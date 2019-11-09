@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Theme 2 - Defining the Research Problem</title>
+    <url>/2019/11/09/Theme-2-Defining-the-Research-Problem/</url>
+    <content><![CDATA[<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>TUNIC</category>
+      </categories>
+      <tags>
+        <tag>PM600 Research Project</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PM600 Book</title>
     <url>/2019/11/09/PM600-Book/</url>
     <content><![CDATA[<h1 id="How-to-Do-Your-Research-Project"><a href="#How-to-Do-Your-Research-Project" class="headerlink" title="How to Do Your Research Project"></a>How to Do Your Research Project</h1><blockquote>
 <p>A Guide for students</p>
 </blockquote>
 <a id="more"></a>
+
 <div class="pdf" target="HowtoDoYourResearchProject.pdf" height=""></div>
-]]></content>
+<hr>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>TUNIC</category>
       </categories>
@@ -42,7 +55,7 @@
 </ul>
 </li>
 <li>Charitable organisations<ul>
-<li>Charities can have a research function. Eg.<a href="https://www.cancerresearchuk.org/" target="_blank" rel="noopener">CANCER RESEARCH UK</a></li>
+<li>Charities can have a research function. Eg. <a href="https://www.cancerresearchuk.org/" target="_blank" rel="noopener">CANCER RESEARCH UK</a></li>
 </ul>
 </li>
 <li>Practitioners<ul>
@@ -66,8 +79,243 @@
 <li>Secure advantage</li>
 <li>Gain inspiration</li>
 </ul>
-<h1 id="Extra-Reading-pp-1-7"><a href="#Extra-Reading-pp-1-7" class="headerlink" title="Extra Reading(pp.1~7)"></a>Extra Reading(pp.1~7)</h1><p>ToDo</p>
-]]></content>
+<h1 id="Starting-Research"><a href="#Starting-Research" class="headerlink" title="Starting Research"></a>Starting Research</h1><h2 id="The-research-cycle"><a href="#The-research-cycle" class="headerlink" title="The research cycle"></a>The research cycle</h2><blockquote>
+<p>Research needs to be properly organised and carefully planned. It needs to be systematic. This is often referred to as the ‘research cycle’.</p>
+</blockquote>
+<ol>
+<li>Identify the research topic and research questions</li>
+<li>Conduct a search of the existing literature</li>
+<li>Design and plan the research project</li>
+<li>Gather data</li>
+<li>Collate and analyse results</li>
+<li>Write up the project</li>
+<li>Present/publish research</li>
+</ol>
+<h2 id="Types-of-Research"><a href="#Types-of-Research" class="headerlink" title="Types of Research"></a>Types of Research</h2><blockquote>
+<p>A research project may adopt more than one of these approaches</p>
+</blockquote>
+<h3 id="Exploratory"><a href="#Exploratory" class="headerlink" title="Exploratory"></a>Exploratory</h3><ul>
+<li>Preliminary investigation into a relatively unknown topic</li>
+<li>Focuses on discovering ideas and gaining insights</li>
+<li>Methods:<ul>
+<li>literature search</li>
+<li>individual interviews</li>
+<li>focus group interviews</li>
+</ul>
+</li>
+<li>Research is flexible and adaptable</li>
+<li>Findings can lead to further, more focused studies</li>
+</ul>
+<h3 id="Descriptive"><a href="#Descriptive" class="headerlink" title="Descriptive"></a>Descriptive</h3><ul>
+<li>Can follow exploratory research to provide a researcher with a better understanding of a topic</li>
+<li>Aims to construct an accurate, in-depth profile of events, persons, situations or phenomena</li>
+<li>Focuses on <strong><em>‘what’</em></strong> rather than ‘why’</li>
+<li>Research results will be accurate but will not offer explanations</li>
+<li>Findings can lead to explanatory research</li>
+</ul>
+<h3 id="Explanatory"><a href="#Explanatory" class="headerlink" title="Explanatory"></a>Explanatory</h3><ul>
+<li>Can follow descriptive research</li>
+<li>Researchers test a hypothesis or theory rather than seek to answer a question</li>
+<li>The researcher wants to establish evidence for cause/effect relationships or to explain a phenomenon</li>
+<li>Research focuses on answering <strong><em>‘why’ and ‘how’</em></strong> questions</li>
+<li>Forms of explanatory research include:<ul>
+<li>experimental research</li>
+<li>non-experimental research</li>
+<li>causal modeling</li>
+</ul>
+</li>
+</ul>
+<h3 id="Evaluative"><a href="#Evaluative" class="headerlink" title="Evaluative"></a>Evaluative</h3><ul>
+<li>Involves judging the effectiveness of a process, strategy, programme or service in achieving its intended purpose(s)</li>
+<li>Research aims to establish evidence of the effectiveness of this process etc</li>
+<li>Focuses on answering <strong><em>‘what’, ‘how’, ‘why’ and ‘to what extent’</em></strong> questions</li>
+<li>Research methods can include:<ul>
+<li>surveys</li>
+<li>questionnaires</li>
+<li>interviews</li>
+<li>focus groups</li>
+</ul>
+</li>
+<li>Findings can be used to assess impact, improve practice and inform decision-making</li>
+</ul>
+<h2 id="Primary-vs-Secondary"><a href="#Primary-vs-Secondary" class="headerlink" title="Primary vs Secondary"></a>Primary vs Secondary</h2><ul>
+<li>Primary research: uses information which researchers gather for themselves<ul>
+<li>Experiment</li>
+<li>Field test</li>
+<li>Questionnaire</li>
+<li>Direct observation</li>
+<li>Face-to-face interview</li>
+<li>Focus Group</li>
+</ul>
+</li>
+<li>Secondary research: uses information gathered by other people in earlier studies<ul>
+<li>Encyclopaedia</li>
+<li>Journal article</li>
+<li>Website</li>
+<li>Newspaper</li>
+<li>Magazine</li>
+<li>Public records</li>
+<li>Report</li>
+<li>Book</li>
+<li>Dictionary</li>
+</ul>
+</li>
+</ul>
+<h2 id="Textbook-Reading"><a href="#Textbook-Reading" class="headerlink" title="Textbook Reading"></a>Textbook Reading</h2><ul>
+<li>pp.1~7</li>
+</ul>
+<hr>
+<h1 id="Introducing-Primary-Research"><a href="#Introducing-Primary-Research" class="headerlink" title="Introducing Primary Research"></a>Introducing Primary Research</h1><h2 id="What-is-primary-research"><a href="#What-is-primary-research" class="headerlink" title="What is primary research?"></a>What is primary research?</h2><blockquote>
+<p>Key characteristics of primary research</p>
+</blockquote>
+<ul>
+<li>Role of researcher<ul>
+<li>The researcher designs the project and collects the data themselves</li>
+<li>The researcher is very involved in the process</li>
+</ul>
+</li>
+<li>Data collection methods<ul>
+<li>Survey</li>
+<li>interview</li>
+<li>questionnaire</li>
+<li>poll</li>
+<li>focus group</li>
+<li>observation</li>
+</ul>
+</li>
+<li>Time<ul>
+<li>Data is collected during a specific research project and timeframe controlled by the researcher</li>
+</ul>
+</li>
+<li>Advantages/Disadvantages:<ul>
+<li>pros: The research will address the specific needs of the researcher</li>
+<li>cons: Completion time is long, and the cost is generally high</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-collection-methods"><a href="#Data-collection-methods" class="headerlink" title="Data collection methods"></a>Data collection methods</h2><ul>
+<li>Qualitative : (the study of human behaviour in an information rich area)<ul>
+<li>Interviews</li>
+<li>focus groups</li>
+<li>observations</li>
+<li>questionnaires(<strong>open questions</strong>)</li>
+</ul>
+</li>
+<li>Quantitative: (objective, statistical analysis used)<ul>
+<li>Structured methods  Eg. a questionnaire with <strong>closed questions</strong></li>
+</ul>
+</li>
+<li>Mixed: A combination of qualitative and quantitative methods are used</li>
+</ul>
+<h2 id="Research-steps"><a href="#Research-steps" class="headerlink" title="Research steps"></a>Research steps</h2><ol>
+<li>Be aware of strengths and limitations</li>
+<li>Select a data collection method(qualitative/quantitative/mixed)</li>
+<li>Select participants</li>
+<li>Select measures</li>
+<li>Select analyses</li>
+</ol>
+<h2 id="Ethical-considerations"><a href="#Ethical-considerations" class="headerlink" title="Ethical considerations"></a>Ethical considerations</h2><ul>
+<li>Whichever research method you choose, you will need to ensure that your primary research is ethical</li>
+<li>It is extremely important that no harm is done to your participants</li>
+<li>Before beginning your primary research<ul>
+<li>You will submit your research proposal to an ethics committee</li>
+<li>Here, you will specify how you will deal with all possible ethical issues that may arise during your study</li>
+</ul>
+</li>
+</ul>
+<h2 id="Textbook-Reading-1"><a href="#Textbook-Reading-1" class="headerlink" title="Textbook Reading"></a>Textbook Reading</h2><ul>
+<li>Ethics: pp. 36 - 40</li>
+<li>Primary and secondary sources: pp. 58 - 62</li>
+</ul>
+<hr>
+<h1 id="Introducing-Secondary-Research"><a href="#Introducing-Secondary-Research" class="headerlink" title="Introducing Secondary Research"></a>Introducing Secondary Research</h1><h2 id="What-is-secondary-research"><a href="#What-is-secondary-research" class="headerlink" title="What is secondary research?"></a>What is secondary research?</h2><blockquote>
+<p>Key characteristics of secondary research</p>
+</blockquote>
+<ul>
+<li>Role of researcher<ul>
+<li>The researcher analyses, interprets or reviews existing data</li>
+<li>The researcher must specify how this past data informs his/her current research</li>
+</ul>
+</li>
+<li>Data collection methods<ul>
+<li>Existing data available (online) e.g. government records such as census reports</li>
+</ul>
+</li>
+<li>Time<ul>
+<li>Secondary research can be quicker than primary research as data does not need to be collected</li>
+</ul>
+</li>
+<li>Advantages/Disadvantages<ul>
+<li>pros<ul>
+<li>Quality of secondary data should be high</li>
+<li>Very large data sets are available</li>
+</ul>
+</li>
+<li>cons<ul>
+<li>The data may not be fully appropriate for your research purposes</li>
+<li>Data was originally collected with a different research question in mind</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Methods-and-purposes-of-secondary-research"><a href="#Methods-and-purposes-of-secondary-research" class="headerlink" title="Methods and purposes of secondary research"></a>Methods and purposes of secondary research</h2><table>
+<thead>
+<tr>
+<th>Method</th>
+<th align="center">Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Using secondary data set in isolation</td>
+<td align="center">Re-assessing a data set with a different research question in mind</td>
+</tr>
+<tr>
+<td>Combining two secondary data sets</td>
+<td align="center">Investigating the relationship between variables in two data sets or comparing findings from two past studies</td>
+</tr>
+<tr>
+<td>Combining secondary and primary data sets</td>
+<td align="center">Obtaining existing information that informs your primary research</td>
+</tr>
+</tbody></table>
+<h2 id="Types-of-secondary-data"><a href="#Types-of-secondary-data" class="headerlink" title="Types of secondary data"></a>Types of secondary data</h2><blockquote>
+<p>Quantitative and Qualitative</p>
+</blockquote>
+<ul>
+<li>inform your current research with past data</li>
+<li>re-assess a past data set</li>
+</ul>
+<h2 id="Sources-of-secondary-data"><a href="#Sources-of-secondary-data" class="headerlink" title="Sources of secondary data"></a>Sources of secondary data</h2><blockquote>
+<p>The two most common sources of secondary data are internal and external</p>
+</blockquote>
+<h3 id="Internal-sources"><a href="#Internal-sources" class="headerlink" title="Internal sources"></a>Internal sources</h3><ul>
+<li>Internal sources of data are those that are internal to the organisation you are researching<ul>
+<li>Sales data</li>
+<li>Financial data</li>
+<li>Transport data</li>
+<li>Marketing data</li>
+<li>Customer data</li>
+<li>Safety data</li>
+</ul>
+</li>
+<li>The benefit of using these sources is that they are easily accessible and there is no associated financial cost in obtaining them.</li>
+</ul>
+<h3 id="External-sources"><a href="#External-sources" class="headerlink" title="External sources"></a>External sources</h3><ul>
+<li>External sources of data have been collected by “somebody else<ul>
+<li>Government sources</li>
+<li>National and international institutions</li>
+<li>Trade, business, and professional associations</li>
+<li>Scientific journals</li>
+<li>Commercial research organisations</li>
+</ul>
+</li>
+<li>The benefit of external sources of data is that they provide comprehensive data.However, you may sometimes need more effort (or money) to obtain it.</li>
+</ul>
+<h2 id="Further-reading"><a href="#Further-reading" class="headerlink" title="Further reading:"></a>Further reading:</h2><blockquote>
+<p>Church, R. M. (2002) The effective use of secondary data. Learning and Motivation. 33(1) pp. 32 – 45.</p>
+</blockquote>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>TUNIC</category>
       </categories>
@@ -104,7 +352,7 @@
 <li>Should you read the book or watch the movie ?<h2 id="Where-do-you-see-yourself-in-10-years"><a href="#Where-do-you-see-yourself-in-10-years" class="headerlink" title="Where do you see yourself in 10 years ?"></a>Where do you see yourself in 10 years ?</h2>ToDo</li>
 </ul>
 <hr>
-]]></content>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>Public Speaking</category>
       </categories>
@@ -134,6 +382,6 @@
 <li>Life Experience</li>
 <li>Book Notes</li>
 </ul>
-]]></content>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
   </entry>
 </search>
