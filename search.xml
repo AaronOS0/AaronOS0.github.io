@@ -14,7 +14,7 @@
   <entry>
     <title>PM600 Book</title>
     <url>/2019/11/09/PM600-Book/</url>
-    <content><![CDATA[<h1 id="How-to-Do-Your-Research-Project"><a href="#How-to-Do-Your-Research-Project" class="headerlink" title="How to Do Your Research Project"></a>How to Do Your Research Project</h1><blockquote>
+    <content><![CDATA[<h1 id="How-To-Do-Your-Research-Project"><a href="#How-To-Do-Your-Research-Project" class="headerlink" title="How To Do Your Research Project"></a>How To Do Your Research Project</h1><blockquote>
 <p>A Guide for students</p>
 </blockquote>
 <a id="more"></a>
@@ -370,7 +370,9 @@
 <li>Have a mind like water.</li>
 <li>Learn more , study less.</li>
 <li>Learning to enjoy studying can matter even more than learning to study well.</li>
-<li>Understanding something means you have the ability to view it from different perspectives.<a id="more"></a>
+<li>Understanding something means you have the ability to view it from different perspectives.</li>
+<li>Focus on the solution, not the emotion.</li>
+<li>Discipline Equals Freedom。<a id="more"></a>
 </li>
 </ul>
 <hr>
@@ -383,5 +385,8 @@
 <li>Book Notes</li>
 </ul>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <tags>
+        <tag>“First post”</tag>
+      </tags>
   </entry>
 </search>
