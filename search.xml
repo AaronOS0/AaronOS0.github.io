@@ -1,6 +1,299 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Theme 4 - The Project Management Plan</title>
+    <url>/2020/01/09/Theme-4-The-Project-Management-Plan/</url>
+    <content><![CDATA[<h1 id="1-Project-Management-Plan"><a href="#1-Project-Management-Plan" class="headerlink" title="1. Project Management Plan"></a>1. Project Management Plan</h1><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>TUNIC</category>
+      </categories>
+      <tags>
+        <tag>PM605 Project Management</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Theme 3 - Starting a Project</title>
+    <url>/2020/01/08/Theme-3-Starting-a-Project/</url>
+    <content><![CDATA[<h1 id="1-Project-definitions-and-requirements"><a href="#1-Project-definitions-and-requirements" class="headerlink" title="1. Project definitions and requirements"></a>1. Project definitions and requirements</h1><h2 id="1-1-The-importance-of-initial-project-definition"><a href="#1-1-The-importance-of-initial-project-definition" class="headerlink" title="1.1. The importance of initial project definition"></a>1.1. The importance of initial project definition</h2><ul>
+<li>The <strong>investors</strong> need to know how much <strong>money will be spent</strong> on the project and what <strong>the benefit</strong> they would generate</li>
+<li>The contracting organisation needs to know for what it is <strong>bidding</strong> and what is its <strong>commitments</strong> when signing the contract</li>
+<li>The managers involved in this project needs to know <strong>what is expected from them</strong> to make this project successful.</li>
+</ul><a id="more"></a>
+<h2 id="1-2-Project-definitions"><a href="#1-2-Project-definitions" class="headerlink" title="1.2. Project definitions"></a>1.2. Project definitions</h2><blockquote>
+<p>Definitions come from the following questions</p>
+</blockquote>
+<ul>
+<li>Why is the project needed?</li>
+<li>What will exist at the end of the project that doesn’t exist now? (This does not have to be a physical object)</li>
+<li>Will (or should) the project <strong>deliver</strong> anything else?</li>
+<li>Is anything explicitly excluded from the project?</li>
+<li>What assumptions are you making?</li>
+<li>Are there any significant problems you are aware of?</li>
+<li>Are there any specific conditions or constraints?</li>
+<li>Who will you need to carry out this project?</li>
+</ul>
+<h2 id="1-3-PID-Project-Initiation-Document"><a href="#1-3-PID-Project-Initiation-Document" class="headerlink" title="1.3. PID (Project Initiation Document)"></a>1.3. PID (Project Initiation Document)</h2><p>The PID will form the basis of your project pitch.  It is a formal document that lays out the intentions and scope of the project.  The PID must be agreed before work can start on the project.</p>
+<h2 id="1-4-Key-objectives-for-any-project"><a href="#1-4-Key-objectives-for-any-project" class="headerlink" title="1.4. Key objectives for any project"></a>1.4. Key objectives for any project</h2><h3 id="1-4-1-Cost-objective"><a href="#1-4-1-Cost-objective" class="headerlink" title="1.4.1. Cost objective"></a>1.4.1. Cost objective</h3><ul>
+<li>Every project should be controlled against a detailed budget to ensure the expenses are not exceeded. Otherwise, <strong>profits and ROI</strong> will be reduced.</li>
+<li>However, some profits are not made for profits such as <strong>pure scientific research programs</strong>, and local governmental projects. In this case the focus is heavily on the cost management because the whole project might terminate if the funds run out.  </li>
+</ul>
+<h3 id="1-4-2-Performance-quality-objective"><a href="#1-4-2-Performance-quality-objective" class="headerlink" title="1.4.2. Performance/quality objective"></a>1.4.2. Performance/quality objective</h3><ul>
+<li>Reliability and freedom from malfunction</li>
+<li>Low operating cost</li>
+<li>Safety</li>
+<li>Long use and economic life</li>
+<li>Environmental friendly</li>
+<li>Performance equal to the specifications</li>
+</ul>
+<h3 id="1-4-3-Time-objective"><a href="#1-4-3-Time-objective" class="headerlink" title="1.4.3. Time objective"></a>1.4.3. Time objective</h3><ul>
+<li>All significant stages of a project must finish on the agreed schedule dates</li>
+<li>Failure to meet this deadline will ruin the reputation of the contractor</li>
+<li>Delay in a project might cause delays in other projects and consume resources beyond its planned finish dates.</li>
+</ul>
+<h2 id="1-5-Project-Organisation"><a href="#1-5-Project-Organisation" class="headerlink" title="1.5. Project Organisation"></a>1.5. Project Organisation</h2><blockquote>
+<p>As a project manager you will need to consider who will be in each of the following groups:</p>
+</blockquote>
+<ul>
+<li>Project board</li>
+<li>Project Team</li>
+<li>Stakeholders</li>
+<li>Quality Assurance</li>
+</ul>
+<h3 id="1-5-1-Project-Board"><a href="#1-5-1-Project-Board" class="headerlink" title="1.5.1. Project Board"></a>1.5.1. Project Board</h3><ul>
+<li>The project board are responsible for <strong>delivering the project</strong></li>
+<li>Their job is to <strong>oversee the project</strong> and keep it moving in the right direction.</li>
+<li>They are accountable for the project’s success or failure.</li>
+</ul>
+<h3 id="1-5-2-Project-team"><a href="#1-5-2-Project-team" class="headerlink" title="1.5.2. Project team"></a>1.5.2. Project team</h3><p>A team can be created for each project and can be supervised by the project manager who is responsible not only for planning, progress and work allocation but also for all technical aspects of the project.</p>
+<h3 id="1-5-3-Stakeholders-and-Buy-In"><a href="#1-5-3-Stakeholders-and-Buy-In" class="headerlink" title="1.5.3. Stakeholders and Buy-In"></a>1.5.3. Stakeholders and Buy-In</h3><p>Stakeholders are key players in your project. They may be individuals e.g. your manager, or an investor, and organizations, such as suppliers, and large groups e.g. your customers and employees. You must secure their buy-in, or support, in a number of ways to seek permission, secure investment, induce consumption, and evoke loyalty.</p>
+<p>Stakeholders will assess your project and product offering based upon the following:</p>
+<ul>
+<li><strong>Benefits Realized</strong> : Managers, investors, and customers will pay close attention to the positive attributes of a proposed emerging-technology concept.<ul>
+<li>Is your concept likely to meet consumer needs?</li>
+<li>Is it likely to be popular?</li>
+<li>Is it likely to make a return on investment?</li>
+</ul>
+</li>
+<li><strong>Robust Research</strong><br>Investors in particular will require substantial data in relation to expected product performance and forecasted costs and sales before they commit to providing capital.</li>
+<li><strong>Talent Management</strong><br>Emerging technology requires talented and potentially expensive staff. An appropriate talent-management strategy is required to actively recruit and retain an engaged, loyal workforce.</li>
+<li><strong>Brand Image</strong><br>Understanding methods and techniques to cultivate an effective brand image, which is promoted using appropriate communication channels, is very important.</li>
+</ul>
+<h3 id="1-5-4-Quality-Assurance"><a href="#1-5-4-Quality-Assurance" class="headerlink" title="1.5.4. Quality Assurance"></a>1.5.4. Quality Assurance</h3><ul>
+<li>List of Factors(Checklist)<br>Quality assurance (QA) is a way of preventing errors and maintaining required levels of performance throughout each stage of a project. QA is judged on a number of factors that can determine a project’s success or failure:<ul>
+<li>Good project definition and a sound business case</li>
+<li>Appropriate choice of project strategy</li>
+<li>Strong support for the project from senior management</li>
+<li>Availability of sufficient funds and other resources</li>
+<li>Technical competence</li>
+<li>A strong quality culture throughout the organization</li>
+<li>A suitable organization structure</li>
+<li>Appropriate regard for the health and safety of everyone connected with the project</li>
+<li>Good project communications</li>
+<li>Well-motivated staff</li>
+<li>Quick and fair resolution of conflict</li>
+</ul>
+</li>
+<li>Quality Assurance Methods<ul>
+<li><strong>Suppliers’ Procedures</strong> : It is important to take an interest in quality control measures taken by your suppliers.</li>
+<li><strong>Expediting</strong> : When waiting for your supplier to deliver, you may wish to spur progress by regularly investigating order status.</li>
+<li><strong>Inspection</strong> : Visiting participating business units (including suppliers’ premises) coupled with consistent scrutiny of operational processes, performance capability, and results.</li>
+<li><strong>Intervention</strong> : If suppliers and other actors cannot deliver on time, or perform to expectations, Project Managers may have to authorize emergency measures.</li>
+<li><strong>Prioritize</strong> : Ranking work in terms of importance identifies tasks critical to maintaining performance level expectations.<ul>
+<li>Priority A - Urgent tasks</li>
+<li>Priority B - Important but less urgent tasks</li>
+<li>Priority C - Less important tasks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-6-What-is-SMART"><a href="#1-6-What-is-SMART" class="headerlink" title="1.6. What is SMART?"></a>1.6. What is SMART?</h2><blockquote>
+<p>Your project pitch must contain content that is SMART.</p>
+</blockquote>
+<ul>
+<li>S - Specific</li>
+<li>M - Measurable</li>
+<li>A - Achievable</li>
+<li>R - Relevant</li>
+<li>T - Time-bound</li>
+</ul>
+<h2 id="1-7-Organisation-Structures"><a href="#1-7-Organisation-Structures" class="headerlink" title="1.7. Organisation Structures"></a>1.7. Organisation Structures</h2><p>An organization structure defines <strong>lines of authority</strong>, <strong>scope of responsibility</strong>, <strong>task allocation</strong>, and <strong>pathways of communication</strong>. As per Lock, structures are often tailored to meet project requirements, and its own views concerning how work should be organized.</p>
+<ul>
+<li><strong>Hierarchical</strong> Organisation<br>An organization described as hierarchical is one that values order, identification of clear lines of responsibility, clarification of job tasks and responsibilities, and several layers of management.</li>
+<li><strong>Flat</strong> Organization<br>A flat organization is characterized as having relatively few layers of management. Managers’ span of control is wider in contrast to a hierarchical structure. Employees tend to have more responsibility and freedom to explore ideas and take decisions without deferring to management. Lines of responsibility are more fluid, and lines of communication more flexible.</li>
+<li><strong>Holacratic</strong> Organizations<br>Moving beyond flat organizations, holacratic organizations lack conventional management structures. Employees are clustered into teams that correspond with a particular function.</li>
+</ul>
+<h2 id="1-8-Extra-learning-information"><a href="#1-8-Extra-learning-information" class="headerlink" title="1.8. Extra learning information"></a>1.8. Extra learning information</h2><p><a href="https://medium.com/@warren2lynch/what-is-project-initiation-document-pid-using-why-what-how-when-who-template-f639c2a10186" target="_blank" rel="noopener">What is PID?</a></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>TUNIC</category>
+      </categories>
+      <tags>
+        <tag>PM605 Project Management</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Theme 2 - Types of Project Management</title>
+    <url>/2020/01/07/Theme-2-Types-of-Project-Management/</url>
+    <content><![CDATA[<h1 id="1-Project-and-Project-Management"><a href="#1-Project-and-Project-Management" class="headerlink" title="1. Project and Project Management"></a>1. Project and Project Management</h1><h2 id="1-1-What-is-a-project"><a href="#1-1-What-is-a-project" class="headerlink" title="1.1. What is a project?"></a>1.1. What is a project?</h2><ul>
+<li>A project is a task with a desired end point.</li>
+<li>A key factor that distinguishes a project from the day-to-day operation of a company is that it has a defined product and timespan.</li>
+</ul><a id="more"></a>
+<h2 id="1-2-What-is-project-management"><a href="#1-2-What-is-project-management" class="headerlink" title="1.2. What is project management"></a>1.2. What is project management</h2><ul>
+<li>Project management is the formal discipline for managing projects</li>
+<li>The aim of project management is to ensure that projects are completed and that the end point is achieved</li>
+<li>It is about reaching the end point predictably, to a given cost and within a planned amount of time</li>
+</ul>
+<h2 id="1-3-Your-role-as-project-manager"><a href="#1-3-Your-role-as-project-manager" class="headerlink" title="1.3. Your role as project manager"></a>1.3. Your role as project manager</h2><blockquote>
+<p>Ensure there is a clear understanding of why a project is being done, and what it will produce</p>
+</blockquote>
+<ul>
+<li>Plan the project<ul>
+<li>to understand how long it will take and how much it will cost</li>
+</ul>
+</li>
+<li>Manage the project<ul>
+<li>to ensure that as the project progresses, it achieves the objectives you have defined within the time and cost specified</li>
+</ul>
+</li>
+<li>Complete the project properly<ul>
+<li>to make sure everything produced by the project is of the quality expected and works as required</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-4-Delivery-and-deliverables"><a href="#1-4-Delivery-and-deliverables" class="headerlink" title="1.4. Delivery and deliverables"></a>1.4. Delivery and deliverables</h2><ul>
+<li>Delivery means getting the things done you set out to do, and bringing the project to completion</li>
+<li>Deliverables are what are to be delivered by a project</li>
+<li>The deliverables are defined at the start of the project</li>
+<li>Your success as a project manager is in delivering them in the planned time and to the expected cost</li>
+</ul>
+<h2 id="1-5-Project-dimensions"><a href="#1-5-Project-dimensions" class="headerlink" title="1.5. Project dimensions"></a>1.5. Project dimensions</h2><blockquote>
+<p>Often a trade-off is needed between these elements.  Finding the right balance is an important part of being a project manager.</p>
+</blockquote>
+<ul>
+<li><strong>5 key elements</strong> of a project<ul>
+<li>Scope</li>
+<li>Quality</li>
+<li>Time</li>
+<li>Cost</li>
+<li>Risk</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-6-Key-players"><a href="#1-6-Key-players" class="headerlink" title="1.6. Key players"></a>1.6. Key players</h2><ul>
+<li>Customers<ul>
+<li>the persons or the organisations for which the project is being conducted. They usually pay money to another organisation in return for project.  </li>
+</ul>
+</li>
+<li>Contractor<ul>
+<li>the organisation that is responsible for executing the project to the customers’ requirement.</li>
+</ul>
+</li>
+<li>End users<ul>
+<li>the individual or the organisation that will own and operate the project. It is not the same as the one who paid for the project</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-Project-Management-Types"><a href="#2-Project-Management-Types" class="headerlink" title="2. Project Management Types"></a>2. Project Management Types</h1><h2 id="2-1-The-definition-of-project-management"><a href="#2-1-The-definition-of-project-management" class="headerlink" title="2.1. The definition of project management"></a>2.1. The definition of project management</h2><p>Project Management is the management discipline that plans, organizes and controls people, money and cash so that projects are completed successfully in spite of all the risks.</p>
+<h2 id="2-2-Project-Types"><a href="#2-2-Project-Types" class="headerlink" title="2.2. Project Types"></a>2.2. Project Types</h2><ul>
+<li>Type 1: <strong>Civil Engineering, Construction, Petrochemical, Mining and Quarrying</strong><br>“A common feature is the physical work involved, their exposure to the public gaze, and their unappealing visual qualities during construction. They involve high risk, significant capital investment, rigorous management, and special attention to health and safety.”</li>
+<li>Type 2: <strong>Manufacturing</strong><br>“A common feature is the production of a piece of specially designed hardware or machinery, for example, an aircraft, a ship, electronic equipment, or a land vehicle. Projects are usually undertaken in an indoor environment. A complex product may involve a consortium of companies and stakeholders across international boundaries.”</li>
+<li>Type 3: <strong>IT Projects and Projects Associated with Management or Business Change</strong><br>“All companies, regardless of size, will probably need Project Management at some point. Whether this is to manage office relocation, introduce a new computer system, coordinate a marketing campaign, or develop and launch a new product or service. There are often no tangible outcomes, but successful implementation is imperative to business success, or survival.”</li>
+<li>Type 4: <strong>Projects For Pure Scientific Research</strong><br>“These projects involve expanding human knowledge and making new discoveries. Objectives can be difficult to define, and timelines may fluctuate. Significant and continuous levels of commitment and investment required. Strict budgeting and monitoring necessary.”</li>
+</ul>
+<h2 id="2-3-Project-Management-Approaches"><a href="#2-3-Project-Management-Approaches" class="headerlink" title="2.3. Project Management Approaches"></a>2.3. Project Management Approaches</h2><ul>
+<li>Phased Development<ul>
+<li>A project that is split into clearly defined categories of linear sequential activities and chronological progress. For example, conception, development, planning, launch, completion.</li>
+</ul>
+</li>
+<li>Agile Methods<ul>
+<li>A flexible method characterized by incremental, non-linear and iterative patterns of activity. Often used when progress is unpredictable.</li>
+</ul>
+</li>
+<li>Prototype Approaches<ul>
+<li>A project that involves the creation and development of an early version of a product or system (the prototype) that is build, tested and reconfigured until an acceptable version is ready for launch.</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-The-project-life-cycle"><a href="#3-The-project-life-cycle" class="headerlink" title="3. The project life cycle"></a>3. The project life cycle</h1><h2 id="3-1-Five-project-stages"><a href="#3-1-Five-project-stages" class="headerlink" title="3.1. Five project stages"></a>3.1. Five project stages</h2><blockquote>
+<p>An example of home decoration</p>
+</blockquote>
+<ul>
+<li>Scope<ul>
+<li>How many rooms do I need to paint and decorate ?</li>
+</ul>
+</li>
+<li>Quality<ul>
+<li>How fastidious do I want to be ?</li>
+</ul>
+</li>
+<li>Time<ul>
+<li>How long will all this painting and decorating take to complete ?</li>
+</ul>
+</li>
+<li>Cost<ul>
+<li>How much money do I need to spend on paint and other materials ?</li>
+</ul>
+</li>
+<li>Risk<ul>
+<li>Are there dangers involved ? Will I not finish on time? Why? What might be the consequences ?</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-Traditional-project-life-cycle"><a href="#3-2-Traditional-project-life-cycle" class="headerlink" title="3.2. Traditional project life cycle"></a>3.2. Traditional project life cycle</h2><ul>
+<li>Phase 1 : Conception/Initiation<ul>
+<li>Stakeholders develop ideas concerning a new product, service, initiative or event</li>
+<li>Initial scoping undertaken to gauge potential feasibility and support</li>
+</ul>
+</li>
+<li>Phase 2 : Definition/Planning<ul>
+<li>Feasibility studies undertaken</li>
+<li>Checklists compiled</li>
+<li>Proposals made</li>
+<li>Project scope finalized</li>
+<li>Strategy and design specification development and documentation completed</li>
+<li>Resources scheduled</li>
+</ul>
+</li>
+<li>Phase 3 : Managing Launch/Execution<ul>
+<li>Standards and procedures agreed and deployed</li>
+<li>Preparations and organization completed</li>
+<li>Plans and instructions issued to all stakeholders</li>
+<li>Work started</li>
+</ul>
+</li>
+<li>Phase 4 : Performance Control<ul>
+<li>Progress monitored</li>
+<li>Control systems implemented</li>
+<li>Workforce observed and encouraged</li>
+<li>Performance data collected</li>
+<li>Crisis management contingency plans, and associated processes and trigger points, understood by key stakeholders</li>
+<li>Corrective measured implemented, if necessary</li>
+</ul>
+</li>
+<li>Phase 5 : Project Close<ul>
+<li>Formal project closure and handover of completed artifact to the client</li>
+<li>Disposal of surplus stocks</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-Modern-project-life-cycle"><a href="#3-3-Modern-project-life-cycle" class="headerlink" title="3.3. Modern project life cycle"></a>3.3. Modern project life cycle</h2><ol>
+<li><strong>Project Definition</strong> : Purpose and outline of the project articulated</li>
+<li><strong>Preparation and planning</strong> : Declaration of required tasks, activities, responsibilities, resources and timelines</li>
+<li><strong>Design</strong> : Declaration of network configuration and pattern of chronology, and interchangeability of tasks and activities</li>
+<li><strong>Purchasing</strong> : Acquirement of necessary resources including goods and services required for project fulfillment</li>
+<li><strong>Fulfillment</strong> : Make or build the project</li>
+<li><strong>Completion and Handover</strong> : Test, commission and handover completed artifact to stakeholder users/customers</li>
+</ol>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>TUNIC</category>
+      </categories>
+      <tags>
+        <tag>PM605 Project Management</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Theme 6 - Literature Review</title>
     <url>/2019/11/21/Theme-6-Literature-Review/</url>
     <content><![CDATA[<h1 id="1-Identifying-themes"><a href="#1-Identifying-themes" class="headerlink" title="1. Identifying themes"></a>1. Identifying themes</h1><h2 id="1-1-What-do-you-think-is-meant-by-‘themes’-in-the-literature"><a href="#1-1-What-do-you-think-is-meant-by-‘themes’-in-the-literature" class="headerlink" title="1.1. What do you think is meant by ‘themes’ in the literature?"></a>1.1. What do you think is meant by ‘themes’ in the literature?</h2><p>When you read and take notes from sources, you should identify the <strong>ideas/topics/issues</strong> that are discussed. Next, you must <strong>analyse and synthesise</strong> your notes to identify <strong>how different sources deal with the same ideas/topics/ issues</strong>. These will be the <strong>emerging themes</strong> that you have found in the literature.</p>
@@ -110,7 +403,7 @@
 <li>The reporting verb you choose can show opinion, distance and attitude as well as the type of infromation or research cited.</li>
 </ul>
 <h3 id="3-8-3-Reporting-verbs"><a href="#3-8-3-Reporting-verbs" class="headerlink" title="3.8.3. Reporting verbs"></a>3.8.3. Reporting verbs</h3><blockquote>
-<p>Author prominent always need a reporting verb.</p>
+<p>Author prominent always need a reporting verb. <a href="https://www.eapfoundation.com/writing/references/reporting/" target="_blank" rel="noopener"><strong><em>URL</em></strong></a></p>
 </blockquote>
 <ul>
 <li>verb + preposition<ul>
@@ -481,8 +774,8 @@
 <p>From a business perspective, an emerging technology is a technology that is capable of changing existing contextual methods and dynamics, often by integrating digital resources with creative thinking and rigorous research and testing, to introduce new products, services, initiatives and events.</p>
 </blockquote><a id="more"></a>
 <ul>
-<li>Emerging-Technology Product : A physical consumer that utilizes new technology. Eg. 3D printers.</li>
-<li>Emerging-Technology Service : A set of new technological processes, activities and systems that collectively meet a pblic or business need. Eg. Artificially intelligent public transport system.</li>
+<li>Emerging-Technology Product : A physical consumer product that utilizes new technology. Eg. 3D printers.</li>
+<li>Emerging-Technology Service : A set of new technological processes, activities and systems that collectively meet a public or business need. Eg. Artificially intelligent public transport system.</li>
 <li>Emerging-Technology Initiative : An enterprise that utilizes new technology to tackle applied problems or social issues. Eg. Desalination projects to provide drinking water.</li>
 <li>Emerging-Technology Event : A planed gathering that utilizes new technology. Eg. WWDC</li>
 </ul>
@@ -1859,6 +2152,12 @@
 <li>Every saint has a past, and every sinner has a future.</li>
 <li>Awareness in itself is healing.</li>
 <li>Do aliens exist?<h2 id="5-1-A-leopard-can’t-change-its-spots"><a href="#5-1-A-leopard-can’t-change-its-spots" class="headerlink" title="5.1 A leopard can’t change its spots."></a>5.1 A leopard can’t change its spots.</h2><img src="WhatCanChange.png" alt="A leopard can&#39;t change its spots."></li>
+</ul>
+<h1 id="6-Topics"><a href="#6-Topics" class="headerlink" title="6. Topics"></a>6. Topics</h1><ul>
+<li>Where is the best place you’ve ever travelled to ?</li>
+<li>Enmotional intelligence is more important than academic intelligence.</li>
+<li>Is world peace achievable ?</li>
+<li>My dream Christmas would look like…<h2 id="6-1-Enmotional-intelligence-is-more-important-than-academic-intelligence"><a href="#6-1-Enmotional-intelligence-is-more-important-than-academic-intelligence" class="headerlink" title="6.1 Enmotional intelligence is more important than academic intelligence."></a>6.1 Enmotional intelligence is more important than academic intelligence.</h2><img src="EQVsIQ.png" alt="Enmotional intelligence is more important than academic intelligence."></li>
 </ul>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
