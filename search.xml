@@ -3,7 +3,154 @@
   <entry>
     <title>Theme 4 - The Project Management Plan</title>
     <url>/2020/01/09/Theme-4-The-Project-Management-Plan/</url>
-    <content><![CDATA[<h1 id="1-Project-Management-Plan"><a href="#1-Project-Management-Plan" class="headerlink" title="1. Project Management Plan"></a>1. Project Management Plan</h1><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content><![CDATA[<h1 id="1-Project-Management-Plan-PMP"><a href="#1-Project-Management-Plan-PMP" class="headerlink" title="1. Project Management Plan (PMP)"></a>1. Project Management Plan (PMP)</h1><blockquote>
+<p>A Project Management Plan is a document that lays out the <strong>tasks, time, people and resources</strong> needed for the project to be successfully completed.</p>
+</blockquote><a id="more"></a>
+<ul>
+<li>It provides information you can use to explain your project to other people.</li>
+<li>The PMP is a tool for allocating work and managing people as well as understanding the time and cost of a project.  It is developed and owned by the project manager.  </li>
+<li>Major changes to the PMP must be approved by the <strong>Project Board</strong>.</li>
+</ul>
+<h2 id="1-1-PID-and-PMP"><a href="#1-1-PID-and-PMP" class="headerlink" title="1.1. PID and PMP"></a>1.1. PID and PMP</h2><table>
+<thead>
+<tr>
+<th align="center">PID</th>
+<th align="center">PMP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Why? <br> Why do you want to do the project?</td>
+<td align="center">How? <br> What tasks are needed to achieve this?</td>
+</tr>
+<tr>
+<td align="center">What? <br> What will the project give you that you don’t have now?</td>
+<td align="center">Who and When? <br> Who will do these tasks, when and in what order?</td>
+</tr>
+</tbody></table>
+<h2 id="1-2-Producing-a-PMP"><a href="#1-2-Producing-a-PMP" class="headerlink" title="1.2. Producing a PMP"></a>1.2. Producing a PMP</h2><ol>
+<li>Divide the project into <strong>component tasks</strong> to give a full list of things that must be done to complete the project.</li>
+<li><strong>Estimate the time</strong> each task will take to complete.</li>
+<li>Order the tasks in the <strong>correct sequence</strong>.</li>
+<li>Determine the <strong>people, money and other resources</strong> needed to complete each task.</li>
+<li>Check resource availability.</li>
+<li><strong>Review</strong> – Can this project be achieved?</li>
+</ol>
+<h1 id="2-Communication"><a href="#2-Communication" class="headerlink" title="2. Communication"></a>2. Communication</h1><ul>
+<li>A vital part of managing a project is managing the lines of communication.</li>
+<li>A formal communication strategy will help you to organise your communications.</li>
+<li>You need to consider <strong>who</strong> you must communicate with, <strong>when</strong> you need to communicate, and the <strong>purpose of the communication</strong>.</li>
+</ul>
+<h2 id="2-1-Communication-information"><a href="#2-1-Communication-information" class="headerlink" title="2.1. Communication information"></a>2.1. Communication information</h2><blockquote>
+<p>The Project Manager is required to communicate her or his plans to stakeholders throughout the project life cycle</p>
+</blockquote>
+<ul>
+<li><strong>Initiation</strong> : An idea for an emerging technology emerges. This needs to be communicated to others.</li>
+<li><strong>Planning</strong><ul>
+<li>Through electronic communication</li>
+<li>In person</li>
+</ul>
+</li>
+<li><strong>Execution</strong> : Doing the tasks identified within the project needs communication and feedback.</li>
+<li><strong>Closure</strong> : Similarly, signing off on a project needs communication to check details and receive feedback.</li>
+</ul>
+<h2 id="2-2-Claude-Shannon’s-Communication-Process-Cycle-Model"><a href="#2-2-Claude-Shannon’s-Communication-Process-Cycle-Model" class="headerlink" title="2.2. Claude Shannon’s Communication Process Cycle Model"></a>2.2. Claude Shannon’s Communication Process Cycle Model</h2><p><img src="ShannonCommunicationProcessCycleModel.jpg" alt></p>
+<ul>
+<li><strong>Encoding the message</strong>: Sender must choose an appropriate medium and encode a message that is clear, appropriate, objective(preferably free from bias), detailed, but also persuasive and succinct.</li>
+<li><strong>Noise</strong>: Misunderstanding and barriers can emerge which can disrupt, or disort the original meaning of the sender’s message. Misunderstanding can cause tension, conflict, and subsequent project delays.</li>
+</ul>
+<h2 id="2-3-Communication-Channels"><a href="#2-3-Communication-Channels" class="headerlink" title="2.3. Communication Channels"></a>2.3. Communication Channels</h2><ul>
+<li><strong>Face-to-Face</strong><br>Face-to-face communication is <strong>effective for persuading others and seeking agreement</strong>. It is also useful to address sensitive issues e.g. conflict and tension.</li>
+<li><strong>Electronic communication</strong><br>It is effective for <strong>communicating across distances, quickly and cheaply</strong>.</li>
+</ul>
+<h1 id="3-Tasks-of-the-Project-Management-Plan"><a href="#3-Tasks-of-the-Project-Management-Plan" class="headerlink" title="3. Tasks of the Project Management Plan"></a>3. Tasks of the Project Management Plan</h1><h2 id="3-1-Breaking-down-tasks"><a href="#3-1-Breaking-down-tasks" class="headerlink" title="3.1. Breaking down tasks"></a>3.1. Breaking down tasks</h2><p>The purpose of the PMP is to allow the estimation of time and cost, and the allocation of people and resources.  Tasks should be broken down enough to allow you to do this.</p>
+<h2 id="3-2-Milestones"><a href="#3-2-Milestones" class="headerlink" title="3.2. Milestones"></a>3.2. Milestones</h2><ul>
+<li>Milestones are points in a project that identify when you have completed an <strong>important stage</strong> of the project.</li>
+<li>They are useful to track progress at a high level and to communicate to people outside the project.</li>
+<li>They are not activities, but reflect the completion of a series of activities and the <strong>production of key deliverables</strong>.</li>
+</ul>
+<div class="video-container"><iframe src="//www.youtube.com/embed/aJcd1rQ0Z9w" frameborder="0" allowfullscreen></iframe></div>
+
+<h2 id="3-3-Estimating-time"><a href="#3-3-Estimating-time" class="headerlink" title="3.3. Estimating time"></a>3.3. Estimating time</h2><p>The part of planning that people usually find the hardest is estimating how long the project will take.  Accurate estimating can be difficult.  Most people are not naturally good at it, this is because they don’t know how to do it.</p>
+<ul>
+<li>Ask someone who does know</li>
+<li>Use any available rules of thumb</li>
+<li>Model it against other similar tasks</li>
+<li>Break down the task further until you get tasks you can estimate</li>
+<li>Make an assumption</li>
+</ul>
+<h2 id="3-4-Estimating-Methods"><a href="#3-4-Estimating-Methods" class="headerlink" title="3.4. Estimating Methods"></a>3.4. Estimating Methods</h2><ol>
+<li>Bottom-Up Estimating<br>Bottom-up estimating allows you to create an estimate for the project as a whole. To analyze from the “bottom up,” <strong>break larger tasks down into detailed tasks</strong>, and then estimate the time needed to complete each one.<br>Because you’re considering each task incrementally, your estimate of the time required for <strong>each task is likely to be more accurate</strong>. You can then <strong>add up</strong> the total amount of time needed to complete the plan.</li>
+<li>Top-Down Estimating<br>In top-down analysis, you develop an overview of the expected timeline first, <strong>using past projects or previous experience as a guide</strong>.<br>It’s often helpful to compare top-down estimates against your bottom-up estimates, to ensure accuracy.</li>
+<li>Comparative Estimating<br>With comparative estimating, you look at the time it took to do <strong>similar tasks</strong>, on other projects.</li>
+<li>Parametric Estimating<br>With this method, you estimate the time required for one deliverable; and then <strong>multiply it</strong> by the number of deliverables required.</li>
+<li>Three-Point Estimating<br>To build in a cushion for uncertainty, you can do three estimates – one for the <strong>best case</strong>, another for the <strong>worst case</strong>, and a final one for <strong>the most likely case</strong>.<br>Although this approach requires additional effort to create three separate estimates, it allows you to set more reasonable expectations, based on a more realistic estimate of outcomes.</li>
+</ol>
+<h2 id="3-5-Contingency"><a href="#3-5-Contingency" class="headerlink" title="3.5. Contingency"></a>3.5. Contingency</h2><blockquote>
+<p>In real life things may go wrong.  You deal with this by setting aside time and money that you will try not to use, but will if there are problems.  This is called contingency.</p>
+</blockquote>
+<ul>
+<li><strong>Low risk</strong>, familiar tasks: 5-10% contingency</li>
+<li><strong>Medium risk</strong>, less familiar tasks: 20-25% contingency</li>
+<li><strong>High risk</strong>, unfamiliar tasks: 50% contingency</li>
+</ul>
+<h2 id="3-6-Ordering-the-tasks"><a href="#3-6-Ordering-the-tasks" class="headerlink" title="3.6. Ordering the tasks"></a>3.6. Ordering the tasks</h2><ul>
+<li><strong>Predecessor dependencies</strong> : Some tasks can only be done when other tasks have been done first</li>
+<li><strong>External dependencies</strong> : Some tasks are done outside the project, but the project cannot move forward without them.</li>
+<li><strong>Availability of people</strong> : Some tasks can be sped up by adding more people, while others cannot.</li>
+</ul>
+<h2 id="3-7-Dealing-with-costs"><a href="#3-7-Dealing-with-costs" class="headerlink" title="3.7. Dealing with costs"></a>3.7. Dealing with costs</h2><ul>
+<li>Staff wages</li>
+<li>Renting space</li>
+<li>Materials</li>
+<li>Tools</li>
+<li>Cost estimation – the more you have to guess costs, the more <strong>contingency</strong> you need</li>
+</ul>
+<div class="video-container"><iframe src="//www.youtube.com/embed/n-3rQUjSGtk" frameborder="0" allowfullscreen></iframe></div>
+
+<h1 id="4-Creating-your-PMP"><a href="#4-Creating-your-PMP" class="headerlink" title="4. Creating your PMP"></a>4. Creating your PMP</h1><ol>
+<li>Brainstorm a task list</li>
+<li>Add the tasks to the PMP template</li>
+<li>Estimate times and dependencies</li>
+<li>Allocate staff to tasks</li>
+<li>Work out a schedule</li>
+<li>Work out costs</li>
+<li>Add in milestones and contingency</li>
+<li>Review and amend</li>
+</ol>
+<h1 id="5-Project-Pitch"><a href="#5-Project-Pitch" class="headerlink" title="5. Project Pitch"></a>5. Project Pitch</h1><h2 id="5-1-What-is-a-pitch"><a href="#5-1-What-is-a-pitch" class="headerlink" title="5.1. What is a pitch?"></a>5.1. What is a pitch?</h2><ul>
+<li>Pitch is a <strong>presentation of a business idea</strong> to potential investors</li>
+<li>People pitch a business because they need resources</li>
+<li>If the goal is to raise startup cash, the target of the pitch is an investor.</li>
+<li>Other businesses pitch to potential customers to sell their product.</li>
+<li>Some organizations pitch because they need a partner or resource to help them accomplish their mission.</li>
+</ul>
+<h2 id="5-2-What-makes-a-compelling-pitch"><a href="#5-2-What-makes-a-compelling-pitch" class="headerlink" title="5.2. What makes a compelling pitch?"></a>5.2. What makes a compelling pitch?</h2><ul>
+<li>A good pitch <strong>balances</strong> business and emotional needs.</li>
+<li>A good pitch is <strong>succinct</strong>.</li>
+<li>A good pitch tells a <strong>story</strong>.</li>
+<li>A good pitch focuses on <strong>benefits</strong></li>
+</ul>
+<h2 id="5-3-Pitching-Essentials"><a href="#5-3-Pitching-Essentials" class="headerlink" title="5.3. Pitching Essentials"></a>5.3. Pitching Essentials</h2><ul>
+<li>Know <strong>who</strong> you’re pitching to</li>
+<li>Understand their <strong>needs and motivations</strong></li>
+<li>Go deep into what challenges they face</li>
+<li>Create a beautiful and powerful presentation</li>
+<li>Have an up-to-date rendering/mock-up of your product</li>
+<li>Solicit testimonials from current users or investors</li>
+<li>Film promotional or explainer videos</li>
+<li>Craft an exciting intro</li>
+<li>Explain the business opportunity</li>
+<li>Highlight the underlying <strong>business model</strong></li>
+<li>Answer why you can beat the market</li>
+<li>Explain who you are and shape your story</li>
+<li>Cover your current traction</li>
+<li>Make your ask incredibly clear</li>
+<li>Keep it short</li>
+<li><strong>Anticipate</strong> and answer key questions (before your audience asks)</li>
+<li>Be ready to deal with objections and tough questions</li>
+<li><strong>Rehearse</strong></li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>TUNIC</category>
       </categories>
@@ -65,7 +212,7 @@
 <li>They are accountable for the project’s success or failure.</li>
 </ul>
 <h3 id="1-5-2-Project-team"><a href="#1-5-2-Project-team" class="headerlink" title="1.5.2. Project team"></a>1.5.2. Project team</h3><p>A team can be created for each project and can be supervised by the project manager who is responsible not only for planning, progress and work allocation but also for all technical aspects of the project.</p>
-<h3 id="1-5-3-Stakeholders-and-Buy-In"><a href="#1-5-3-Stakeholders-and-Buy-In" class="headerlink" title="1.5.3. Stakeholders and Buy-In"></a>1.5.3. Stakeholders and Buy-In</h3><p>Stakeholders are key players in your project. They may be individuals e.g. your manager, or an investor, and organizations, such as suppliers, and large groups e.g. your customers and employees. You must secure their buy-in, or support, in a number of ways to seek permission, secure investment, induce consumption, and evoke loyalty.</p>
+<h3 id="1-5-3-Stakeholders-and-Buy-In"><a href="#1-5-3-Stakeholders-and-Buy-In" class="headerlink" title="1.5.3. Stakeholders and Buy-In"></a>1.5.3. Stakeholders and Buy-In</h3><p><strong>Stakeholders are key players in your project.</strong> They may be individuals e.g. your manager, or an investor, and organizations, such as suppliers, and large groups e.g. your customers and employees. You must secure their buy-in, or support, in a number of ways to seek permission, secure investment, induce consumption, and evoke loyalty.</p>
 <p>Stakeholders will assess your project and product offering based upon the following:</p>
 <ul>
 <li><strong>Benefits Realized</strong> : Managers, investors, and customers will pay close attention to the positive attributes of a proposed emerging-technology concept.<ul>
@@ -119,8 +266,8 @@
 </ul>
 <h2 id="1-7-Organisation-Structures"><a href="#1-7-Organisation-Structures" class="headerlink" title="1.7. Organisation Structures"></a>1.7. Organisation Structures</h2><p>An organization structure defines <strong>lines of authority</strong>, <strong>scope of responsibility</strong>, <strong>task allocation</strong>, and <strong>pathways of communication</strong>. As per Lock, structures are often tailored to meet project requirements, and its own views concerning how work should be organized.</p>
 <ul>
-<li><strong>Hierarchical</strong> Organisation<br>An organization described as hierarchical is one that values order, identification of clear lines of responsibility, clarification of job tasks and responsibilities, and several layers of management.</li>
-<li><strong>Flat</strong> Organization<br>A flat organization is characterized as having relatively few layers of management. Managers’ span of control is wider in contrast to a hierarchical structure. Employees tend to have more responsibility and freedom to explore ideas and take decisions without deferring to management. Lines of responsibility are more fluid, and lines of communication more flexible.</li>
+<li><strong>Hierarchical</strong> Organisation<br>An organization described as hierarchical is one that values order, identification of clear lines of responsibility, clarification of job tasks and responsibilities, and <strong>several layers of management</strong>.</li>
+<li><strong>Flat</strong> Organization<br>A flat organization is characterized as having relatively few layers of management. Managers’ span of control is wider in contrast to a hierarchical structure. Employees tend to have more responsibility and freedom to explore ideas and take decisions without deferring to management. Lines of responsibility are more <strong>fluid</strong>, and lines of communication more <strong>flexible</strong>.</li>
 <li><strong>Holacratic</strong> Organizations<br>Moving beyond flat organizations, holacratic organizations lack conventional management structures. Employees are clustered into teams that correspond with a particular function.</li>
 </ul>
 <h2 id="1-8-Extra-learning-information"><a href="#1-8-Extra-learning-information" class="headerlink" title="1.8. Extra learning information"></a>1.8. Extra learning information</h2><p><a href="https://medium.com/@warren2lynch/what-is-project-initiation-document-pid-using-why-what-how-when-who-template-f639c2a10186" target="_blank" rel="noopener">What is PID?</a></p>
@@ -136,11 +283,11 @@
     <title>Theme 2 - Types of Project Management</title>
     <url>/2020/01/07/Theme-2-Types-of-Project-Management/</url>
     <content><![CDATA[<h1 id="1-Project-and-Project-Management"><a href="#1-Project-and-Project-Management" class="headerlink" title="1. Project and Project Management"></a>1. Project and Project Management</h1><h2 id="1-1-What-is-a-project"><a href="#1-1-What-is-a-project" class="headerlink" title="1.1. What is a project?"></a>1.1. What is a project?</h2><ul>
-<li>A project is a task with a desired end point.</li>
-<li>A key factor that distinguishes a project from the day-to-day operation of a company is that it has a defined product and timespan.</li>
+<li>A project is a task with <strong>a desired end point</strong>.</li>
+<li>A key factor that distinguishes a project from the day-to-day operation of a company is that it has a defined <strong>product and timespan</strong>.</li>
 </ul><a id="more"></a>
 <h2 id="1-2-What-is-project-management"><a href="#1-2-What-is-project-management" class="headerlink" title="1.2. What is project management"></a>1.2. What is project management</h2><ul>
-<li>Project management is the formal discipline for managing projects</li>
+<li>Project management is the <strong>formal discipline</strong> for managing projects</li>
 <li>The aim of project management is to ensure that projects are completed and that the end point is achieved</li>
 <li>It is about reaching the end point predictably, to a given cost and within a planned amount of time</li>
 </ul>
@@ -149,7 +296,7 @@
 </blockquote>
 <ul>
 <li>Plan the project<ul>
-<li>to understand how long it will take and how much it will cost</li>
+<li>to understand <strong>how long</strong> it will take and <strong>how much</strong> it will cost</li>
 </ul>
 </li>
 <li>Manage the project<ul>
@@ -157,7 +304,7 @@
 </ul>
 </li>
 <li>Complete the project properly<ul>
-<li>to make sure everything produced by the project is of the quality expected and works as required</li>
+<li>to make sure everything produced by the project is of the <strong>quality expected</strong> and works as required</li>
 </ul>
 </li>
 </ul>
@@ -165,7 +312,7 @@
 <li>Delivery means getting the things done you set out to do, and bringing the project to completion</li>
 <li>Deliverables are what are to be delivered by a project</li>
 <li>The deliverables are defined at the start of the project</li>
-<li>Your success as a project manager is in delivering them in the planned time and to the expected cost</li>
+<li>Your success as a project manager is in delivering them in the <strong>planned time</strong> and to the <strong>expected cost</strong></li>
 </ul>
 <h2 id="1-5-Project-dimensions"><a href="#1-5-Project-dimensions" class="headerlink" title="1.5. Project dimensions"></a>1.5. Project dimensions</h2><blockquote>
 <p>Often a trade-off is needed between these elements.  Finding the right balance is an important part of being a project manager.</p>
@@ -181,20 +328,20 @@
 </li>
 </ul>
 <h2 id="1-6-Key-players"><a href="#1-6-Key-players" class="headerlink" title="1.6. Key players"></a>1.6. Key players</h2><ul>
-<li>Customers<ul>
+<li><strong>Customers</strong><ul>
 <li>the persons or the organisations for which the project is being conducted. They usually pay money to another organisation in return for project.  </li>
 </ul>
 </li>
-<li>Contractor<ul>
+<li><strong>Contractor</strong><ul>
 <li>the organisation that is responsible for executing the project to the customers’ requirement.</li>
 </ul>
 </li>
-<li>End users<ul>
+<li><strong>End users</strong><ul>
 <li>the individual or the organisation that will own and operate the project. It is not the same as the one who paid for the project</li>
 </ul>
 </li>
 </ul>
-<h1 id="2-Project-Management-Types"><a href="#2-Project-Management-Types" class="headerlink" title="2. Project Management Types"></a>2. Project Management Types</h1><h2 id="2-1-The-definition-of-project-management"><a href="#2-1-The-definition-of-project-management" class="headerlink" title="2.1. The definition of project management"></a>2.1. The definition of project management</h2><p>Project Management is the management discipline that plans, organizes and controls people, money and cash so that projects are completed successfully in spite of all the risks.</p>
+<h1 id="2-Project-Management-Types"><a href="#2-Project-Management-Types" class="headerlink" title="2. Project Management Types"></a>2. Project Management Types</h1><h2 id="2-1-The-definition-of-project-management"><a href="#2-1-The-definition-of-project-management" class="headerlink" title="2.1. The definition of project management"></a>2.1. The definition of project management</h2><p>Project Management is the <strong>management discipline</strong> that plans, organizes and controls people, money and cash so that projects are completed successfully in spite of all the risks.</p>
 <h2 id="2-2-Project-Types"><a href="#2-2-Project-Types" class="headerlink" title="2.2. Project Types"></a>2.2. Project Types</h2><ul>
 <li>Type 1: <strong>Civil Engineering, Construction, Petrochemical, Mining and Quarrying</strong><br>“A common feature is the physical work involved, their exposure to the public gaze, and their unappealing visual qualities during construction. They involve high risk, significant capital investment, rigorous management, and special attention to health and safety.”</li>
 <li>Type 2: <strong>Manufacturing</strong><br>“A common feature is the production of a piece of specially designed hardware or machinery, for example, an aircraft, a ship, electronic equipment, or a land vehicle. Projects are usually undertaken in an indoor environment. A complex product may involve a consortium of companies and stakeholders across international boundaries.”</li>
@@ -202,15 +349,15 @@
 <li>Type 4: <strong>Projects For Pure Scientific Research</strong><br>“These projects involve expanding human knowledge and making new discoveries. Objectives can be difficult to define, and timelines may fluctuate. Significant and continuous levels of commitment and investment required. Strict budgeting and monitoring necessary.”</li>
 </ul>
 <h2 id="2-3-Project-Management-Approaches"><a href="#2-3-Project-Management-Approaches" class="headerlink" title="2.3. Project Management Approaches"></a>2.3. Project Management Approaches</h2><ul>
-<li>Phased Development<ul>
-<li>A project that is split into clearly defined categories of linear sequential activities and chronological progress. For example, conception, development, planning, launch, completion.</li>
+<li><strong>Phased Development</strong><ul>
+<li>A project that is split into <strong>clearly defined categories</strong> of linear sequential activities and chronological progress. For example, conception, development, planning, launch, completion.</li>
 </ul>
 </li>
-<li>Agile Methods<ul>
-<li>A flexible method characterized by incremental, non-linear and iterative patterns of activity. Often used when progress is unpredictable.</li>
+<li><strong>Agile Methods</strong><ul>
+<li>A flexible method characterized by <strong>incremental, non-linear and iterative patterns of activity</strong>. Often used when progress is unpredictable.</li>
 </ul>
 </li>
-<li>Prototype Approaches<ul>
+<li><strong>Prototype Approaches</strong><ul>
 <li>A project that involves the creation and development of an early version of a product or system (the prototype) that is build, tested and reconfigured until an acceptable version is ready for launch.</li>
 </ul>
 </li>
@@ -774,10 +921,10 @@
 <p>From a business perspective, an emerging technology is a technology that is capable of changing existing contextual methods and dynamics, often by integrating digital resources with creative thinking and rigorous research and testing, to introduce new products, services, initiatives and events.</p>
 </blockquote><a id="more"></a>
 <ul>
-<li>Emerging-Technology Product : A physical consumer product that utilizes new technology. Eg. 3D printers.</li>
-<li>Emerging-Technology Service : A set of new technological processes, activities and systems that collectively meet a public or business need. Eg. Artificially intelligent public transport system.</li>
-<li>Emerging-Technology Initiative : An enterprise that utilizes new technology to tackle applied problems or social issues. Eg. Desalination projects to provide drinking water.</li>
-<li>Emerging-Technology Event : A planed gathering that utilizes new technology. Eg. WWDC</li>
+<li>Emerging-Technology <strong>Product</strong> : A physical consumer product that utilizes new technology. Eg. 3D printers.</li>
+<li>Emerging-Technology <strong>Service</strong> : A set of new technological processes, activities and systems that collectively meet a public or business need. Eg. Artificially intelligent public transport system.</li>
+<li>Emerging-Technology <strong>Initiative</strong> : An enterprise that utilizes new technology to tackle applied problems or social issues. Eg. Desalination projects to provide drinking water.</li>
+<li>Emerging-Technology <strong>Event</strong> : A planed gathering that utilizes new technology. Eg. WWDC</li>
 </ul>
 <h1 id="2-Emerging-Technology"><a href="#2-Emerging-Technology" class="headerlink" title="2. Emerging Technology"></a>2. Emerging Technology</h1><blockquote>
 <p>A new product, service, initiative or event developed and launched in response to a gap in the market.</p>
