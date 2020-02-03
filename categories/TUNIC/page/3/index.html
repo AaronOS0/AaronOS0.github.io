@@ -247,6 +247,46 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
+              datetime="2019-11-09T17:50:07+00:00"
+              content="2019-11-09">
+          11-09
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/11/09/Theme-2-Defining-the-Research-Problem/" itemprop="url">
+            <span itemprop="name">Theme 2 - Defining the Research Problem</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-09T12:23:56+00:00"
+              content="2019-11-09">
+          11-09
+        </time>
+      </div>
+
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2019/11/09/PM600-Book/" itemprop="url">
+            <span itemprop="name">PM600 Book</span>
+          </a>
+      </h2>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
               datetime="2019-11-09T11:19:20+00:00"
               content="2019-11-09">
           11-09
@@ -316,7 +356,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -379,12 +419,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">76k</span>
+    <span title="Symbols count total">89k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:09</span>
+    <span title="Reading time total">1:21</span>
 </div>
 
         
@@ -460,6 +500,33 @@ if (document.querySelectorAll('div.pdf').length) {
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'en, zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
