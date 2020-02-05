@@ -21,7 +21,101 @@
   <entry>
     <title>Theme 5 - Running a Project</title>
     <url>/2020/02/04/Theme-5-Running-a-Project/</url>
-    <content><![CDATA[<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content><![CDATA[<h1 id="1-Project-issues"><a href="#1-Project-issues" class="headerlink" title="1. Project issues"></a>1. Project issues</h1><blockquote>
+<p>A project issue is an event or condition that has <strong>negative consequences</strong> for a project. The term implies a situation that is recoverable or that can be mitigated in some way.</p>
+</blockquote><a id="more"></a>
+<h2 id="1-1-Examples-of-Issues"><a href="#1-1-Examples-of-Issues" class="headerlink" title="1.1. Examples of Issues"></a>1.1. Examples of Issues</h2><ul>
+<li>The bus breaks down on the way to college.</li>
+<li>You need to have a meeting with a team member, but they are off sick.</li>
+<li>A piece of material costs more than you budgeted, and you don’t have enough money.</li>
+<li>A piece of work you thought would take 5 days takes 10 days.</li>
+</ul>
+<h2 id="1-2-Resolving-issues"><a href="#1-2-Resolving-issues" class="headerlink" title="1.2. Resolving issues"></a>1.2. Resolving issues</h2><blockquote>
+<p>Applying a structured process makes it more likely issues will be resolved successfully.</p>
+</blockquote>
+<ul>
+<li>Make sure the issue is <strong>identified and understood</strong>.</li>
+<li>Develop some <strong>appropriate action</strong> to resolve the issue.</li>
+<li>Allocate someone with responsibility for performing this action and so resolving the issue.</li>
+<li><strong>Set a date</strong> for it to be resolved by.</li>
+<li>Manage the task of resolving the issue by the set date.</li>
+</ul>
+<h2 id="1-3-Project-Issue-Type"><a href="#1-3-Project-Issue-Type" class="headerlink" title="1.3. Project Issue Type"></a>1.3. Project Issue Type</h2><blockquote>
+<p>Track the progress of the resolution with a clear label <strong>identifying the issue’s overall status</strong>.</p>
+</blockquote>
+<ul>
+<li><strong>Open</strong> – The issue has been identified, but no action has yet been taken.</li>
+<li><strong>Investigating</strong> – The issue, and possible solutions, are being investigated.</li>
+<li><strong>Implementing</strong> – The issue resolution is in process.</li>
+<li><strong>Escalated</strong> – The issue has been raised to management or the project sponsor/steering committee, and directions or approval of a solution is pending.</li>
+<li><strong>Resolved</strong> – The resolution has been implemented, and the issue is closed.</li>
+</ul>
+<p>Tip:</p>
+<blockquote>
+<p>Use ‘traffic lights’ when reporting issues.</p>
+</blockquote>
+<ul>
+<li><strong>Red</strong> – Cannot proceed before issue is resolved.</li>
+<li><strong>Yellow</strong> – Resolution in process, and you’ll be able to proceed soon.</li>
+<li><strong>Green</strong> – Resolution implemented, and issue no longer exists.</li>
+</ul>
+<h2 id="1-4-Project-Issue-Log"><a href="#1-4-Project-Issue-Log" class="headerlink" title="1.4. Project Issue Log"></a>1.4. Project Issue Log</h2><blockquote>
+<p>Issues – otherwise known as problems, gaps, inconsistencies, or conflicts – need to be recorded when they happen.</p>
+</blockquote>
+<p>When you create an issues log, you provide a tool for reporting and communicating <strong>what’s happening with the project</strong>. This makes sure that issues are indeed raised, and then investigated and resolved quickly and effectively. Without a defined process, you risk ignoring issues, or not taking them seriously enough – until it’s too late to deal with them successfully.</p>
+<p>The importance of Issue Log:</p>
+<ul>
+<li>Have a safe and reliable method for the team to raise issues.</li>
+<li><strong>Track and assign responsibility</strong> to specific people for each issue.</li>
+<li><strong>Analyze and prioritize</strong> issues more easily.</li>
+<li><strong>Record issue resolution</strong> for future reference and project learning.</li>
+<li><strong>Monitor</strong> overall project health and status.</li>
+</ul>
+<h2 id="1-5-Project-issue-and-a-Project-risk"><a href="#1-5-Project-issue-and-a-Project-risk" class="headerlink" title="1.5. Project issue and a Project risk"></a>1.5. Project issue and a Project risk</h2><ul>
+<li>An issue differs from a risk in that <strong>a risk hasn’t occurred yet</strong>.</li>
+<li>Issues and risks are not quite the same thing. However, the exact nature of both is largely unknown before you begin.</li>
+<li><strong>With risks, you usually have a general idea in advance</strong> that there’s a cause for concern. An issue tends to be less predictable; it can arise with no warning.</li>
+</ul>
+<h1 id="2-Project-Risks"><a href="#2-Project-Risks" class="headerlink" title="2. Project Risks"></a>2. Project Risks</h1><h2 id="2-1-Definition"><a href="#2-1-Definition" class="headerlink" title="2.1. Definition"></a>2.1. Definition</h2><blockquote>
+<p>Thinking about potential issues is called predicting risks.</p>
+</blockquote>
+<ul>
+<li>For some risks you can <strong>take action early</strong> to prevent them becoming issues.</li>
+<li>The list of possible risks is almost <strong>infinite</strong>, so you need a way of focussing only on <strong>the most important risks</strong>. This can be done by looking at the likelihood that the risk will happen, and the impact on the project if it does.</li>
+</ul>
+<h2 id="2-2-Risk-Matrix"><a href="#2-2-Risk-Matrix" class="headerlink" title="2.2. Risk Matrix"></a>2.2. Risk Matrix</h2><p>A risk matrix is a matrix that is used during risk assessment to define the level of risk by considering the category of <strong>probability or likelihood</strong> against the category of <strong>consequence severity</strong>.</p>
+<h2 id="2-3-Categories-of-risk"><a href="#2-3-Categories-of-risk" class="headerlink" title="2.3. Categories of risk"></a>2.3. Categories of risk</h2><ul>
+<li><strong>Strategic risk</strong>.  These are risks to the <strong>strategic objectives</strong> and goals of the project.  They affect areas of the project life-cycle such as planning and finance.  Mitigation of these risks requires the commitment of senior management.</li>
+<li><strong>Operational risk</strong>.  These risks generally have a <strong>short-term impact</strong>, affecting <strong>daily</strong> operations and activities of the project team.</li>
+<li><strong>Compliance risk</strong>.  These concern the need to comply with the documented statements and regulations.</li>
+<li><strong>Financial risk</strong>.  These are associated with the financial structure of the project.</li>
+<li><strong>Knowledge risk</strong>.  These refer to the effective control of knowledge resources.  It includes abuse of intellectual property, loss of key staff and technical inefficiency.</li>
+</ul>
+<h2 id="2-4-Risk-mitigation"><a href="#2-4-Risk-mitigation" class="headerlink" title="2.4. Risk mitigation"></a>2.4. Risk mitigation</h2><ul>
+<li>Ignore it all together</li>
+<li>Monitor the risk</li>
+<li>Reduce the likelihood of it occurring</li>
+<li>Reduce the impact if it does occur</li>
+<li>Have some contingency plan in place</li>
+</ul>
+<h2 id="2-5-Risk-status"><a href="#2-5-Risk-status" class="headerlink" title="2.5. Risk status"></a>2.5. Risk status</h2><ul>
+<li><strong>Open</strong>.  Risk identified but no actions agreed.</li>
+<li><strong>Actioned</strong>.  Actions have been agreed and responsibility allocated.</li>
+<li><strong>Closed</strong>.  Risk no longer a threat to this project.</li>
+<li><strong>Increasing</strong>.  The likelihood and/or impact has increased since the last review.</li>
+<li><strong>Decreasing</strong>. The likelihood and/or impact has decreased since the last review.</li>
+<li><strong>Issue</strong>.  The risk has become reality and is now an issue for direct management.</li>
+</ul>
+<h2 id="2-6-Changes-in-project"><a href="#2-6-Changes-in-project" class="headerlink" title="2.6. Changes in project"></a>2.6. Changes in project</h2><blockquote>
+<p>A common occurrence in a project is the customer <strong>asks for a change in the deliverables</strong>.  This will affect the project plan and could impact on the timeline and cost of the project.</p>
+</blockquote>
+<p>A structured approach to managing change:</p>
+<ul>
+<li>Have a change control process in place and make sure changes do not happen without it.</li>
+<li>Assess every change in terms of the impact on the project.  Does in increase the time, budget or level of risk of the project?</li>
+<li>Accept the change only once the customer has agreed to any additional cost, time or risk.</li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>TUNIC</category>
       </categories>
@@ -1619,7 +1713,7 @@
   <entry>
     <title>Theme 4 - Writing a Proposal</title>
     <url>/2019/11/15/Theme-4-Writing-a-Proposal/</url>
-    <content><![CDATA[<h1 id="PM600-Research-Project-Proposal-Assessment-Brief-Sep-19"><a href="#PM600-Research-Project-Proposal-Assessment-Brief-Sep-19" class="headerlink" title="PM600 Research Project Proposal Assessment Brief_Sep 19"></a>PM600 Research Project Proposal Assessment Brief_Sep 19</h1><a id="more"></a>
+    <content><![CDATA[<h1 id="★PM600-Research-Project-Proposal-Assessment-Brief-Sep-19"><a href="#★PM600-Research-Project-Proposal-Assessment-Brief-Sep-19" class="headerlink" title="★PM600 Research Project Proposal Assessment Brief_Sep 19"></a>★PM600 Research Project Proposal Assessment Brief_Sep 19</h1><a id="more"></a>
 <div class="pdf" target="PM600ResearchProjectProposalAssessmentBrief_Sep19.pdf" height=""></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
