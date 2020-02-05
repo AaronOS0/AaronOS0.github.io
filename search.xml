@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Book <Learn More Study Less></title>
+    <title>Book - Learn More, Study Less!</title>
     <url>/2020/02/05/Book-Learn-More-Study-Less/</url>
-    <content><![CDATA[<a id="more"></a><h1 id="1-lt-Learn-More-Study-Less-gt"><a href="#1-lt-Learn-More-Study-Less-gt" class="headerlink" title="1. &lt;Learn More, Study Less!&gt;"></a>1. &lt;Learn More, Study Less!&gt;</h1><div class="pdf" target="LearnMoreStudyLess.pdf" height></div><h1 id="2-Reading-Notes"><a href="#2-Reading-Notes" class="headerlink" title="2. Reading Notes"></a>2. Reading Notes</h1><p><img src="LearnMoreStudyLess.png" alt="Learn More, Study Less!"></p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    <content><![CDATA[<h1 id="1-lt-Learn-More-Study-Less-gt"><a href="#1-lt-Learn-More-Study-Less-gt" class="headerlink" title="1. &lt;Learn More, Study Less!&gt;"></a>1. &lt;Learn More, Study Less!&gt;</h1><blockquote>
+<p>Focus on the best way to study.</p>
+</blockquote>
+<a id="more"></a>
+<div class="pdf" target="LearnMoreStudyLess.pdf" height=""></div>
+
+<h1 id="2-Reading-Notes"><a href="#2-Reading-Notes" class="headerlink" title="2. Reading Notes"></a>2. Reading Notes</h1><p><img src="LearnMoreStudyLess.png" alt="Learn More, Study Less!"></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
       <categories>
         <category>Reading Notes</category>
       </categories>
