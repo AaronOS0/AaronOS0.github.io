@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="0. IntroductionLearning by Doing : It’s highly efficient to train your programming skills every day.1. Duplicate Encoder">
+<meta name="keywords" content="Codewars">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codewars - Theme 1 Fundamental">
+<meta property="og:url" content="https:&#x2F;&#x2F;aaronos0.github.io&#x2F;2020&#x2F;05&#x2F;23&#x2F;Codewars-Theme-1-Fundamental&#x2F;index.html">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="0. IntroductionLearning by Doing : It’s highly efficient to train your programming skills every day.1. Duplicate Encoder">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-23T18:06:50.135Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://aaronos0.github.io/2020/05/23/Codewars-Theme-1-Fundamental/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Codewars - Theme 1 Fundamental | Aaron's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151920999-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-151920999-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2020/05/23/Codewars-Theme-1-Fundamental/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Codewars - Theme 1 Fundamental
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-23 10:22:27 / Modified: 19:06:50" itemprop="dateCreated datePublished" datetime="2020-05-23T10:22:27+01:00">2020-05-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/05/23/Codewars-Theme-1-Fundamental/" class="post-meta-item leancloud_visitors" data-flag-title="Codewars - Theme 1 Fundamental" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/05/23/Codewars-Theme-1-Fundamental/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/23/Codewars-Theme-1-Fundamental/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="0-Introduction"><a href="#0-Introduction" class="headerlink" title="0. Introduction"></a>0. Introduction</h1><p>Learning by Doing : It’s highly efficient to train your programming skills every day.</p><h1 id="1-Duplicate-Encoder"><a href="#1-Duplicate-Encoder" class="headerlink" title="1. Duplicate Encoder"></a>1. Duplicate Encoder</h1><a id="more"></a>
+<h2 id="1-1-Description"><a href="#1-1-Description" class="headerlink" title="1.1. Description"></a>1.1. Description</h2><p>The goal of this exercise is to convert a string to a new string where each character in the new string is:</p>
+<ul>
+<li>“(“ if that character appears only once in the original string.</li>
+<li>“)” if that character appears more than once in the original string.</li>
+<li>Ignore capitalization when determining if a character is a duplicate.</li>
+</ul>
+<h2 id="1-2-Examples"><a href="#1-2-Examples" class="headerlink" title="1.2. Examples"></a>1.2. Examples</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;din&quot;      =&gt;  &quot;(((&quot;</span><br><span class="line">&quot;recede&quot;   =&gt;  &quot;()()()&quot;</span><br><span class="line">&quot;Success&quot;  =&gt;  &quot;)())())&quot;</span><br><span class="line">&quot;(( @&quot;     =&gt;  &quot;))((&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-My-Solution"><a href="#1-3-My-Solution" class="headerlink" title="1.3. My Solution"></a>1.3. My Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">duplicate_encode</span><span class="params">(word)</span>:</span></span><br><span class="line">    <span class="comment"># Ignore capitalization</span></span><br><span class="line">    word = word.lower()</span><br><span class="line">    <span class="comment"># Get all the character, remove duplication</span></span><br><span class="line">    all_character = set(word)</span><br><span class="line">    <span class="comment"># Count the number of each character</span></span><br><span class="line">    num_iter = map(<span class="keyword">lambda</span> character: word.count(character), all_character)</span><br><span class="line">    <span class="comment"># Use a dict to store character:num</span></span><br><span class="line">    dic = dict(zip(all_character, num_iter))</span><br><span class="line">    <span class="comment"># Replace word with )/(</span></span><br><span class="line">    result = <span class="string">""</span>.join([<span class="string">'('</span> <span class="keyword">if</span> dic[character] == <span class="number">1</span> <span class="keyword">else</span> <span class="string">')'</span> <span class="keyword">for</span> character <span class="keyword">in</span> word])</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-Excellent-Solution"><a href="#1-4-Excellent-Solution" class="headerlink" title="1.4. Excellent Solution"></a>1.4. Excellent Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">duplicate_encode</span><span class="params">(word)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join([<span class="string">"("</span> <span class="keyword">if</span> word.lower().count(c) == <span class="number">1</span> <span class="keyword">else</span> <span class="string">")"</span> <span class="keyword">for</span> c <span class="keyword">in</span> word.lower()])</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-Your-order-please"><a href="#2-Your-order-please" class="headerlink" title="2. Your order, please"></a>2. Your order, please</h1><h2 id="2-1-Description"><a href="#2-1-Description" class="headerlink" title="2.1. Description"></a>2.1. Description</h2><p>Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.</p>
+<ul>
+<li>Numbers can be from 1 to 9. So 1 will be the first word (not 0).</li>
+<li>If the input string is empty, return an empty string.</li>
+<li>The words in the input String will only contain valid consecutive numbers.</li>
+</ul>
+<h2 id="2-2-Examples"><a href="#2-2-Examples" class="headerlink" title="2.2. Examples"></a>2.2. Examples</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;is2 Thi1s T4est 3a&quot;  --&gt;  &quot;Thi1s is2 3a T4est&quot;</span><br><span class="line">&quot;4of Fo1r pe6ople g3ood th5e the2&quot;  --&gt;  &quot;Fo1r the2 g3ood 4of th5e pe6ople&quot;</span><br><span class="line">&quot;&quot;  --&gt;  &quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-My-Solution"><a href="#2-3-My-Solution" class="headerlink" title="2.3. My Solution"></a>2.3. My Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order</span><span class="params">(sentence)</span>:</span></span><br><span class="line">    <span class="comment"># Transform str to list, split by space</span></span><br><span class="line">    word_list = sentence.split(<span class="string">" "</span>)</span><br><span class="line">    <span class="comment"># Extract the number of each word and make tuple, then Sort it</span></span><br><span class="line">    sorted_list = sorted([(character, word) <span class="keyword">for</span> word <span class="keyword">in</span> word_list <span class="keyword">for</span> character <span class="keyword">in</span> word <span class="keyword">if</span> character.isdigit()])</span><br><span class="line">    <span class="comment"># Make the new string</span></span><br><span class="line">    result = <span class="string">" "</span>.join([item[<span class="number">1</span>] <span class="keyword">for</span> item <span class="keyword">in</span> sorted_list])</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-Excellent-Solution"><a href="#2-4-Excellent-Solution" class="headerlink" title="2.4. Excellent Solution"></a>2.4. Excellent Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order</span><span class="params">(sentence)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">' '</span>.join(sorted(sentence.split(), key=sorted))</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-Grasshopper-Summation"><a href="#3-Grasshopper-Summation" class="headerlink" title="3. Grasshopper - Summation"></a>3. Grasshopper - Summation</h1><h2 id="3-1-Description"><a href="#3-1-Description" class="headerlink" title="3.1. Description"></a>3.1. Description</h2><p>Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.</p>
+<h2 id="3-2-Examples"><a href="#3-2-Examples" class="headerlink" title="3.2. Examples"></a>3.2. Examples</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">summation(2) -&gt; 3</span><br><span class="line">1 + 2</span><br><span class="line"></span><br><span class="line">summation(8) -&gt; 36</span><br><span class="line">1 + 2 + 3 + 4 + 5 + 6 + 7 + 8</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-My-Solution"><a href="#3-3-My-Solution" class="headerlink" title="3.3. My Solution"></a>3.3. My Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">summation</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x + y, range(num+<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="3-4-Excellent-Solution"><a href="#3-4-Excellent-Solution" class="headerlink" title="3.4. Excellent Solution"></a>3.4. Excellent Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">summation</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(range(num + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">summation</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span>+num) * num / <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-Todo"><a href="#4-Todo" class="headerlink" title="4. Todo"></a>4. Todo</h1><h2 id="4-1-Description"><a href="#4-1-Description" class="headerlink" title="4.1. Description"></a>4.1. Description</h2><h2 id="4-2-Examples"><a href="#4-2-Examples" class="headerlink" title="4.2. Examples"></a>4.2. Examples</h2><h2 id="4-3-My-Solution"><a href="#4-3-My-Solution" class="headerlink" title="4.3. My Solution"></a>4.3. My Solution</h2><h2 id="4-4-Excellent-Solution"><a href="#4-4-Excellent-Solution" class="headerlink" title="4.4. Excellent Solution"></a>4.4. Excellent Solution</h2><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aaron
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://aaronos0.github.io/2020/05/23/Codewars-Theme-1-Fundamental/" title="Codewars - Theme 1 Fundamental">https://aaronos0.github.io/2020/05/23/Codewars-Theme-1-Fundamental/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Codewars/" rel="tag"><i class="fa fa-tag"></i> Codewars</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/03/02/Theme-9-Methodology/" rel="next" title="Theme 9 - Methodology">
+                  <i class="fa fa-chevron-left"></i> Theme 9 - Methodology
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-Introduction"><span class="nav-text">0. Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Duplicate-Encoder"><span class="nav-text">1. Duplicate Encoder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Description"><span class="nav-text">1.1. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Examples"><span class="nav-text">1.2. Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-My-Solution"><span class="nav-text">1.3. My Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Excellent-Solution"><span class="nav-text">1.4. Excellent Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Your-order-please"><span class="nav-text">2. Your order, please</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Description"><span class="nav-text">2.1. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Examples"><span class="nav-text">2.2. Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-My-Solution"><span class="nav-text">2.3. My Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Excellent-Solution"><span class="nav-text">2.4. Excellent Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Grasshopper-Summation"><span class="nav-text">3. Grasshopper - Summation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Description"><span class="nav-text">3.1. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Examples"><span class="nav-text">3.2. Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-My-Solution"><span class="nav-text">3.3. My Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Excellent-Solution"><span class="nav-text">3.4. Excellent Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Todo"><span class="nav-text">4. Todo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Description"><span class="nav-text">4.1. Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Examples"><span class="nav-text">4.2. Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-My-Solution"><span class="nav-text">4.3. My Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-Excellent-Solution"><span class="nav-text">4.4. Excellent Solution</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Aaron"
+    src="/images/Aaron.png">
+  <p class="site-author-name" itemprop="name">Aaron</p>
+  <div class="site-description" itemprop="description">Have a mind like water</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AaronOS0" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;AaronOS0" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/chiwang296" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;chiwang296" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">116k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:45</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'en' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
