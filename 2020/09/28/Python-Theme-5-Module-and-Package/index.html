@@ -54,14 +54,15 @@
   };
 </script>
 
-  <meta name="description" content="Todo">
+  <meta name="description" content="1. 模块和包12345678910111213#1.模块和包能大大减少代码的管理维护成本且便于阅读#2.模块可以避免函数名\变量名的冲突, 但切记避免和内置函数同名.(venv3.7) ➜  testproject tree.├── a.py├── database  #包: Package;│   └── __init__.py├── method│   └── __init__.py└──">
+<meta name="keywords" content="Python Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python - Theme 5 Module and Package">
 <meta property="og:url" content="https:&#x2F;&#x2F;aaronos0.github.io&#x2F;2020&#x2F;09&#x2F;28&#x2F;Python-Theme-5-Module-and-Package&#x2F;index.html">
 <meta property="og:site_name" content="Aaron&#39;s Blog">
-<meta property="og:description" content="Todo">
+<meta property="og:description" content="1. 模块和包12345678910111213#1.模块和包能大大减少代码的管理维护成本且便于阅读#2.模块可以避免函数名\变量名的冲突, 但切记避免和内置函数同名.(venv3.7) ➜  testproject tree.├── a.py├── database  #包: Package;│   └── __init__.py├── method│   └── __init__.py└──">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-29T20:31:45.650Z">
+<meta property="og:updated_time" content="2020-09-30T16:03:10.351Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://aaronos0.github.io/2020/09/28/Python-Theme-5-Module-and-Package/">
@@ -262,8 +263,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-29 21:31:45" itemprop="dateModified" datetime="2020-09-29T21:31:45+01:00">2020-09-29</time>
+                <time title="Modified: 2020-09-30 17:03:10" itemprop="dateModified" datetime="2020-09-30T17:03:10+01:00">2020-09-30</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Science</span>
+                  </a>
+                </span>
+            </span>
 
           
             <span id="/2020/09/28/Python-Theme-5-Module-and-Package/" class="post-meta-item leancloud_visitors" data-flag-title="Python - Theme 5 Module and Package" title="Views">
@@ -292,7 +304,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -311,7 +323,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Todo</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+        <h1 id="1-模块和包"><a href="#1-模块和包" class="headerlink" title="1. 模块和包"></a>1. 模块和包</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.模块和包能大大减少代码的管理维护成本且便于阅读</span></span><br><span class="line"><span class="comment">#2.模块可以避免函数名\变量名的冲突, 但切记避免和内置函数同名.</span></span><br><span class="line"></span><br><span class="line">(venv3<span class="number">.7</span>) ➜  testproject tree</span><br><span class="line">.</span><br><span class="line">├── a.py</span><br><span class="line">├── database  <span class="comment">#包: Package;</span></span><br><span class="line">│   └── __init__.py</span><br><span class="line">├── method</span><br><span class="line">│   └── __init__.py</span><br><span class="line">└── web</span><br><span class="line">    ├── __init__.py <span class="comment">#表示这是一个包,而不是普通目录.</span></span><br><span class="line">    └── b.py <span class="comment">#b模块, testproject.web.b;</span></span><br></pre></td></tr></table></figure><a id="more"></a>
+
+<h1 id="2-模块的使用"><a href="#2-模块的使用" class="headerlink" title="2. 模块的使用"></a>2. 模块的使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#内置模块只要安装完毕即可使用, 也可自行创建模块.举例如下:</span></span><br><span class="line"><span class="comment">#testmodule.py</span></span><br><span class="line">----------------</span><br><span class="line"></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding : utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""This is a python file to demonstrate how to use Module and Package in python"""</span>  <span class="comment">#注释内容, 可以调用__doc__显示</span></span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">"greeting"</span>,<span class="string">"string"</span>] <span class="comment">#当使用from xx import *时候, 会导入这些.</span></span><br><span class="line"></span><br><span class="line">__author__ = <span class="string">"xxx@email"</span> <span class="comment">#作者</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">string = <span class="string">"I'm a test program"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以_或者__开头的被认为是内部函数, 不希望被调用;但是由于python没有这层限制, 因此只是人为约束</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello, World!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__private_hi</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hi, %s'</span> % name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">()</span>:</span></span><br><span class="line">    args = sys.argv</span><br><span class="line">    <span class="keyword">if</span> len(args) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> _private_hello()</span><br><span class="line">    <span class="keyword">elif</span> len(args) == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> __private_hi(args[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'Too many arguments!'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>: <span class="comment">#在作为模块使用时，不执行; 因此一般用于运行测试.</span></span><br><span class="line">    result = greeting()</span><br><span class="line">    print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令行输出</span></span><br><span class="line">(venv3<span class="number">.7</span>) ➜  testpackage python testmodule.py</span><br><span class="line">Hello, World!</span><br><span class="line">(venv3<span class="number">.7</span>) ➜  testpackage python testmodule.py Aaron</span><br><span class="line">Hi, Aaron</span><br><span class="line"></span><br><span class="line"><span class="comment">#python交互环境</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> testmodule</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>testmodule.greeting()</span><br><span class="line"><span class="string">'Hello, World!'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>testmodule.string</span><br><span class="line"><span class="string">"I'm a test program"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>testmodule.__all__</span><br><span class="line">[<span class="string">'greeting'</span>, <span class="string">'string'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>testmodule.__doc__</span><br><span class="line"><span class="string">'This is a python file to demonstrate how to use Module and Package in python'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>testmodule._private_hello()</span><br><span class="line"><span class="string">'Hello, World!'</span></span><br></pre></td></tr></table></figure>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
     </div>
 
     
@@ -336,6 +351,10 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Python-Learning/" rel="tag"><i class="fa fa-tag"></i> Python Learning</a>
+          </div>
 
         
 
@@ -391,6 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-模块和包"><span class="nav-text">1. 模块和包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-模块的使用"><span class="nav-text">2. 模块的使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -406,7 +426,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -469,12 +489,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">150k</span>
+    <span title="Symbols count total">167k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:16</span>
+    <span title="Reading time total">2:32</span>
 </div>
 
         
