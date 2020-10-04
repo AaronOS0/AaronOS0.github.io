@@ -54,15 +54,15 @@
   };
 </script>
 
-  <meta name="description" content="Coming Soon ~">
+  <meta name="description" content="1. 基本知识字符串是编程时涉及到的最多的一种数据结构。正则表达式正是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性语言来给字符串定义一个规则，用来验证是否匹配。2. 进阶知识[0-9a-zA-Z_] : 可以匹配一个数字、字母、下划线；[0-9a-zA-Z_]+ : 可以匹配至少由一个数字、字母、下划线组成的字符串；[a-zA-Z_] [0-9a-zA-Z_] : 可以匹配由字母数">
 <meta name="keywords" content="Python Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python - Theme 10 RegExp">
 <meta property="og:url" content="https:&#x2F;&#x2F;aaronos0.github.io&#x2F;2020&#x2F;09&#x2F;30&#x2F;Python-Theme-10-RegExp&#x2F;index.html">
 <meta property="og:site_name" content="Aaron&#39;s Blog">
-<meta property="og:description" content="Coming Soon ~">
+<meta property="og:description" content="1. 基本知识字符串是编程时涉及到的最多的一种数据结构。正则表达式正是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性语言来给字符串定义一个规则，用来验证是否匹配。2. 进阶知识[0-9a-zA-Z_] : 可以匹配一个数字、字母、下划线；[0-9a-zA-Z_]+ : 可以匹配至少由一个数字、字母、下划线组成的字符串；[a-zA-Z_] [0-9a-zA-Z_] : 可以匹配由字母数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-30T22:16:53.478Z">
+<meta property="og:updated_time" content="2020-10-04T17:18:10.661Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://aaronos0.github.io/2020/09/30/Python-Theme-10-RegExp/">
@@ -255,10 +255,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-09-30 22:06:13 / Modified: 23:16:53" itemprop="dateCreated datePublished" datetime="2020-09-30T22:06:13+01:00">2020-09-30</time>
+              <time title="Created: 2020-09-30 22:06:13" itemprop="dateCreated datePublished" datetime="2020-09-30T22:06:13+01:00">2020-09-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-04 18:18:10" itemprop="dateModified" datetime="2020-10-04T18:18:10+01:00">2020-10-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -298,14 +304,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>11</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -317,7 +323,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Coming Soon ~</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+        <h1 id="1-基本知识"><a href="#1-基本知识" class="headerlink" title="1. 基本知识"></a>1. 基本知识</h1><p>字符串是编程时涉及到的最多的一种数据结构。正则表达式正是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性语言来给字符串定义一个规则，用来验证是否匹配。</p><h1 id="2-进阶知识"><a href="#2-进阶知识" class="headerlink" title="2. 进阶知识"></a>2. 进阶知识</h1><p>[0-9a-zA-Z_] : 可以匹配一个数字、字母、下划线；<br>[0-9a-zA-Z_]+ : 可以匹配至少由一个数字、字母、下划线组成的字符串；<br>[a-zA-Z_] [0-9a-zA-Z_] : 可以匹配由字母数字下划线开头，后面至少由一个数字、字母、下划线组成的字符串，即: Python的合法变量；<br>(P|p)ython : 表示Python 或 python<br>^: 开始符，表示行的开头<br>$: 结束符，表示行的结束</p><a id="more"></a>
+
+<h1 id="3-re模块"><a href="#3-re模块" class="headerlink" title="3. re模块"></a>3. re模块</h1><p>Python提供re模块，包含了所有正则表达式的功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> re</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.match(<span class="string">r'^\d&#123;3&#125;\-\d&#123;3,8&#125;'</span>, <span class="string">'010-12345'</span>) <span class="comment">#匹配成功返回一个Match对象</span></span><br><span class="line">&lt;re.Match object; span=(<span class="number">0</span>, <span class="number">9</span>), match=<span class="string">'010-12345'</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.match(<span class="string">r'^\d&#123;3&#125;\-\d&#123;3,8&#125;'</span>, <span class="string">'010 12345'</span>) <span class="comment">#匹配失败返回None</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>常见应用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test = <span class="string">'用户输入的字符串'</span></span><br><span class="line"><span class="keyword">if</span> re.match(<span class="string">r'正则表达式'</span>, test):</span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'failed'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-切分字符串"><a href="#4-切分字符串" class="headerlink" title="4. 切分字符串"></a>4. 切分字符串</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a b   c'</span>.split(<span class="string">' '</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.split(<span class="string">r'\s+'</span>, <span class="string">'a b  c'</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.split(<span class="string">r'[\s\,]+'</span>, <span class="string">'a,b c  d'</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-分组"><a href="#5-分组" class="headerlink" title="5. 分组"></a>5. 分组</h1><p>正则表达式还具有提取子串的强大功能。()表示要提取的Group。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#提取区号和本地号码</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m = re.match(<span class="string">r'^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$'</span>, <span class="string">'010-12345'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m</span><br><span class="line">&lt;re.Match object; span=(<span class="number">0</span>, <span class="number">9</span>), match=<span class="string">'010-12345'</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m.group(<span class="number">0</span>)</span><br><span class="line"><span class="string">'010-12345'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m.group(<span class="number">1</span>)</span><br><span class="line"><span class="string">'010'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m.group(<span class="number">2</span>)</span><br><span class="line"><span class="string">'12345'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m.group()</span><br><span class="line"><span class="string">'010-12345'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>m.groups()</span><br><span class="line">(<span class="string">'010'</span>, <span class="string">'12345'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-贪婪匹配"><a href="#6-贪婪匹配" class="headerlink" title="6. 贪婪匹配"></a>6. 贪婪匹配</h1><p>正则表达式会尽可能多的匹配字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.match(<span class="string">r'^(\d+)(0*)$'</span>, <span class="string">'102300'</span>).groups()</span><br><span class="line">(<span class="string">'102300'</span>, <span class="string">''</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re.match(<span class="string">r'^(\d+?)(0*)$'</span>, <span class="string">'102300'</span>).groups() <span class="comment">#贪婪符后面放置'?'，采用了非贪婪匹配</span></span><br><span class="line">(<span class="string">'1023'</span>, <span class="string">'00'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-编译"><a href="#7-编译" class="headerlink" title="7. 编译"></a>7. 编译</h1><p>当需要大量重复的使用正则表达式时，可以采用预编译方式，提升效率</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>re_telephone = re.compile(<span class="string">r'^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$'</span>) <span class="comment">#编译</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re_telephone.match(<span class="string">'010-12345'</span>).groups()</span><br><span class="line">(<span class="string">'010'</span>, <span class="string">'12345'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>re_telephone.match(<span class="string">'010 12345'</span>).groups() <span class="comment">#不合法，会报错</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;input&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">'NoneType'</span> object has no attribute <span class="string">'groups'</span></span><br></pre></td></tr></table></figure>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
     </div>
 
     
@@ -359,6 +382,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/10/04/Python-Theme-11-Package/" rel="prev" title="Python - Theme 11 Package">
+                  Python - Theme 11 Package <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -398,6 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基本知识"><span class="nav-text">1. 基本知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-进阶知识"><span class="nav-text">2. 进阶知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-re模块"><span class="nav-text">3. re模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-切分字符串"><span class="nav-text">4. 切分字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-分组"><span class="nav-text">5. 分组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-贪婪匹配"><span class="nav-text">6. 贪婪匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-编译"><span class="nav-text">7. 编译</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -413,7 +440,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -476,12 +503,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">167k</span>
+    <span title="Symbols count total">206k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:32</span>
+    <span title="Reading time total">3:08</span>
 </div>
 
         
