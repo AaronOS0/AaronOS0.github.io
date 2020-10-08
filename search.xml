@@ -1,6 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>COMP4035 - 1.Basics</title>
+    <url>/2020/10/08/COMP4035-1-Basics/</url>
+    <content><![CDATA[<h1 id="1-Challenges-of-Computer-Networks"><a href="#1-Challenges-of-Computer-Networks" class="headerlink" title="1. Challenges of Computer Networks"></a>1. Challenges of Computer Networks</h1><h2 id="1-1-What-is-a-Computer-Network"><a href="#1-1-What-is-a-Computer-Network" class="headerlink" title="1.1.What is a Computer Network?"></a>1.1.What is a Computer Network?</h2><p>Wikipedia: A computer network is a group of computers that use a set of common communication protocols over digital interconnections for the purpose of sharing resources located on or provided by the network nodes.</p><a id="more"></a>
+<h2 id="1-2-Classifying-Networks"><a href="#1-2-Classifying-Networks" class="headerlink" title="1.2. Classifying Networks"></a>1.2. Classifying Networks</h2><ul>
+<li>By size: Local area networks (LANs) versus Wide area networks (WANs)</li>
+<li>By connectivity: Point to point versus broadcast networks</li>
+<li>By communication medium: Wired, wireless, satellite, Bluetooth, even your TV remote control!!</li>
+<li>By mobility: Fixed versus mobile</li>
+</ul>
+<h2 id="1-3-Top-level-challenges"><a href="#1-3-Top-level-challenges" class="headerlink" title="1.3. Top level challenges"></a>1.3. Top level challenges</h2><ul>
+<li>Security!</li>
+<li>Problem determination/isolation</li>
+<li>Heterogeneity</li>
+<li>Providing a unified service environment</li>
+</ul>
+<h1 id="2-Challenges-of-sending-data"><a href="#2-Challenges-of-sending-data" class="headerlink" title="2.  Challenges of sending data"></a>2.  Challenges of sending data</h1><h2 id="2-1-Common-Issues-in-Networking"><a href="#2-1-Common-Issues-in-Networking" class="headerlink" title="2.1. Common Issues in Networking"></a>2.1. Common Issues in Networking</h2><ul>
+<li>Framing and encoding</li>
+<li>Addressing</li>
+<li>Routing</li>
+<li>Error detection and correction</li>
+<li>Flow and congestion</li>
+</ul>
+<h1 id="3-Distributed-Systems"><a href="#3-Distributed-Systems" class="headerlink" title="3. Distributed Systems"></a>3. Distributed Systems</h1><h2 id="3-1-Definition"><a href="#3-1-Definition" class="headerlink" title="3.1. Definition"></a>3.1. Definition</h2><p>Wikipedia: A distributed system is a system whose components are located on different networked computers, which communicate and coordinate their actions by passing messages to one another. The components interact with one another in order to achieve a common goal.</p>
+<h2 id="3-2-Advantages"><a href="#3-2-Advantages" class="headerlink" title="3.2. Advantages"></a>3.2. Advantages</h2><ul>
+<li>Access to remote resources (sharing)</li>
+<li>Access to computing power that you don’t have locally</li>
+<li>Scalability</li>
+<li>Robustness (duplication of resources)</li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>UoN</category>
+      </categories>
+      <tags>
+        <tag>COMP4035-System&amp;Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>COMP3009 - 0.Module Overview</title>
+    <url>/2020/10/08/COMP3009-0-Module-Overview/</url>
+    <content><![CDATA[<h1 id="1-Teaching"><a href="#1-Teaching" class="headerlink" title="1. Teaching"></a>1. Teaching</h1><h2 id="1-1-Theoretical-Part"><a href="#1-1-Theoretical-Part" class="headerlink" title="1.1. Theoretical Part:"></a>1.1. Theoretical Part:</h2><ul>
+<li>2 x 2 hours/week online videos</li>
+<li>lecture activities</li>
+</ul><h2 id="1-2-Practical-Part-Lab-and-3-group-Coursework"><a href="#1-2-Practical-Part-Lab-and-3-group-Coursework" class="headerlink" title="1.2. Practical Part: Lab and 3 group Coursework"></a>1.2. Practical Part: Lab and 3 group Coursework</h2><a id="more"></a>
+<ul>
+<li>ANN - Artifical Neural Networks</li>
+<li>Decision Trees</li>
+<li>Support Vector Machines</li>
+</ul>
+<h1 id="2-Assessment"><a href="#2-Assessment" class="headerlink" title="2. Assessment"></a>2. Assessment</h1><ul>
+<li>2h Exam(70%)<ul>
+<li>Contents from all lectures examinable, as well as the relevant chapters in the two core text (Bishop and Duda &amp; Hart)</li>
+<li>Guest lectures can be used as examples but not examinable in detail.</li>
+<li>Three questions - no optional question</li>
+</ul>
+</li>
+<li>One coursework (30%)<ul>
+<li>Reports on 3 Lab topics</li>
+<li>Peer-review evaluation</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-Resources"><a href="#3-Resources" class="headerlink" title="3. Resources"></a>3. Resources</h1><ul>
+<li>Core text:<ul>
+<li>Machine Learning &amp; Pattern Recognition (Christopher Bishop)</li>
+</ul>
+</li>
+<li>Additional Reading:<ul>
+<li>Machine Learning (Tom Mitchell)</li>
+<li>Pattern Classification (Duda &amp; Hart)</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-Structure"><a href="#4-Structure" class="headerlink" title="4. Structure"></a>4. Structure</h1><ol>
+<li>Introduction</li>
+<li>Linear Regression</li>
+<li>Mathematics for Machine Learning</li>
+<li>Linear Classification</li>
+<li>Decision Trees</li>
+<li>Artificial Neural Networks I</li>
+<li>Artificial Neural Networks II</li>
+<li>Deep Learning and Convolutional Neural Networks</li>
+<li>Evaluating Hypotheses</li>
+<li>Unsupervised Learning</li>
+<li>Data mining</li>
+<li>Dimensionality Reduction</li>
+<li>Kernel Methods</li>
+<li>Support Vector Machines</li>
+<li>Bayesian Learning</li>
+<li>Probabilistic Graphical Models</li>
+<li>Sequential Data</li>
+<li>Advanced Topics</li>
+<li>Exam Revision</li>
+</ol>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>UoN</category>
+      </categories>
+      <tags>
+        <tag>COMP3009-Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>COMP4035 - 0.Module Overview</title>
+    <url>/2020/10/08/COMP4035-0-Module-Overview/</url>
+    <content><![CDATA[<h1 id="1-Teaching"><a href="#1-Teaching" class="headerlink" title="1. Teaching"></a>1. Teaching</h1><ul>
+<li>20 credit Module</li>
+<li>3 sessions per week – Lecture engagement<ul>
+<li>Videos</li>
+<li>Online lectures</li>
+<li>Moodle Quizzes</li>
+<li>Some live sessions</li>
+</ul>
+</li>
+<li>1 workshop per week • UNIX labs (Online)<ul>
+<li>Small group teaching/discussions</li>
+<li>New material</li>
+<li>Other activities</li>
+</ul>
+</li>
+</ul><a id="more"></a>
+<h1 id="2-Assessment"><a href="#2-Assessment" class="headerlink" title="2. Assessment"></a>2. Assessment</h1><ul>
+<li>One exam – take home (75%)</li>
+<li>One coursework (25%)</li>
+</ul>
+<h1 id="3-Structure"><a href="#3-Structure" class="headerlink" title="3. Structure"></a>3. Structure</h1><ol>
+<li>Basics<ul>
+<li>Introduction</li>
+<li>Fundamentals</li>
+<li>Unix Filestore</li>
+<li>WORKSHOP – UNIX lab (Online)</li>
+<li>Unix and I/O (Input/Output) Redirecting</li>
+<li>Searching and Regular Expressions</li>
+<li>Processes and Signals</li>
+</ul>
+</li>
+<li>Data Communication</li>
+<li>Packet Switching and Network Technologies</li>
+<li>Internetworking</li>
+<li>System Administration</li>
+<li>Sharing Resources/Distributed Systems</li>
+</ol>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>UoN</category>
+      </categories>
+      <tags>
+        <tag>COMP4035-System&amp;Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>COMP4039 - 1.Databases</title>
+    <url>/2020/10/07/COMP4039-1-Databases/</url>
+    <content><![CDATA[<h1 id="1-Wkiipedia-Definition"><a href="#1-Wkiipedia-Definition" class="headerlink" title="1. Wkiipedia Definition"></a>1. Wkiipedia Definition</h1><p>A database is an organized collection of data, generally stored and accessed electronically from a computer system.</p><a id="more"></a>
+<h1 id="2-Programming-data-structures-and-databases"><a href="#2-Programming-data-structures-and-databases" class="headerlink" title="2. Programming data structures and databases"></a>2. Programming data structures and databases</h1><ul>
+<li>You have to find a way to map data structures in your programming language to data structures held by the (relational) database.</li>
+<li>OO data structure  &lt;——&gt; DBs</li>
+</ul>
+<h1 id="3-The-world’s-simplest-databases"><a href="#3-The-world’s-simplest-databases" class="headerlink" title="3. The world’s simplest databases"></a>3. The world’s simplest databases</h1><h2 id="3-1-File-based-databases"><a href="#3-1-File-based-databases" class="headerlink" title="3.1. File-based databases"></a>3.1. File-based databases</h2><ul>
+<li>Linux configuration files: /etc/xxx</li>
+<li>DNS/Network configuration files …</li>
+</ul>
+<h2 id="3-2-Problems"><a href="#3-2-Problems" class="headerlink" title="3.2. Problems"></a>3.2. Problems</h2><ul>
+<li>No standards</li>
+<li>Data duplication</li>
+<li>Data dependence</li>
+<li>No way to generate complex queries (e.g., JOIN)</li>
+<li>No provision for concurrency, security, recovery, etc.</li>
+</ul>
+<h1 id="4-DBMS-Database-Management-Systems"><a href="#4-DBMS-Database-Management-Systems" class="headerlink" title="4. DBMS - Database Management Systems"></a>4. DBMS - Database Management Systems</h1><h2 id="4-1-Definition"><a href="#4-1-Definition" class="headerlink" title="4.1. Definition"></a>4.1. Definition</h2><blockquote>
+<p>A database is a system to allow multiple users to share the same information<br>A Database Management System (DBMS) is the software that implements a database</p>
+</blockquote>
+<ul>
+<li>a collaborative system</li>
+<li>uniqueness</li>
+<li>data integrity/consistency</li>
+</ul>
+<h2 id="4-2-What-a-DBMS-does"><a href="#4-2-What-a-DBMS-does" class="headerlink" title="4.2. What a DBMS does?"></a>4.2. What a DBMS does?</h2><ul>
+<li>store data</li>
+<li>manage change (updates)</li>
+<li>organise data</li>
+<li>retrieve data</li>
+<li>retain privacy (security)</li>
+<li>ensure reliability &amp; consistency (no redundancy, transactional model, etc.)</li>
+</ul>
+<h2 id="4-3-What-a-DBMS-provides"><a href="#4-3-What-a-DBMS-provides" class="headerlink" title="4.3. What a DBMS provides?"></a>4.3. What a DBMS provides?</h2><blockquote>
+<p>SQL=(DDL, DML, DCL)</p>
+</blockquote>
+<ul>
+<li>Data Definition Language (DDL)<ul>
+<li>e.g., ‘CREATE’ table</li>
+</ul>
+</li>
+<li>Data Manipulation Language (DML)<ul>
+<li>e.g., ‘INSERT’ row</li>
+</ul>
+</li>
+<li>Data Control Language (DCL)<ul>
+<li>e.g., ‘GRANT’ privilege on table to user</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-4-DBMS-components"><a href="#4-4-DBMS-components" class="headerlink" title="4.4. DBMS components"></a>4.4. DBMS components</h2><ul>
+<li>Data dictionary: stores information about database objects</li>
+<li>Data dictionary compiler: extracts database information and stores it in the data dictionary</li>
+<li>Query processor: parses / interprets and optimises user queries (caching?)</li>
+<li>Transaction manager: communicates with recovery manager and scheduler to ensure data consistency in multi-user environments</li>
+<li>Storage manager: deals with concrete file I/O etc.</li>
+</ul>
+<h2 id="4-5-ANSI-SPARC-architecture"><a href="#4-5-ANSI-SPARC-architecture" class="headerlink" title="4.5. ANSI / SPARC architecture"></a>4.5. ANSI / SPARC architecture</h2><p>Three tier architecture:</p>
+<ul>
+<li>internal level/schema: For systems designers (OS, file system level , provides platform independent service for conceptual level)</li>
+<li>Conceptual level/schema: For database designers (structure for all users, abstracted from internal level)</li>
+<li>External level/schema: For database users (user view, subject to access permissions, multiple possible views)<br>Not fully implemented in any DBMS: Eg. external level blended with conceptual level (MySQL)</li>
+</ul>
+<h2 id="4-6-Database-systems-programmers"><a href="#4-6-Database-systems-programmers" class="headerlink" title="4.6. Database systems programmers"></a>4.6. Database systems programmers</h2><ul>
+<li>Database systems programmers: writes the DBMS software</li>
+<li>Database administrators (DBA): designs and manages the database system</li>
+<li>Applications developers: write the client software that allows end users to interface with the DBMS</li>
+<li>End users: use the information provided by the database to achieve a personal or organisational goal</li>
+</ul>
+<h1 id="5-Lab-Exercise"><a href="#5-Lab-Exercise" class="headerlink" title="5. Lab Exercise"></a>5. Lab Exercise</h1><h2 id="5-1-Exercise-Guide"><a href="#5-1-Exercise-Guide" class="headerlink" title="5.1. Exercise Guide"></a>5.1. Exercise Guide</h2><h2 id="5-2-My-Answer"><a href="#5-2-My-Answer" class="headerlink" title="5.2. My Answer"></a>5.2. My Answer</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- Create Database</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> COMP4039;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Use Database</span></span><br><span class="line"><span class="keyword">USE</span> COMP4039;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Create Table</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> countries (</span><br><span class="line">    countries_name <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    countries_area <span class="built_in">INT</span>,</span><br><span class="line">    countries_population <span class="built_in">INT</span>,</span><br><span class="line">    countries_gdp <span class="built_in">BIGINT</span>(<span class="number">20</span>),</span><br><span class="line">    countries_currency <span class="built_in">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    countries_capital <span class="built_in">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    ountries_tld <span class="built_in">VARCHAR</span>(<span class="number">10</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1. Print the GDP of all countries in the database.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, countries_gdp</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2. Print the GDP of all countries,in descending order.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, countries_gdp</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> countries_gdp <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3. Print the per-capita GDP of all countries in the database, in descending order.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, countries_gdp/countries_population per_capitaGDP</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> per_capitaGDP <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 4. Display 2 places of decimals</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, <span class="keyword">ROUND</span>(countries_gdp/countries_population, <span class="number">2</span>) per_capitaGDP</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> per_capitaGDP <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 5. Ignores very small countries with a land mass of less than 20,000.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, <span class="keyword">ROUND</span>(countries_gdp/countries_population, <span class="number">2</span>) per_capitaGDP</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_area &gt;= <span class="number">20000</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> per_capitaGDP <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 6. Shows the names of countries that have a land mass in between 100,000 km2 and 200,000 km2.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_area <span class="keyword">BETWEEN</span> <span class="number">100000</span> <span class="keyword">AND</span> <span class="number">200000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 7. Shows the names of countries that start with the letter‘M’.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_name <span class="keyword">LIKE</span> <span class="string">'M%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 8. Lists the names of countries that end with‘...land’.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_name <span class="keyword">LIKE</span> <span class="string">'%land'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 9. The name of the country is the same as the name of the capital.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_name=countries_capital;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 10. Total population of all of the countries.</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">SUM</span>(countries_population)</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 11. Find the number of countries that have a total land mass of at least 500,000.</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">num</span></span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_area &gt;= <span class="number">500000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 12. Show the countries which have a per capita GDP more than that of Poland, in descending order of wealth.</span></span><br><span class="line"><span class="keyword">SELECT</span> countries_name, countries_gdp/countries_population</span><br><span class="line"><span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line"><span class="keyword">WHERE</span> countries_gdp/countries_population &gt; (<span class="keyword">SELECT</span> countries_gdp/countries_population</span><br><span class="line">                                            <span class="keyword">FROM</span> COMP4039.countries</span><br><span class="line">                                            <span class="keyword">WHERE</span> countries_name=<span class="string">'Poland'</span>)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> countries_gdp/countries_population <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>UoN</category>
+      </categories>
+      <tags>
+        <tag>COMP4039-DB&amp;WebInterface Design</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>COMP4039 - 0.Module Overview</title>
+    <url>/2020/10/07/COMP4039-0-Module-Overview/</url>
+    <content><![CDATA[<h1 id="1-Teaching"><a href="#1-Teaching" class="headerlink" title="1. Teaching"></a>1. Teaching</h1><ul>
+<li>20 credit Module = 200 hours of study time</li>
+<li>3-14 Weeks of Teaching</li>
+</ul><h1 id="2-Assessment"><a href="#2-Assessment" class="headerlink" title="2. Assessment"></a>2. Assessment</h1><ul>
+<li>Open book exam (details TBA) – 40%</li>
+<li>Coursework 1: 2-part coursework – total 20%<ul>
+<li>Part A (10%): database design</li>
+<li>Part B (10%): database manipulation</li>
+</ul>
+</li>
+<li>Coursework 2: Project coursework – 40%<ul>
+<li>Database + web interface</li>
+</ul>
+</li>
+</ul><a id="more"></a>
+
+<h1 id="3-Resources"><a href="#3-Resources" class="headerlink" title="3. Resources"></a>3. Resources</h1><ul>
+<li><a href="https://nostarch.com/mg_databases.htm" target="_blank" rel="noopener">The Manga Guide to Databases</a></li>
+<li><a href="https://opentextbc.ca/dbdesign01/" target="_blank" rel="noopener">Database Design - 2nd Edition</a></li>
+</ul>
+<h1 id="4-Software"><a href="#4-Software" class="headerlink" title="4. Software"></a>4. Software</h1><ul>
+<li>Login shell to (mersey.cs.nott.ac.uk)</li>
+<li>MySQL (mysql.cs.nott.ac.uk:3306)</li>
+<li>MySQL Workbench</li>
+<li>Visual Paradigm (ER, Use Cases)</li>
+<li>PHP</li>
+<li>HTML / CSS</li>
+<li>JS</li>
+</ul>
+<h1 id="5-Course-amp-amp-Structure"><a href="#5-Course-amp-amp-Structure" class="headerlink" title="5. Course&amp;&amp;Structure"></a>5. Course&amp;&amp;Structure</h1><ol>
+<li>Databases: Relational/Nonrelational DBs</li>
+<li>Interfaces</li>
+<li>Software design principles: Requirements and web-based front-end web design</li>
+</ol>
+<h1 id="6-Databases-and-Categorisation"><a href="#6-Databases-and-Categorisation" class="headerlink" title="6. Databases and Categorisation"></a>6. Databases and Categorisation</h1><blockquote>
+<p>Databases are ways of modelling and shaping the nature of reality</p>
+</blockquote>
+<ul>
+<li>Categories and categorisations of the world</li>
+<li>The structure of databases structures relations between people, systems, things, circumstances, activities, etc.</li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+      <categories>
+        <category>UoN</category>
+      </categories>
+      <tags>
+        <tag>COMP4039-DB&amp;WebInterface Design</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python - Theme 12 virtualenv</title>
     <url>/2020/10/04/Python-Theme-12-virtualenv/</url>
     <content><![CDATA[<blockquote>
