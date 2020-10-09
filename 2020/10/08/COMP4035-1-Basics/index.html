@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Aaron&#39;s Blog">
 <meta property="og:description" content="1. Challenges of Computer Networks1.1.What is a Computer Network?Wikipedia: A computer network is a group of computers that use a set of common communication protocols over digital interconnections fo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-08T11:19:29.693Z">
+<meta property="og:updated_time" content="2020-10-09T07:49:47.511Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://aaronos0.github.io/2020/10/08/COMP4035-1-Basics/">
@@ -255,10 +255,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-08 12:17:57 / Modified: 12:19:29" itemprop="dateCreated datePublished" datetime="2020-10-08T12:17:57+01:00">2020-10-08</time>
+              <time title="Created: 2020-10-08 12:17:57" itemprop="dateCreated datePublished" datetime="2020-10-08T12:17:57+01:00">2020-10-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-09 08:49:47" itemprop="dateModified" datetime="2020-10-09T08:49:47+01:00">2020-10-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -298,14 +304,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.1k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -344,7 +350,186 @@
 <li>Scalability</li>
 <li>Robustness (duplication of resources)</li>
 </ul>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+<h2 id="3-3-What-is-IP-address"><a href="#3-3-What-is-IP-address" class="headerlink" title="3.3. What is IP address?"></a>3.3. What is IP address?</h2><p>Wikipedia: An Internet Protocol address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.</p>
+<h2 id="3-4-Types-of-Address"><a href="#3-4-Types-of-Address" class="headerlink" title="3.4. Types of Address"></a>3.4. Types of Address</h2><ul>
+<li>Hostname address, e.g. severn.cs.nott.ac.uk</li>
+<li>IP address, e.g. 128.243.10.4</li>
+<li>Hardware address, e.g. 00-8C-39-7C-B3-14</li>
+</ul>
+<h2 id="3-5-Identifying-Applications"><a href="#3-5-Identifying-Applications" class="headerlink" title="3.5. Identifying Applications"></a>3.5. Identifying Applications</h2><p>Port Numbers:</p>
+<ul>
+<li>80/443</li>
+<li>8080 …</li>
+</ul>
+<h2 id="3-6-IP-Addresses-Sending-to-Many"><a href="#3-6-IP-Addresses-Sending-to-Many" class="headerlink" title="3.6. IP Addresses - Sending to Many"></a>3.6. IP Addresses - Sending to Many</h2><p>There are special IP addresses for sending to more than one host (computer):</p>
+<ul>
+<li>A Multicast address allows a message to be sent to a group</li>
+<li>A Broadcast address allows a message to be sent to all hosts on a network</li>
+</ul>
+<h2 id="3-7-Types-of-IP-V4-Addresses"><a href="#3-7-Types-of-IP-V4-Addresses" class="headerlink" title="3.7. Types of IP(V4) Addresses"></a>3.7. Types of IP(V4) Addresses</h2><table>
+<thead>
+<tr>
+<th>Address Type</th>
+<th>Meaning and Packet Delivery</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Unicast</td>
+<td>Uniquely identifies a single computer, and specifies that only the identified computer should receive a copy of the packet</td>
+</tr>
+<tr>
+<td>Broadcast</td>
+<td>Corresponds to all computers, and specifies that each computer on the network should receive a copy of the packet</td>
+</tr>
+<tr>
+<td>Multicast</td>
+<td>Identifies a subset of the computers on a given network, and specifies that each computer in the subset should receive a copy of the packet</td>
+</tr>
+</tbody></table>
+<h1 id="4-Introduction-of-Unix"><a href="#4-Introduction-of-Unix" class="headerlink" title="4. Introduction of Unix"></a>4. Introduction of Unix</h1><h2 id="4-1-Operating-Systems"><a href="#4-1-Operating-Systems" class="headerlink" title="4.1. Operating Systems"></a>4.1. Operating Systems</h2><ul>
+<li>The program that controls all the other parts of the computer system, manages hardware and software</li>
+<li>Enables you to use the computer system and its facilities</li>
+</ul>
+<h2 id="4-2-What-does-the-Kernel-do"><a href="#4-2-What-does-the-Kernel-do" class="headerlink" title="4.2. What does the Kernel do?"></a>4.2. What does the Kernel do?</h2><ul>
+<li>Managing the machine’s memory and allocating it to each process</li>
+<li>Scheduling the work done by the CPU so that the work of each user is carried out as efficiently as possible</li>
+<li>Organising the transfer of data from one part of the machine to another</li>
+<li>Accepting instructions from the user interface and carrying them out.</li>
+<li>Enforcing the access permissions that are set on the file system</li>
+</ul>
+<h2 id="4-3-Command-involved"><a href="#4-3-Command-involved" class="headerlink" title="4.3. Command involved"></a>4.3. Command involved</h2><ul>
+<li>ssh</li>
+<li>sftp</li>
+<li>passwd</li>
+</ul>
+<h1 id="5-Unix-Filestore"><a href="#5-Unix-Filestore" class="headerlink" title="5. Unix Filestore"></a>5. Unix Filestore</h1><h2 id="5-1-Files"><a href="#5-1-Files" class="headerlink" title="5.1. Files"></a>5.1. Files</h2><ul>
+<li>From the user’s point of view, all information on the computer is stored in files</li>
+<li>Files may contain many kinds of information, including programs, data and documents</li>
+<li>Like paper files, they have a name (chosen by the user) and some content</li>
+<li>By convention, the filename suffix suggests the type of content</li>
+</ul>
+<h2 id="5-2-Directories"><a href="#5-2-Directories" class="headerlink" title="5.2. Directories"></a>5.2. Directories</h2><ul>
+<li>Files are stored in directories (folders)</li>
+<li>Each directory may contain many files and also other directories</li>
+<li>By convention, directory names do not usually have suffixes</li>
+</ul>
+<h2 id="5-3-Command-involved"><a href="#5-3-Command-involved" class="headerlink" title="5.3. Command involved"></a>5.3. Command involved</h2><ul>
+<li>cat</li>
+<li>more\less</li>
+<li>head\tail</li>
+</ul>
+<h1 id="6-Absolute-and-Relative-Pathnames"><a href="#6-Absolute-and-Relative-Pathnames" class="headerlink" title="6. Absolute and Relative Pathnames"></a>6. Absolute and Relative Pathnames</h1><h2 id="6-1-Two-ways-of-specifying-filenames"><a href="#6-1-Two-ways-of-specifying-filenames" class="headerlink" title="6.1. Two ways of specifying filenames"></a>6.1. Two ways of specifying filenames</h2><ul>
+<li>From the current directory - relative pathnames</li>
+<li>From the root directory - absolute pathnames</li>
+</ul>
+<h2 id="6-2-Command-involved"><a href="#6-2-Command-involved" class="headerlink" title="6.2. Command involved"></a>6.2. Command involved</h2><ul>
+<li>pwd</li>
+<li>cd</li>
+<li>ls</li>
+<li>mv</li>
+<li>cp</li>
+<li>rm</li>
+<li>mkdir</li>
+<li>rmdir</li>
+</ul>
+<h1 id="Lab1"><a href="#Lab1" class="headerlink" title="Lab1"></a>Lab1</h1><div class="pdf" target="UnixLab1-2020.pdf" height></div>
+
+<hr>
+<h1 id="7-Unix-File-Operations"><a href="#7-Unix-File-Operations" class="headerlink" title="7. Unix File Operations"></a>7. Unix File Operations</h1><h2 id="7-1-UNIX-thinks-everything-is-a-file"><a href="#7-1-UNIX-thinks-everything-is-a-file" class="headerlink" title="7.1. UNIX thinks everything is a file!"></a>7.1. UNIX thinks everything is a file!</h2><ul>
+<li>Directories and programs are all files!</li>
+<li>Input and Output channels are files</li>
+<li>All of these things can be manipulated like files</li>
+</ul>
+<h2 id="7-2-Shell-Metacharacters"><a href="#7-2-Shell-Metacharacters" class="headerlink" title="7.2. Shell Metacharacters"></a>7.2. Shell Metacharacters</h2><ul>
+<li>*</li>
+<li>?</li>
+</ul>
+<h2 id="7-3-Command-involved"><a href="#7-3-Command-involved" class="headerlink" title="7.3. Command involved"></a>7.3. Command involved</h2><ul>
+<li>file</li>
+<li>wc</li>
+</ul>
+<h1 id="8-Security-and-File-Permissions"><a href="#8-Security-and-File-Permissions" class="headerlink" title="8. Security and File Permissions"></a>8. Security and File Permissions</h1><h2 id="8-1-Permissions-lists"><a href="#8-1-Permissions-lists" class="headerlink" title="8.1. Permissions lists"></a>8.1. Permissions lists</h2><ul>
+<li>ugo</li>
+<li>rwx == 421</li>
+</ul>
+<h2 id="8-2-The-effect-of-directory-permissions"><a href="#8-2-The-effect-of-directory-permissions" class="headerlink" title="8.2. The effect of directory permissions"></a>8.2. The effect of directory permissions</h2><ul>
+<li>Execute lets you change (cd) into that directory<ul>
+<li>(i.e. you are searching the directory)</li>
+</ul>
+</li>
+<li>Read lets you list files in the directory<ul>
+<li>(i.e. you are reading the directory contents)</li>
+</ul>
+</li>
+<li>Write lets you create and delete files<ul>
+<li>(i.e. you are writing to the directory contents)</li>
+</ul>
+</li>
+</ul>
+<h2 id="8-3-Command-involved"><a href="#8-3-Command-involved" class="headerlink" title="8.3. Command involved"></a>8.3. Command involved</h2><ul>
+<li>chmod</li>
+</ul>
+<h1 id="9-Unix-Input-Output"><a href="#9-Unix-Input-Output" class="headerlink" title="9. Unix Input/Output"></a>9. Unix Input/Output</h1><h2 id="9-1-Input-and-Output-in-UNIX"><a href="#9-1-Input-and-Output-in-UNIX" class="headerlink" title="9.1. Input and Output in UNIX"></a>9.1. Input and Output in UNIX</h2><blockquote>
+<p>UNIX considers input and output to programs to be “streams of data”.</p>
+</blockquote>
+<ul>
+<li>Could be from the user</li>
+<li>Could be from a file</li>
+<li>Could be from another program</li>
+</ul>
+<h2 id="9-2-Redirecting-I-O"><a href="#9-2-Redirecting-I-O" class="headerlink" title="9.2.Redirecting I/O"></a>9.2.Redirecting I/O</h2><blockquote>
+<p>Each UNIX command has a number of input and output channels, these are files that are specified in arguments.</p>
+</blockquote>
+<ul>
+<li>STDIN (0)</li>
+<li>STDOUT (1)</li>
+<li>STDERR (2)</li>
+</ul>
+<h2 id="9-3-STDIN"><a href="#9-3-STDIN" class="headerlink" title="9.3. STDIN"></a>9.3. STDIN</h2><ul>
+<li>Stands for Standard Input</li>
+<li>This is where programs expect to find their input</li>
+<li>Everything you type at the command line goes onto STDIN</li>
+<li>If you want to read the input from a file instead, use &lt;</li>
+</ul>
+<h2 id="9-4-STDOUT"><a href="#9-4-STDOUT" class="headerlink" title="9.4. STDOUT"></a>9.4. STDOUT</h2><ul>
+<li>Stands for standard output</li>
+<li>This is where programs (usually) write any output they generate. By default STDOUT appears in your terminal window</li>
+<li>If you want to save the output to a file instead, use &gt;</li>
+<li>You can also use &gt;&gt; which appends the output onto a file’s contents</li>
+</ul>
+<h2 id="9-5-STDERR"><a href="#9-5-STDERR" class="headerlink" title="9.5. STDERR"></a>9.5. STDERR</h2><ul>
+<li>Stands for standard error</li>
+<li>This is where programs usually write error messages. So even if you are redirecting the normal output, you can still see error messages</li>
+<li>You can redirect STDERR using 2&gt;</li>
+</ul>
+<h2 id="9-6-Redirecting-symbol"><a href="#9-6-Redirecting-symbol" class="headerlink" title="9.6. Redirecting symbol"></a>9.6. Redirecting symbol</h2><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>redirect STDOUT</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>appends</td>
+</tr>
+<tr>
+<td>2&gt;&amp;1</td>
+<td>redirect both(STDOUT&amp;STDERR) outputs</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>redirects the standard input</td>
+</tr>
+</tbody></table>
+<h2 id="9-7-Piping"><a href="#9-7-Piping" class="headerlink" title="9.7. Piping"></a>9.7. Piping</h2><ul>
+<li>|</li>
+</ul>
+<h1 id="10-Searching-and-RegularExpressions"><a href="#10-Searching-and-RegularExpressions" class="headerlink" title="10. Searching and RegularExpressions"></a>10. Searching and RegularExpressions</h1><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
     </div>
 
     
@@ -425,7 +610,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Challenges-of-Computer-Networks"><span class="nav-text">1. Challenges of Computer Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-What-is-a-Computer-Network"><span class="nav-text">1.1.What is a Computer Network?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Classifying-Networks"><span class="nav-text">1.2. Classifying Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Top-level-challenges"><span class="nav-text">1.3. Top level challenges</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Challenges-of-sending-data"><span class="nav-text">2.  Challenges of sending data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Common-Issues-in-Networking"><span class="nav-text">2.1. Common Issues in Networking</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Distributed-Systems"><span class="nav-text">3. Distributed Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Definition"><span class="nav-text">3.1. Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Advantages"><span class="nav-text">3.2. Advantages</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Challenges-of-Computer-Networks"><span class="nav-text">1. Challenges of Computer Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-What-is-a-Computer-Network"><span class="nav-text">1.1.What is a Computer Network?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Classifying-Networks"><span class="nav-text">1.2. Classifying Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Top-level-challenges"><span class="nav-text">1.3. Top level challenges</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Challenges-of-sending-data"><span class="nav-text">2.  Challenges of sending data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Common-Issues-in-Networking"><span class="nav-text">2.1. Common Issues in Networking</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Distributed-Systems"><span class="nav-text">3. Distributed Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Definition"><span class="nav-text">3.1. Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Advantages"><span class="nav-text">3.2. Advantages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-What-is-IP-address"><span class="nav-text">3.3. What is IP address?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Types-of-Address"><span class="nav-text">3.4. Types of Address</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Identifying-Applications"><span class="nav-text">3.5. Identifying Applications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-IP-Addresses-Sending-to-Many"><span class="nav-text">3.6. IP Addresses - Sending to Many</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-Types-of-IP-V4-Addresses"><span class="nav-text">3.7. Types of IP(V4) Addresses</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Introduction-of-Unix"><span class="nav-text">4. Introduction of Unix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Operating-Systems"><span class="nav-text">4.1. Operating Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-What-does-the-Kernel-do"><span class="nav-text">4.2. What does the Kernel do?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Command-involved"><span class="nav-text">4.3. Command involved</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Unix-Filestore"><span class="nav-text">5. Unix Filestore</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Files"><span class="nav-text">5.1. Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Directories"><span class="nav-text">5.2. Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Command-involved"><span class="nav-text">5.3. Command involved</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Absolute-and-Relative-Pathnames"><span class="nav-text">6. Absolute and Relative Pathnames</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Two-ways-of-specifying-filenames"><span class="nav-text">6.1. Two ways of specifying filenames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Command-involved"><span class="nav-text">6.2. Command involved</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lab1"><span class="nav-text">Lab1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Unix-File-Operations"><span class="nav-text">7. Unix File Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-UNIX-thinks-everything-is-a-file"><span class="nav-text">7.1. UNIX thinks everything is a file!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-Shell-Metacharacters"><span class="nav-text">7.2. Shell Metacharacters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-Command-involved"><span class="nav-text">7.3. Command involved</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Security-and-File-Permissions"><span class="nav-text">8. Security and File Permissions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-Permissions-lists"><span class="nav-text">8.1. Permissions lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-The-effect-of-directory-permissions"><span class="nav-text">8.2. The effect of directory permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-Command-involved"><span class="nav-text">8.3. Command involved</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Unix-Input-Output"><span class="nav-text">9. Unix Input/Output</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-Input-and-Output-in-UNIX"><span class="nav-text">9.1. Input and Output in UNIX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-Redirecting-I-O"><span class="nav-text">9.2.Redirecting I/O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-STDIN"><span class="nav-text">9.3. STDIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-STDOUT"><span class="nav-text">9.4. STDOUT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-5-STDERR"><span class="nav-text">9.5. STDERR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-6-Redirecting-symbol"><span class="nav-text">9.6. Redirecting symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-7-Piping"><span class="nav-text">9.7. Piping</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Searching-and-RegularExpressions"><span class="nav-text">10. Searching and RegularExpressions</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -504,12 +689,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">214k</span>
+    <span title="Symbols count total">218k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:15</span>
+    <span title="Reading time total">3:18</span>
 </div>
 
         
