@@ -421,7 +421,7 @@ mjx-container[display="true"] + br {
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.4k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -441,14 +441,15 @@ mjx-container[display="true"] + br {
 
       
         <h1 id="1-What-is-Machine-Learning"><a href="#1-What-is-Machine-Learning" class="headerlink" title="1. What is Machine Learning?"></a>1. What is Machine Learning?</h1><h2 id="1-1-Definition"><a href="#1-1-Definition" class="headerlink" title="1.1. Definition"></a>1.1. Definition</h2><ul>
-<li>Arthur Samuel (1959): Field of study that gives computers the ability to learn without being explicitly programmed. &lt;&lt;一个较为宏观的定义&gt;&gt;</li>
-<li>Tom Mitchell (1998).Well-posed Learning Problem:A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E. &lt;&lt;一个较为practical的定义, 难点在于如何辨别一个problem中的T/P/E.&gt;&gt;</li>
+<li>Arthur Samuel (1959): Field of study that gives computers the ability to learn without being explicitly programmed. <strong>&lt;&lt;一个较为宏观的定义&gt;&gt;</strong></li>
+<li>Tom Mitchell (1998).Well-posed Learning Problem:A computer program is said to learn from <strong>experience E</strong> with respect to some <strong>task T</strong> and some <strong>performance measure P</strong>, if its performance on T, as measured by P, improves with experience E. <strong>&lt;&lt;一个较为practical的定义, 难点在于如何辨别一个problem中的T/P/E&gt;&gt;</strong></li>
 </ul>
 <a id="more"></a>
 
 <h2 id="1-2-Main-goal-Aim"><a href="#1-2-Main-goal-Aim" class="headerlink" title="1.2. Main goal(Aim)"></a>1.2. Main goal(Aim)</h2><ul>
 <li>Learning functions:<div class="wiz-table-container" style="position: relative; padding: 0px;"><div class="wiz-table-body" contenteditable="false"><table style="width: 683px;"><tbody><tr><td align="left" valign="middle" style="width: 81px; background-color: rgb(209, 230, 255);" data-background-color="#d1e6ff"><div>Features </div></td><td align="left" valign="middle" style="width: 76px; background-color: rgb(209, 230, 255);" data-background-color="#d1e6ff"><div>Labels</div></td><td align="left" valign="middle" style="width: 147px; background-color: rgb(209, 230, 255);" data-background-color="#d1e6ff"><div><span style="">Learning functions</span></div></td><td align="left" valign="middle" style="width: 378px; background-color: rgb(209, 230, 255);" data-background-color="#d1e6ff"><div><span style="">Machine learning<span> </span></span></div></td></tr><tr><td align="left" valign="middle" style="width: 81px;"><div>x</div></td><td align="left" valign="middle" style="width: 76px;"><div>f(x) = y</div></td><td align="left" valign="middle" style="width: 147px;"><div>The relationship between x and y.</div></td><td align="left" valign="middle" style="width: 378px;"><div>ML is the process of learning a function or hypothesis h(x), let the h(x) --&gt; y,best approximates.</div></td></tr></tbody></table></div></div></li>
-<li>Generalisation(泛化): This hypothesis can then make predictions <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.257ex" height="2.195ex" role="img" focusable="false" viewBox="0 -765 555.6 970"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(55.6, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container> on new data points <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.756ex" role="img" focusable="false" viewBox="0 -765 572 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(63.8, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container>, such that <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.257ex" height="2.195ex" role="img" focusable="false" viewBox="0 -765 555.6 970"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(55.6, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container> is as close as possible to its real label y .</li>
+<li>Generalisation(泛化): This hypothesis can then make predictions <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.257ex" height="2.195ex" role="img" focusable="false" viewBox="0 -765 555.6 970"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(55.6, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container> on new data points <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.756ex" role="img" focusable="false" viewBox="0 -765 572 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(63.8, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container>, such that <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.257ex" height="2.195ex" role="img" focusable="false" viewBox="0 -765 555.6 970"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(55.6, -29)"><path data-c="2C6" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path></g></g></g></g></g></svg></mjx-container> is <strong>as close as possible</strong> to its real label y .</li>
+<li>就人类而言，正是因为泛化能力，才让我们有可能<strong>用已知来对抗未知，以有限对抗无限</strong>.</li>
 </ul>
 <h2 id="1-3-Learning-functions"><a href="#1-3-Learning-functions" class="headerlink" title="1.3. Learning functions"></a>1.3. Learning functions</h2><p><img src="LearningFunctionsEg.png" alt="LearningFunctionsEg.png"></p>
 <ol>
@@ -470,15 +471,33 @@ mjx-container[display="true"] + br {
 </li>
 </ol>
 <ul>
-<li>Rule of thumb: Data points ~= 10 x variables num</li>
+<li><strong>Rule of thumb</strong>: Data points ~= 10 x variables num</li>
 <li>Tips:<ol>
 <li>避免过拟合</li>
 <li>控制参数个数</li>
 </ol>
 </li>
 </ul>
-<h1 id="2-Representation"><a href="#2-Representation" class="headerlink" title="2. Representation"></a>2. Representation</h1><h2 id="2-1-Supervised-Unsupervised-Learning"><a href="#2-1-Supervised-Unsupervised-Learning" class="headerlink" title="2.1. Supervised/Unsupervised Learning"></a>2.1. Supervised/Unsupervised Learning</h2><div class="wiz-table-container" style="position: relative; padding: 0px;"><div class="wiz-table-body" contenteditable="false"><table style="width: 627px;"><tbody><tr><td align="left" valign="middle" style="width: 160px;"><div>Machine Learning</div></td><td align="left" valign="middle" style="width: 466px;"><div>is learning from experience. It’s also called supervised learning. E consists of features and labels, and P and T are well-defined.</div></td></tr><tr><td align="left" valign="middle" style="width: 160px;"><div>Pattern Recognition</div></td><td align="left" valign="middle" style="width: 466px;"><div>is finding patterns without experience. It’s also called unsupervised learning. E consists of only features, and P and T are defined in much broader terms of finding ‘interesting patterns’.</div></td></tr></tbody></table></div></div>
-
+<h1 id="2-Representation"><a href="#2-Representation" class="headerlink" title="2. Representation"></a>2. Representation</h1><h2 id="2-1-Supervised-Unsupervised-Learning"><a href="#2-1-Supervised-Unsupervised-Learning" class="headerlink" title="2.1. Supervised/Unsupervised Learning"></a>2.1. Supervised/Unsupervised Learning</h2><ul>
+<li>Machine Learning: is learning from experience. It’s also called <strong>supervised learning</strong>. E consists of features and labels, and P and T are well-defined.</li>
+<li>Pattern Recognition: is finding patterns without experience. It’s also called <strong>unsupervised learning</strong>. E consists of only features, and P and T are defined in much broader terms of finding ‘interesting patterns’.</li>
+</ul>
+<p>监督学习(supervised learning):</p>
+<ol>
+<li>已知Label是什么，长什么样子，正确答案\结果是什么</li>
+<li>输入输出之间存在较为明确的关系</li>
+<li>比如：房屋面积和房价</li>
+</ol>
+<p>无监督学习(unsupervised learning)</p>
+<ol>
+<li>对Label的定义不是很明确，或者可以理解为很广泛</li>
+<li>通过数据集中原本存在的某种关系进行归类(Clustering)</li>
+<li>比如：<ul>
+<li>对基因组进行归类</li>
+<li>从音频中分出音乐和对话</li>
+</ul>
+</li>
+</ol>
 <h2 id="2-2-Representation-view-on-ML-Pedro-Domingos-2012"><a href="#2-2-Representation-view-on-ML-Pedro-Domingos-2012" class="headerlink" title="2.2. Representation view on ML (Pedro Domingos, 2012)"></a>2.2. Representation view on ML (Pedro Domingos, 2012)</h2><blockquote>
 <p>Machine Learning = Representation + Evaluation + Optimisation</p>
 </blockquote>
@@ -492,7 +511,7 @@ mjx-container[display="true"] + br {
 </blockquote>
 <p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="13.385ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5916.1 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mo" transform="translate(576, 0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(965, 0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1537, 0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2203.8, 0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(3481.6, 0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(4249.3, 0)"><path data-c="2208" d="M84 250Q84 372 166 450T360 539Q361 539 377 539T419 540T469 540H568Q583 532 583 520Q583 511 570 501L466 500Q355 499 329 494Q280 482 242 458T183 409T147 354T129 306T124 272V270H568Q583 262 583 250T568 230H124V228Q124 207 134 177T167 112T231 48T328 7Q355 1 466 0H570Q583 -10 583 -20Q583 -32 568 -40H471Q464 -40 446 -40T417 -41Q262 -41 172 45Q84 127 84 250Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(5194.1, 0)"><g data-mml-node="mi"><path data-c="2115" d="M20 664Q20 666 31 683H142Q256 683 258 681Q259 680 279 653T342 572T422 468L582 259V425Q582 451 582 490T583 541Q583 611 573 628T522 648Q500 648 493 654Q484 665 493 679L500 683H691Q702 676 702 666Q702 657 698 652Q688 648 680 648Q633 648 627 612Q624 601 624 294V-8Q616 -20 607 -20Q601 -20 596 -15Q593 -13 371 270L156 548L153 319Q153 284 153 234T152 167Q152 103 156 78T172 44T213 34Q236 34 242 28Q253 17 242 3L236 -1H36Q24 6 24 16Q24 34 56 34Q58 35 69 36T86 40T100 50T109 72Q111 83 111 345V603L96 619Q72 643 44 648Q20 648 20 664ZM413 419L240 648H120L136 628Q137 626 361 341T587 54L589 68Q589 78 589 121V192L413 419Z"></path></g></g></g></g></svg></mjx-container></p>
 <ul>
-<li>Often classification is binary</li>
+<li>Often classification is binary: [0,1]</li>
 <li>Examples:<ul>
 <li>face detection</li>
 <li>smile detection</li>
@@ -517,7 +536,7 @@ mjx-container[display="true"] + br {
 <h1 id="3-Features-labels-tasks"><a href="#3-Features-labels-tasks" class="headerlink" title="3. Features, labels, tasks"></a>3. Features, labels, tasks</h1><h2 id="3-1-Features-and-Labels"><a href="#3-1-Features-and-Labels" class="headerlink" title="3.1. Features and Labels"></a>3.1. Features and Labels</h2><ul>
 <li>Data points or instances make up the data used to learn a hypothesis h or find a pattern g</li>
 <li>In Machine Learning, a data point consists of feature/label tuples {x, y}</li>
-<li>A single data point comes from one measurement/ obser vation</li>
+<li>A single data point comes from one measurement/observation</li>
 <li>Many data points together make a dataset</li>
 </ul>
 <h2 id="3-2-Labels"><a href="#3-2-Labels" class="headerlink" title="3.2. Labels"></a>3.2. Labels</h2><blockquote>
@@ -622,6 +641,9 @@ mjx-container[display="true"] + br {
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/10/12/COMP3009-2-Linear-Regression/" rel="prev" title="COMP3009 - 2.Linear Regression">
+                  COMP3009 - 2.Linear Regression <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -677,7 +699,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -740,12 +762,12 @@ mjx-container[display="true"] + br {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">234k</span>
+    <span title="Symbols count total">236k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:33</span>
+    <span title="Reading time total">3:35</span>
 </div>
 
         
