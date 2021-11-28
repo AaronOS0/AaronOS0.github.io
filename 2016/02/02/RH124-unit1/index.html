@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1. Red Hat Enterprise Linux 71.1. 什么是shell?在计算机科学中，Shell俗称壳（用来区别于核），是指提供使用者使用界面的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.Accessing The Command Line">
+<meta property="og:url" content="https://aaronos0.github.io/2016/02/02/RH124-unit1/index.html">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="1. Red Hat Enterprise Linux 71.1. 什么是shell?在计算机科学中，Shell俗称壳（用来区别于核），是指提供使用者使用界面的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-02-02T15:30:12.000Z">
+<meta property="article:modified_time" content="2016-02-02T15:30:12.000Z">
+<meta property="article:author" content="Aaron">
+<meta property="article:tag" content="linux fundamental">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://aaronos0.github.io/2016/02/02/RH124-unit1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>1.Accessing The Command Line | Aaron's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151920999-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-151920999-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/02/RH124-unit1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          1.Accessing The Command Line
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-02-02 15:30:12" itemprop="dateCreated datePublished" datetime="2016-02-02T15:30:12+00:00">2016-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/02/02/RH124-unit1/" class="post-meta-item leancloud_visitors" data-flag-title="1.Accessing The Command Line" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/02/02/RH124-unit1/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/02/RH124-unit1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-什么是shell"><a href="#1-1-什么是shell" class="headerlink" title="1.1. 什么是shell?"></a>1.1. 什么是shell?</h2><p>在计算机科学中，Shell俗称壳（用来区别于核），是指<code>提供使用者使用界面</code>的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。</p>
+<span id="more"></span>
+<h2 id="1-2-命令行解释"><a href="#1-2-命令行解释" class="headerlink" title="1.2. 命令行解释"></a>1.2. 命令行解释</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]<span class="comment">#</span></span><br><span class="line">root      <span class="comment">##开启shell的用户</span></span><br><span class="line">@         <span class="comment">##分隔符（可以自定义)</span></span><br><span class="line">localhost <span class="comment">##主机的短名称，表示shell开启在哪台主机里</span></span><br><span class="line">Desktop   <span class="comment">##表示你在系统的什么位置</span></span><br><span class="line"><span class="comment">#         ##身份提示中的超级用户，普通用户：$</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-切换用户"><a href="#1-3-切换用户" class="headerlink" title="1.3. 切换用户"></a>1.3. 切换用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]<span class="comment"># su - 系统中已经存在用户名字   ##切换用户身份</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-4-虚拟控制台"><a href="#1-4-虚拟控制台" class="headerlink" title="1.4. 虚拟控制台"></a>1.4. 虚拟控制台</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl+alt+F2-F6	<span class="comment">##进入虚拟控制台</span></span><br><span class="line">ctrl+alt+F1|F7	<span class="comment">##回到图形</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-5-在shell中如何使用命令"><a href="#1-5-在shell中如何使用命令" class="headerlink" title="1.5. 在shell中如何使用命令"></a>1.5. 在shell中如何使用命令</h2><p><strong>1.命令一定要在提示符之后输入</strong><br><strong>2.命令的输入方式</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令	 参数	 目标   ##参数是命令功能的指定</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-参数       <span class="comment">##单词的缩写    </span></span><br><span class="line">--参数      <span class="comment">##单词的全拼</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.帮助</strong><br> <code>命令     --help</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[内容]    <span class="comment">##内容选加</span></span><br><span class="line"> &lt;内容&gt;     <span class="comment">##内容必加</span></span><br><span class="line"> 内容...    <span class="comment">##内容个数任意</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-6-gnome中的常规操作"><a href="#1-6-gnome中的常规操作" class="headerlink" title="1.6. gnome中的常规操作"></a>1.6. gnome中的常规操作</h2><p><strong>1.login</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##for gui</span></span><br><span class="line">not list -----&gt;  username :root -----&gt;passwd: redhat</span><br><span class="line"></span><br><span class="line"><span class="comment">##for text</span></span><br><span class="line">localhost login: root</span><br><span class="line">Passwd: redhat</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.切换工作界面</strong><br><code>ctrl+alt+上|下</code></p>
+<p><strong>3.锁屏</strong><br><code>ctrl+alt+L</code></p>
+<p><strong>4.shell打开方式</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">右健 --&gt; Open <span class="keyword">in</span> Terminal</span><br><span class="line">Applications --&gt; Favorites --&gt; Terminal</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.图形下添加快捷方式</strong><br><code>Application——&gt;System Tools——&gt;Settings——&gt;Keyboard——&gt;Shortcuts :gnome-terminal</code></p>
+<p><strong>6.系统重新初始化</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">关机:</span><br><span class="line">poweroff         </span><br><span class="line">init 0            </span><br><span class="line">shutdown -h now <span class="comment">##会依据目前已启动的服务逐次关闭各服务后才关机。</span></span><br><span class="line">halt   <span class="comment">##不理睬目前系统的状况，进行硬件关机。</span></span><br><span class="line"></span><br><span class="line">重启:</span><br><span class="line">reboot</span><br><span class="line">init 6</span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
+<h2 id="1-7-简单命令"><a href="#1-7-简单命令" class="headerlink" title="1.7. 简单命令"></a>1.7. 简单命令</h2><h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">date -R    <span class="comment">##显示格式  星期 日 月 年 时:分:秒</span></span><br><span class="line">date 月月日日时时分分.秒秒 <span class="comment">##修改时间</span></span><br><span class="line">date -d +时间day/hour   <span class="comment">##显示多少天(小时)后的时间</span></span><br><span class="line">watch -n 1 date	    <span class="comment">##监控date命令每秒钟执行一次</span></span><br><span class="line">date +%D            <span class="comment">##月/日/年</span></span><br><span class="line">date +%m-%d-%Y      <span class="comment">##月-日-年</span></span><br></pre></td></tr></table></figure>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">passwd  username    <span class="comment">##更改用户密码(只有超级用户root可以)</span></span><br><span class="line">passwd	            <span class="comment">##普通用户修改自己的密码,普通用户只能修改自己的密码,并且必须知道自己原始密码,修改密码必须大于8位,不能与原始密码字符重复</span></span><br><span class="line">passwd -l username  <span class="comment">##冻结普通用户</span></span><br><span class="line">passwd -u username  <span class="comment">##解锁冻结帐号</span></span><br></pre></td></tr></table></figure>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p><code>file    文件名   ##查看文件类型</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># file anaconda-ks.cfg</span></span><br><span class="line">anaconda-ks.cfg: ASCII text</span><br></pre></td></tr></table></figure>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat     文件名称   <span class="comment">##查看文件内所有内容</span></span><br><span class="line">cat - b 文件名称   <span class="comment">##查看文件内所有内容并给除空行外的行加行标号</span></span><br><span class="line">cat - n 文件名称   <span class="comment">##查看文件内所有内容并给所有行加标号</span></span><br></pre></td></tr></table></figure>
+<h3 id="head-tail"><a href="#head-tail" class="headerlink" title="head,tail"></a>head,tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -数字 文件名称   <span class="comment">##文件内容前多少行,不加-数字,默认为10行</span></span><br><span class="line">tail -数字 文件名称   <span class="comment">##文件内容后多少行,不加-数字,默认为10行</span></span><br></pre></td></tr></table></figure>
+<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p><code>less 文件名称    ##查看文件所有内容从文件的开始,按q退出</code></p>
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wc    文件名   <span class="comment">##统计行数，单词数，字符数</span></span><br><span class="line">wc -l 文件名   <span class="comment">##统计行数(包含空行)</span></span><br><span class="line">wc -c 文件名   <span class="comment">##统计字节数</span></span><br><span class="line">wc -m 文件名   <span class="comment">##统计字符数</span></span><br><span class="line">wc -w 文件名   <span class="comment">##统计单词数</span></span><br><span class="line">wc -L 文件名   <span class="comment">##显示最长行的长度</span></span><br></pre></td></tr></table></figure>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls --<span class="built_in">help</span>        <span class="comment">##命令帮助</span></span><br><span class="line">ls -l[long]      <span class="comment">##查看属性</span></span><br><span class="line">ls -s[size]      <span class="comment">##查看大小</span></span><br><span class="line">ls -a[all]       <span class="comment">##查看隐藏文件</span></span><br><span class="line">ls -d[directory] <span class="comment">##查看目录</span></span><br><span class="line">ls -R            <span class="comment">##递归列出</span></span><br><span class="line">ls -Z            <span class="comment">##打印安全上下文</span></span><br></pre></td></tr></table></figure>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>              <span class="comment">##进入目标目录中(change directory)</span></span><br><span class="line"><span class="built_in">cd</span> ～           <span class="comment">##回到当前用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ～username   <span class="comment">##进入到指定用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ..           <span class="comment">##进入当前目录的上一级      </span></span><br><span class="line"><span class="built_in">cd</span> -            <span class="comment">##进入之前所在系统目录</span></span><br></pre></td></tr></table></figure>
+<h3 id="tab键"><a href="#tab键" class="headerlink" title="tab键"></a>tab键</h3><p><code>补齐系统中存在的文件名称,命令,和命令参数</code></p>
+<h3 id="历史调用"><a href="#历史调用" class="headerlink" title="历史调用"></a>历史调用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!数字         <span class="comment">##执行第多少条命令  </span></span><br><span class="line">!关键字       <span class="comment">##执行最近一条以关键字开头的命令  </span></span><br><span class="line">ctrl+r+关键字 <span class="comment">##调出最近一条含有关键字的命令  </span></span><br><span class="line">上下键        <span class="comment">##从最后一条命令开始向前查看或者向后查看  </span></span><br><span class="line"><span class="built_in">history</span>       <span class="comment">##查看历史</span></span><br></pre></td></tr></table></figure>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl	+ a	<span class="comment">##光标移动到行首</span></span><br><span class="line">ctrl	+ e	<span class="comment">##光标移动到行尾</span></span><br><span class="line">ctrl	+ u	<span class="comment">##光标所在位置删除到行首</span></span><br><span class="line">ctrl	+ k	<span class="comment">##光标所在位置删除到行尾</span></span><br><span class="line">ctrl    + w     <span class="comment">##删除光标所在位置的前一个单词</span></span><br><span class="line">ctrl	+ r	<span class="comment">##调出最近一条含有关键字的命令</span></span><br><span class="line">ctrl	+ 左|右	<span class="comment">##光标移动以单词为单位</span></span><br><span class="line">ctrl	+ c	<span class="comment">##撤销已输入的命令</span></span><br><span class="line">ctrl	+ d	<span class="comment">##关闭当前环境</span></span><br></pre></td></tr></table></figure>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aaron
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://aaronos0.github.io/2016/02/02/RH124-unit1/" title="1.Accessing The Command Line">https://aaronos0.github.io/2016/02/02/RH124-unit1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux-fundamental/" rel="tag"><i class="fa fa-tag"></i> linux fundamental</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2016/02/02/RH124-unit2/" rel="prev" title="2.Managing Files Form The Command Line">
+                  2.Managing Files Form The Command Line <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Red-Hat-Enterprise-Linux-7"><span class="nav-text">1. Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFshell"><span class="nav-text">1.1. 什么是shell?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%A7%A3%E9%87%8A"><span class="nav-text">1.2. 命令行解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="nav-text">1.3. 切换用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E8%99%9A%E6%8B%9F%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="nav-text">1.4. 虚拟控制台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E5%9C%A8shell%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">1.5. 在shell中如何使用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-gnome%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%84%E6%93%8D%E4%BD%9C"><span class="nav-text">1.6. gnome中的常规操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4"><span class="nav-text">1.7. 简单命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-text">passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#file"><span class="nav-text">file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head-tail"><span class="nav-text">head,tail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less"><span class="nav-text">less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc"><span class="nav-text">wc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tab%E9%94%AE"><span class="nav-text">tab键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%86%E5%8F%B2%E8%B0%83%E7%94%A8"><span class="nav-text">历史调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Aaron"
+    src="/images/Aaron.png">
+  <p class="site-author-name" itemprop="name">Aaron</p>
+  <div class="site-description" itemprop="description">Have a mind like water</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AaronOS0" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;AaronOS0" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/chiwang296" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;chiwang296" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">266k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'en' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: 'https://jfcpb10t.api.lncldglobal.com'
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

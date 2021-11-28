@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Red Hat Enterprise Linux 7什么是进程进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。 进程状态   名称 ps状态 解释    运行 R ： runnable (on run queue) 正在运行或在运行队列中等待   中断 S ： sleeping 休眠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7.Monitoring and Managing Linux Processes">
+<meta property="og:url" content="https://aaronos0.github.io/2016/02/09/RH124-unit7/index.html">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="Red Hat Enterprise Linux 7什么是进程进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。 进程状态   名称 ps状态 解释    运行 R ： runnable (on run queue) 正在运行或在运行队列中等待   中断 S ： sleeping 休眠">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-02-09T03:03:36.000Z">
+<meta property="article:modified_time" content="2016-02-09T03:03:36.000Z">
+<meta property="article:author" content="Aaron">
+<meta property="article:tag" content="linux fundamental">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://aaronos0.github.io/2016/02/09/RH124-unit7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>7.Monitoring and Managing Linux Processes | Aaron's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151920999-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-151920999-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/09/RH124-unit7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          7.Monitoring and Managing Linux Processes
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-02-09 03:03:36" itemprop="dateCreated datePublished" datetime="2016-02-09T03:03:36+00:00">2016-02-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/02/09/RH124-unit7/" class="post-meta-item leancloud_visitors" data-flag-title="7.Monitoring and Managing Linux Processes" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/02/09/RH124-unit7/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/09/RH124-unit7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。</p>
+<h3 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>ps状态</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>运行</td>
+<td>R ： runnable (on run queue)</td>
+<td>正在运行或在运行队列中等待</td>
+</tr>
+<tr>
+<td>中断</td>
+<td>S ： sleeping</td>
+<td>休眠中, 受阻, 在等待某个条件的形成或接受到信号</td>
+</tr>
+<tr>
+<td>停止</td>
+<td>T ： traced or stopped</td>
+<td>进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行</td>
+</tr>
+<tr>
+<td>僵死</td>
+<td>Z ：  a defunct (“zombie”) process</td>
+<td>进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放</td>
+</tr>
+<tr>
+<td>不可中断</td>
+<td>D ：  uninterruptible sleep (usually IO)</td>
+<td>收到信号不唤醒和不可运行, 进程必须等待直到有中断发生</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+<h3 id="图形中如何查看进程"><a href="#图形中如何查看进程" class="headerlink" title="图形中如何查看进程"></a>图形中如何查看进程</h3><ul>
+<li>直接打开system monitor</li>
+<li>用命令gnome-system-monitor打开进程管理器<h3 id="如何用命令查看进程"><a href="#如何用命令查看进程" class="headerlink" title="如何用命令查看进程"></a>如何用命令查看进程</h3><h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ps      <span class="comment">##进程查看工具</span></span><br><span class="line">ps  -a  <span class="comment">##shell中运行的进程</span></span><br><span class="line">ps  -x  <span class="comment">##不在shell中运行的进程</span></span><br><span class="line">ps  -u  <span class="comment">##查看进程用户</span></span><br><span class="line">ps  -l  <span class="comment">##显示进程的详细信息</span></span><br><span class="line">ps  -f  <span class="comment">##完全信息full的缩写</span></span><br><span class="line">ps  -e  <span class="comment">##显示进程的依赖关系</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps   aux  | grep 进程关键字           <span class="comment">##仅列出某个进程</span></span><br><span class="line">ps ax  -o %cpu,%mem,user,pid,comm   <span class="comment">##查看进程某项信息</span></span><br><span class="line">ps aux --sort +|-%cpu|%mem...       <span class="comment">##进程按指定方式排序</span></span><br><span class="line">ps ax -o gid --sort -%cpu | grep -v GID | head -5  <span class="comment">##按cpu占用排序，显示占用最多的前五名的gid</span></span><br></pre></td></tr></table></figure>
+<h3 id="如何控制shell重进程的前后台调用"><a href="#如何控制shell重进程的前后台调用" class="headerlink" title="如何控制shell重进程的前后台调用"></a>如何控制shell重进程的前后台调用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">命令&amp;        ##进程在shell后台运行</span><br><span class="line">ctrl +z     ##把占用shell的进程打入后台停止</span><br><span class="line">jobs        ##查看被打入后台的进程信息</span><br><span class="line">fg job号    ##把指定进程调回前台</span><br><span class="line">bg job号    ##运行后台停止进程</span><br><span class="line">ctrl +c     ##关闭占用shell进程</span><br></pre></td></tr></table></figure>
+<h3 id="如何用命令控制进程-man-7-signal"><a href="#如何用命令控制进程-man-7-signal" class="headerlink" title="如何用命令控制进程(man 7 signal)"></a>如何用命令控制进程(man 7 signal)</h3><h4 id="1-信号"><a href="#1-信号" class="headerlink" title="1)信号"></a>1)信号</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">信号 1		##reload进程</span><br><span class="line">信号 2		##ctrl +c 删除进程在内存中的信息</span><br><span class="line">信号 3		##清除内存中的鼠标信息</span><br><span class="line">信号 9		##强行关闭进程</span><br><span class="line">信号 15		##正常关闭进程</span><br><span class="line">信号 18		##开启停止的进程</span><br><span class="line">信号 19		##停止正在运行的进程</span><br><span class="line">信号 20		##ctrl +z</span><br></pre></td></tr></table></figure>
+<h3 id="2-信号发起"><a href="#2-信号发起" class="headerlink" title="2)信号发起"></a>2)信号发起</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kill 	信号   pid</span><br><span class="line">killall	信号   进程名称</span><br><span class="line">pkill -u username     ##结束某个用户的所有进程</span><br></pre></td></tr></table></figure>
+<h3 id="用户登陆监控"><a href="#用户登陆监控" class="headerlink" title="用户登陆监控"></a>用户登陆监控</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">w	##查看当前使用系统的用户</span><br><span class="line">w   -f	##查看当前使用系统的用户并显示使用地点</span><br><span class="line">last	##查看登陆过系统的用户</span><br><span class="line">lastb	##查看试图登陆但没有成功的用户</span><br></pre></td></tr></table></figure>
+<h3 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h3><blockquote>
+<p>在shell中显示进程管理器</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">u username</span><br><span class="line">k 信号</span><br><span class="line">h 帮助</span><br><span class="line">s 改变刷新速度</span><br><span class="line">m 以内存占用量排序</span><br><span class="line">c 以cpu占用率排序</span><br></pre></td></tr></table></figure>
+<h3 id="pstree-进程树"><a href="#pstree-进程树" class="headerlink" title="pstree 进程树"></a>pstree 进程树</h3><blockquote>
+<p>example</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pstree</span></span><br><span class="line">systemd─┬─ModemManager───2*[&#123;ModemManager&#125;]</span><br><span class="line">        ├─NetworkManager─┬─dhclient</span><br><span class="line">        │                └─3*[&#123;NetworkManager&#125;]</span><br><span class="line">        ├─2*[abrt-watch-log]</span><br><span class="line">        ├─abrtd</span><br><span class="line">        ├─accounts-daemon───2*[&#123;accounts-daemon&#125;]</span><br><span class="line">        ├─alsactl</span><br><span class="line">        ├─at-spi-bus-laun─┬─dbus-daemon───&#123;dbus-daemon&#125;</span><br><span class="line">        │                 └─3*[&#123;at-spi-bus-laun&#125;]</span><br><span class="line">        ├─at-spi2-registr───&#123;at-spi2-registr&#125;</span><br><span class="line">        ├─atd</span><br><span class="line">        ├─auditd─┬─audispd─┬─sedispatch</span><br><span class="line">        │        │         └─&#123;audispd&#125;</span><br><span class="line">        │        └─&#123;auditd&#125;</span><br><span class="line">        ├─avahi-daemon───avahi-daemon</span><br><span class="line">        ├─chronyd</span><br><span class="line">        ├─colord───&#123;colord&#125;</span><br><span class="line">        ├─crond</span><br><span class="line">        ├─2*[dbus-daemon───&#123;dbus-daemon&#125;]</span><br><span class="line">        ├─dbus-launch</span><br><span class="line">        ├─dconf-service───2*[&#123;dconf-service&#125;]</span><br><span class="line">        ├─firewalld───&#123;firewalld&#125;</span><br><span class="line">        ├─gdm─┬─gdm-simple-slav─┬─Xorg</span><br><span class="line">        │     │                 ├─gdm-session-wor─┬─gnome-session─┬─gnome-settings-───3*[&#123;gnome-settin+</span><br><span class="line">        │     │                 │                 │               ├─gnome-shell───4*[&#123;gnome-shell&#125;]</span><br><span class="line">        │     │                 │                 │               └─3*[&#123;gnome-session&#125;]</span><br><span class="line">        │     │                 │                 └─2*[&#123;gdm-session-wor&#125;]</span><br><span class="line">        │     │                 └─2*[&#123;gdm-simple-slav&#125;]</span><br><span class="line">        │     └─2*[&#123;gdm&#125;]</span><br><span class="line">        ├─goa-daemon───3*[&#123;goa-daemon&#125;]</span><br><span class="line">        ├─ibus-daemon─┬─ibus-dconf───2*[&#123;ibus-dconf&#125;]</span><br><span class="line">        │             ├─ibus-engine-sim───&#123;ibus-engine-sim&#125;</span><br><span class="line">        │             └─2*[&#123;ibus-daemon&#125;]</span><br><span class="line">        ├─ibus-x11───&#123;ibus-x11&#125;</span><br><span class="line">        ├─iprdump</span><br><span class="line">        ├─iprinit</span><br><span class="line">        ├─iprupdate</span><br><span class="line">        ├─ksmtuned───sleep</span><br><span class="line">        ├─libvirtd───10*[&#123;libvirtd&#125;]</span><br><span class="line">        ├─lsmd</span><br><span class="line">        ├─lvmetad</span><br><span class="line">        ├─master─┬─pickup</span><br><span class="line">        │        └─qmgr</span><br><span class="line">        ├─mission-control───2*[&#123;mission-control&#125;]</span><br><span class="line">        ├─polkitd───5*[&#123;polkitd&#125;]</span><br><span class="line">        ├─pulseaudio───2*[&#123;pulseaudio&#125;]</span><br><span class="line">        ├─rhsmcertd</span><br><span class="line">        ├─rpc.statd</span><br><span class="line">        ├─rpcbind</span><br><span class="line">        ├─rsyslogd───2*[&#123;rsyslogd&#125;]</span><br><span class="line">        ├─rtkit-daemon───2*[&#123;rtkit-daemon&#125;]</span><br><span class="line">        ├─smartd</span><br><span class="line">        ├─sshd───sshd───bash───pstree</span><br><span class="line">        ├─systemd-journal</span><br><span class="line">        ├─systemd-logind</span><br><span class="line">        ├─systemd-udevd</span><br><span class="line">        ├─tuned───4*[&#123;tuned&#125;]</span><br><span class="line">        └─upowerd───2*[&#123;upowerd&#125;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aaron
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://aaronos0.github.io/2016/02/09/RH124-unit7/" title="7.Monitoring and Managing Linux Processes">https://aaronos0.github.io/2016/02/09/RH124-unit7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux-fundamental/" rel="tag"><i class="fa fa-tag"></i> linux fundamental</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2016/02/09/RH124-unit6/" rel="next" title="6.Controlling Access to Files with Linux File System Permissions">
+                  <i class="fa fa-chevron-left"></i> 6.Controlling Access to Files with Linux File System Permissions
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2016/02/09/RH124-unit8/" rel="prev" title="8.Controlling Services and Daemons">
+                  8.Controlling Services and Daemons <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Hat-Enterprise-Linux-7"><span class="nav-text">Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B"><span class="nav-text">什么是进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-text">进程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E4%B8%AD%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="nav-text">图形中如何查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%94%A8%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="nav-text">如何用命令查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8E%A7%E5%88%B6shell%E9%87%8D%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%89%8D%E5%90%8E%E5%8F%B0%E8%B0%83%E7%94%A8"><span class="nav-text">如何控制shell重进程的前后台调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%94%A8%E5%91%BD%E4%BB%A4%E6%8E%A7%E5%88%B6%E8%BF%9B%E7%A8%8B-man-7-signal"><span class="nav-text">如何用命令控制进程(man 7 signal)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BF%A1%E5%8F%B7"><span class="nav-text">1)信号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BF%A1%E5%8F%B7%E5%8F%91%E8%B5%B7"><span class="nav-text">2)信号发起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E7%9B%91%E6%8E%A7"><span class="nav-text">用户登陆监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top%E5%91%BD%E4%BB%A4"><span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pstree-%E8%BF%9B%E7%A8%8B%E6%A0%91"><span class="nav-text">pstree 进程树</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Aaron"
+    src="/images/Aaron.png">
+  <p class="site-author-name" itemprop="name">Aaron</p>
+  <div class="site-description" itemprop="description">Have a mind like water</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AaronOS0" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;AaronOS0" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/chiwang296" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;chiwang296" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">266k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'en' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: 'https://jfcpb10t.api.lncldglobal.com'
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

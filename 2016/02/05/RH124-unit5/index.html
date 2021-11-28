@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="1. Red Hat Enterprise Linux 7 用户如何存在于系统当中  1.1. &#x2F;etc&#x2F;passwd用户信息文件12[root@localhost ~]# ll &#x2F;etc&#x2F;passwd-rw-r--r--. 1 root root 2009 Feb  8 20:40 &#x2F;etc&#x2F;passwd 用户名字：用户密码：用户uid：用户gid：用户说明：用户家目录：用户使用的shell 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5.Managing Local Linux Users and Groups">
+<meta property="og:url" content="https://aaronos0.github.io/2016/02/05/RH124-unit5/index.html">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="1. Red Hat Enterprise Linux 7 用户如何存在于系统当中  1.1. &#x2F;etc&#x2F;passwd用户信息文件12[root@localhost ~]# ll &#x2F;etc&#x2F;passwd-rw-r--r--. 1 root root 2009 Feb  8 20:40 &#x2F;etc&#x2F;passwd 用户名字：用户密码：用户uid：用户gid：用户说明：用户家目录：用户使用的shell 1">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-02-05T17:33:12.000Z">
+<meta property="article:modified_time" content="2016-02-05T17:33:12.000Z">
+<meta property="article:author" content="Aaron">
+<meta property="article:tag" content="linux fundamental">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://aaronos0.github.io/2016/02/05/RH124-unit5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>5.Managing Local Linux Users and Groups | Aaron's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151920999-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-151920999-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/05/RH124-unit5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          5.Managing Local Linux Users and Groups
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-02-05 17:33:12" itemprop="dateCreated datePublished" datetime="2016-02-05T17:33:12+00:00">2016-02-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/02/05/RH124-unit5/" class="post-meta-item leancloud_visitors" data-flag-title="5.Managing Local Linux Users and Groups" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/02/05/RH124-unit5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/05/RH124-unit5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><blockquote>
+<p>用户如何存在于系统当中</p>
+</blockquote>
+<h2 id="1-1-etc-passwd用户信息文件"><a href="#1-1-etc-passwd用户信息文件" class="headerlink" title="1.1. /etc/passwd用户信息文件"></a>1.1. /etc/passwd用户信息文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ll /etc/passwd</span></span><br><span class="line">-rw-r--r--. 1 root root 2009 Feb  8 20:40 /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><code>用户名字：用户密码：用户uid：用户gid：用户说明：用户家目录：用户使用的shell</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:2:2:daemon:/sbin:/sbin/nologin</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="1-2-etc-shadow用户认证信息"><a href="#1-2-etc-shadow用户认证信息" class="headerlink" title="1.2. /etc/shadow用户认证信息"></a>1.2. /etc/shadow用户认证信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ll /etc/shadow</span></span><br><span class="line">----------. 1 root root 1187 Feb  8 20:40 /etc/shadow</span><br></pre></td></tr></table></figure>
+<p><code>用户名称：密码：密码使用天数：最短有效期：密码最长有效期：密码警告期：密码非活跃期：密码到期日：</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root:$6$sqkcVKBkf0yGT9ld<span class="variable">$ekFGc44dFI5HLsxfdfMbYXyIEG2X</span>.5SccLqa2LGWRQcuOAQYIbEGosB6bq.9aEC5UIksfrcSQORRbGeybDEKY1:16812:0:99999:7:::</span><br><span class="line">bin:*:16141:0:99999:7:::</span><br><span class="line">ntp:!!:16812::::::</span><br><span class="line"><span class="built_in">test</span>::16839:0:99999:7:::</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">密码部分，如果是空就表示无密码；如果是两个感叹号(!!)就表示用户被锁定了，不能登陆；如果是星号(*)就表示此用户为不能登陆的系统用户。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，以前<code>/etc/shadow</code>是包含在<code>/etc/passwd</code>中的，但是由于一些程序是需要通过读取<code>/etc/passwd</code>文件来了解不同账号的权限的，所以既然有了读取<code>/etc/passwd</code>的权限，那么就可以通过暴力破解去破解密码，因此后来把用户的密码放在<code>/etc/shadow</code>进行管理。</p>
+</blockquote>
+<h2 id="1-3-etc-group用户组信息"><a href="#1-3-etc-group用户组信息" class="headerlink" title="1.3. /etc/group用户组信息"></a>1.3. /etc/group用户组信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ll /etc/group</span></span><br><span class="line">-rw-r--r--. 1 root root 858 Feb  8 20:29 /etc/group</span><br></pre></td></tr></table></figure>
+<p><code>用户组名称：用户组密码：用户组id：附加用户成员</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:</span><br><span class="line">mail:x:12:postfix</span><br><span class="line">student:x:1000:student</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-纯手工创建用户"><a href="#1-4-纯手工创建用户" class="headerlink" title="1.4. 纯手工创建用户"></a>1.4. 纯手工创建用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/home/username	<span class="comment">##用户家目录</span></span><br><span class="line">/etc/skel/.*	<span class="comment">##用户的基本信息配置,模板</span></span><br><span class="line">cp /etc/skel/.* /home/用户名  <span class="comment">##可以让用文件新建出来的用户显示正常</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># su - test</span></span><br><span class="line">su: user <span class="built_in">test</span> does not exist</span><br><span class="line">[root@localhost ~]<span class="comment"># vim /etc/passwd</span></span><br><span class="line"><span class="built_in">test</span>:x:1001:1001:<span class="built_in">test</span>:/home/<span class="built_in">test</span>:/bin/bash</span><br><span class="line">[root@localhost ~]<span class="comment"># su - test</span></span><br><span class="line">Last login: Mon Feb  8 20:29:52 CST 2016 on :0</span><br><span class="line">su: warning: cannot change directory to /home/<span class="built_in">test</span>: No such file or directory</span><br><span class="line">id: cannot find name <span class="keyword">for</span> group ID 1001</span><br><span class="line">mkdir: cannot create directory <span class="string">&#x27;/home/test&#x27;</span>: Permission denied</span><br><span class="line">-bash-4.2$ <span class="built_in">echo</span> <span class="variable">$USER</span></span><br><span class="line"><span class="built_in">test</span></span><br><span class="line">-bash-4.2$ <span class="built_in">logout</span></span><br><span class="line">[root@localhost ~]<span class="comment"># mkdir /home/test</span></span><br><span class="line">[root@localhost ~]<span class="comment"># cd /home</span></span><br><span class="line">[root@localhost home]<span class="comment"># ll</span></span><br><span class="line">total 4</span><br><span class="line">drwx------. 14 student student 4096 Feb  2 12:23 student</span><br><span class="line">drwxr-xr-x.  2 root    root       6 Feb  9 00:46 <span class="built_in">test</span></span><br><span class="line">[root@localhost home]<span class="comment"># chown test.test test/</span></span><br><span class="line">chown: invalid user: ‘test.test’</span><br><span class="line">[root@localhost home]<span class="comment"># groupadd -g 1001 test</span></span><br><span class="line">[root@localhost home]<span class="comment"># chown test.test test/</span></span><br><span class="line">[root@localhost home]<span class="comment"># chmod go-rx test/</span></span><br><span class="line">[root@localhost home]<span class="comment"># ll</span></span><br><span class="line">total 4</span><br><span class="line">drwx------. 14 student student 4096 Feb  2 12:23 student</span><br><span class="line">drwx------.  2 <span class="built_in">test</span>    <span class="built_in">test</span>       6 Feb  9 00:46 <span class="built_in">test</span></span><br><span class="line">[root@localhost home]<span class="comment"># su - test</span></span><br><span class="line">Last login: Tue Feb  9 00:45:43 CST 2016 on pts/0</span><br><span class="line">-bash-4.2$ cp /etc/skel/.* .</span><br><span class="line">cp: omitting directory ‘/etc/skel/.’</span><br><span class="line">cp: omitting directory ‘/etc/skel/..’</span><br><span class="line">cp: omitting directory ‘/etc/skel/.mozilla’</span><br><span class="line">-bash-4.2$ <span class="built_in">logout</span></span><br><span class="line">[root@localhost home]<span class="comment"># su - test</span></span><br><span class="line">Last login: Tue Feb  9 00:52:36 CST 2016 on pts/0</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$</span><br></pre></td></tr></table></figure>
+<h2 id="1-5-用户操作命令"><a href="#1-5-用户操作命令" class="headerlink" title="1.5. 用户操作命令"></a>1.5. 用户操作命令</h2><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ifconfig       <span class="comment">##查看本机ip</span></span><br><span class="line">hostname       <span class="comment">##查看主机名称</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$USER</span>     <span class="comment">##查看当前用户名</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span>     <span class="comment">##查看当前用户环境</span></span><br><span class="line">su - username  <span class="comment">##切换用户与用户所使用的环境</span></span><br><span class="line">grep bash$ /etc/passwd <span class="comment">##显示可以登录系统的用户(用户有密码或密码为空)</span></span><br></pre></td></tr></table></figure>
+<h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">id     用户名    <span class="comment">##查看用户信息</span></span><br><span class="line">id -u  用户名    <span class="comment">##用户uid</span></span><br><span class="line">id -g  用户名    <span class="comment">##用户gid</span></span><br><span class="line">id -a  用户名    <span class="comment">##用户所有信息</span></span><br><span class="line">id -G  用户名    <span class="comment">##用户所在所有的id</span></span><br><span class="line">id -un 用户名    <span class="comment">##用户名字</span></span><br><span class="line">id -gn 用户名    <span class="comment">##用户初始组名称</span></span><br><span class="line">id -Gn 用户名    <span class="comment">##用户所在所有组名称</span></span><br></pre></td></tr></table></figure>
+<h3 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">useradd	 用户名	 <span class="comment">##新建用户</span></span><br><span class="line">useradd	-u uid号 用户名称       <span class="comment">##指定用户的uid</span></span><br><span class="line">useradd	-g 已存在组名称 用户名称  <span class="comment">##指定用户初始组，这个组一定要存在</span></span><br><span class="line">useradd	-G 已存在组名称 用户名称  <span class="comment">##指定附加组，组同样要存在</span></span><br><span class="line">useradd	-c 描述 用户名称	      <span class="comment">##用户说明</span></span><br><span class="line">useradd	-d 路径 用户名称	      <span class="comment">##指定用户加目录</span></span><br><span class="line">useradd	-s 类型 用户名称	      <span class="comment">##指定用户使用的shell，shell种类参看/etc/shells</span></span><br></pre></td></tr></table></figure>
+<h3 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userdel 用户名称     <span class="comment">##删除用户名称未删除配置</span></span><br><span class="line">userdel -r 用户名称  <span class="comment">##完全删除用户信息</span></span><br></pre></td></tr></table></figure>
+<h3 id="groupadd-groupdel"><a href="#groupadd-groupdel" class="headerlink" title="groupadd/groupdel"></a>groupadd/groupdel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd   组名称        <span class="comment">##新建组</span></span><br><span class="line">groupadd  -g id号 组名称 <span class="comment">##新建组，-g表示指定组的id</span></span><br><span class="line">groupdel   组名称        <span class="comment">##删除组</span></span><br></pre></td></tr></table></figure>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd	 <span class="comment">##更改用户密码</span></span><br><span class="line"><span class="built_in">echo</span> 密码 | passwd --stdin 用户  <span class="comment">##更改用户密码</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查看用户建立或管理过程使用的命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch -n 1 <span class="string">&#x27;tail -3 /etc/passwd;echo @@@@@@@@@@@@@@@@@@@@@@@@@@;tail -3 /etc/group&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-6-用户的更改"><a href="#1-6-用户的更改" class="headerlink" title="1.6. 用户的更改"></a>1.6. 用户的更改</h2><h3 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">usermod	   -u	<span class="comment">##改变用户uid</span></span><br><span class="line">usermod	   -g	<span class="comment">##改变用户初始组</span></span><br><span class="line">usermod	   -G	<span class="comment">##改变用户附加组</span></span><br><span class="line">usermod	   -aG	<span class="comment">##增加用户附加组</span></span><br><span class="line">usermod	   -d	<span class="comment">##改变用户家目录信息</span></span><br><span class="line">usermod	   -md	<span class="comment">##改变用户家目录信息和家目录名称</span></span><br><span class="line">usermod	   -s	<span class="comment">##改变用户的shell</span></span><br><span class="line">usermod	   -c	<span class="comment">##改变用户的说明</span></span><br><span class="line">usermod	   -L	<span class="comment">##冻结用户（passwd -l）</span></span><br><span class="line">usermod	   -U	<span class="comment">##解锁用户（passwd -u）</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户权限下放（sudo）"><a href="#用户权限下放（sudo）" class="headerlink" title="用户权限下放（sudo）"></a>用户权限下放（sudo）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">权限下放动作的配置文件:</span><br><span class="line">/etc/sudoers  ##这个文件用visudo命令编辑</span><br><span class="line"></span><br><span class="line">文件内容:</span><br><span class="line">授权目标用户	主机名称=（授权用户得到的新用户身份）	授权用户执行命令</span><br><span class="line">test		localhost=（root）		/usr/sbin/useradd</span><br><span class="line"></span><br><span class="line">sudo 命令        ##使用下放的权限</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># su - test</span></span><br><span class="line">Last login: Tue Feb  9 01:44:23 CST 2016 on pts/0</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ useradd hello</span><br><span class="line">-bash: /usr/sbin/useradd: Permission denied</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ <span class="built_in">logout</span></span><br><span class="line">[root@localhost ~]<span class="comment"># visudo</span></span><br><span class="line">97 <span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line">98 root    ALL=(ALL)       ALL</span><br><span class="line">99</span><br><span class="line">100 <span class="built_in">test</span>    localhost=(root)        NOPASSWD :/usr/sbin/useradd, /usr/sbin/userdel</span><br><span class="line">[root@localhost ~]<span class="comment"># su - test</span></span><br><span class="line">Last login: Tue Feb  9 01:44:56 CST 2016 on pts/0</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ sudo useradd hello</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ ll /home/</span><br><span class="line">total 8</span><br><span class="line">drwx------.  3 hello   hello     74 Feb  9 01:50 hello</span><br><span class="line">drwx------. 14 student student 4096 Feb  2 12:23 student</span><br><span class="line">drwx------.  4 <span class="built_in">test</span>    <span class="built_in">test</span>    4096 Feb  9 00:53 <span class="built_in">test</span></span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ sudo userdel -r hello</span><br><span class="line">[<span class="built_in">test</span>@localhost ~]$ ls /home/</span><br><span class="line">student  <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-7-密码期限更改"><a href="#1-7-密码期限更改" class="headerlink" title="1.7. 密码期限更改"></a>1.7. 密码期限更改</h2><h3 id="chage"><a href="#chage" class="headerlink" title="chage"></a>chage</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chage 	-d 数字 用户名	<span class="comment">##密码使用了多久，如何设定为0表示用户登陆系统前必须更改密码</span></span><br><span class="line">chage	-m 数字 用户名	<span class="comment">##最短有效期</span></span><br><span class="line">chage	-M 数字 用户名	<span class="comment">##最长有效期</span></span><br><span class="line">chage	-W 数字 用户名	<span class="comment">##警告期</span></span><br><span class="line">chage	-I 数字 用户名	<span class="comment">##非活跃期</span></span><br><span class="line">chage	-E yyyy-mm-dd 用户名  <span class="comment">##到期日</span></span><br></pre></td></tr></table></figure>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aaron
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://aaronos0.github.io/2016/02/05/RH124-unit5/" title="5.Managing Local Linux Users and Groups">https://aaronos0.github.io/2016/02/05/RH124-unit5/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux-fundamental/" rel="tag"><i class="fa fa-tag"></i> linux fundamental</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2016/02/03/RH124-unit4/" rel="next" title="4.Creating/Viewing/Editing Text Files">
+                  <i class="fa fa-chevron-left"></i> 4.Creating/Viewing/Editing Text Files
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2016/02/09/RH124-unit6/" rel="prev" title="6.Controlling Access to Files with Linux File System Permissions">
+                  6.Controlling Access to Files with Linux File System Permissions <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Red-Hat-Enterprise-Linux-7"><span class="nav-text">1. Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-etc-passwd%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6"><span class="nav-text">1.1. &#x2F;etc&#x2F;passwd用户信息文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-etc-shadow%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BF%A1%E6%81%AF"><span class="nav-text">1.2. &#x2F;etc&#x2F;shadow用户认证信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-etc-group%E7%94%A8%E6%88%B7%E7%BB%84%E4%BF%A1%E6%81%AF"><span class="nav-text">1.3. &#x2F;etc&#x2F;group用户组信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E7%BA%AF%E6%89%8B%E5%B7%A5%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-text">1.4. 纯手工创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="nav-text">1.5. 用户操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#id"><span class="nav-text">id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useradd"><span class="nav-text">useradd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#userdel"><span class="nav-text">userdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupadd-groupdel"><span class="nav-text">groupadd&#x2F;groupdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-text">passwd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E7%94%A8%E6%88%B7%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-text">1.6. 用户的更改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#usermod"><span class="nav-text">usermod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8B%E6%94%BE%EF%BC%88sudo%EF%BC%89"><span class="nav-text">用户权限下放（sudo）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-%E5%AF%86%E7%A0%81%E6%9C%9F%E9%99%90%E6%9B%B4%E6%94%B9"><span class="nav-text">1.7. 密码期限更改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chage"><span class="nav-text">chage</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Aaron"
+    src="/images/Aaron.png">
+  <p class="site-author-name" itemprop="name">Aaron</p>
+  <div class="site-description" itemprop="description">Have a mind like water</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AaronOS0" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;AaronOS0" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/chiwang296" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;chiwang296" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">266k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:02</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'en' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: 'https://jfcpb10t.api.lncldglobal.com'
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
