@@ -581,6 +581,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/02/17/Encapsulate-virtual-machine/" class="post-title-link" itemprop="url">Encapsulate virtual machine</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-02-17 20:28:24" itemprop="dateCreated datePublished" datetime="2016-02-17T20:28:24+00:00">2016-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/02/17/Encapsulate-virtual-machine/" class="post-meta-item leancloud_visitors" data-flag-title="Encapsulate virtual machine" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/02/17/Encapsulate-virtual-machine/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/17/Encapsulate-virtual-machine/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Red-Hat-Enterprise-Linux-6-5"><a href="#Red-Hat-Enterprise-Linux-6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h1><h1 id="1-封装虚拟机"><a href="#1-封装虚拟机" class="headerlink" title="1. 封装虚拟机"></a>1. 封装虚拟机</h1><h2 id="1-1-配置yum源-物理机Rhel7"><a href="#1-1-配置yum源-物理机Rhel7" class="headerlink" title="1.1. 配置yum源(物理机Rhel7)"></a>1.1. 配置yum源(物理机Rhel7)</h2><p><strong>效果</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem                           Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/rhel_foundation163-root   89G   33G   57G  37% /</span><br><span class="line">devtmpfs                             3.8G     0  3.8G   0% /dev</span><br><span class="line">tmpfs                                3.8G   18M  3.8G   1% /dev/shm</span><br><span class="line">tmpfs                                3.8G  9.0M  3.8G   1% /run</span><br><span class="line">tmpfs                                3.8G     0  3.8G   0% /sys/fs/cgroup</span><br><span class="line">/dev/loop0                           3.5G  3.5G     0 100% /var/www/html/<span class="built_in">source</span></span><br><span class="line">/dev/loop1                           3.6G  3.6G     0 100% /var/www/html/rh6.5  <span class="comment">##镜像挂载成功</span></span><br><span class="line">/dev/sda3                            497M  122M  376M  25% /boot</span><br><span class="line">[root@foundation ~]<span class="comment"># vim /etc/fstab  ##设置开机自动挂载</span></span><br><span class="line">/<span class="built_in">source</span>/rhel-server-6.5-x86_64-dvd.iso /var/www/html/rh6.5 iso9660 ro,relatime 0 0</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/02/17/Encapsulate-virtual-machine/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/14/RH124-unit15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -646,7 +758,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>655</span>
+              <span>669</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -665,7 +777,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install qemu-kvm qemu-img	 ##安装虚拟机核心组件</span><br><span class="line">yum install virt-manager libvirt libvirt-python-virtinst libvirtnt   ##安装虚拟机前端管理工具</span><br></pre></td></tr></table></figure>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-虚拟机安装"><a href="#1-1-虚拟机安装" class="headerlink" title="1.1. 虚拟机安装"></a>1.1. 虚拟机安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install qemu-kvm qemu-img	 ##安装虚拟机核心组件</span><br><span class="line">yum install virt-manager libvirt libvirt-python-virtinst libvirtnt   ##安装虚拟机前端管理工具</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/02/14/RH124-unit15/#more" rel="contents">
@@ -776,7 +888,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="设备的识别"><a href="#设备的识别" class="headerlink" title="设备的识别"></a>设备的识别</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda	##系统中的第一块串口硬盘</span><br><span class="line">/dev/hda	##系统中第一块并口硬盘</span><br><span class="line">/dev/hdb	##系统中第二块并口硬盘</span><br><span class="line">/dev/cdrom	##系统光驱</span><br><span class="line">/dev/mapper/xxx	##虚拟设备</span><br></pre></td></tr></table></figure>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-设备的识别"><a href="#1-1-设备的识别" class="headerlink" title="1.1. 设备的识别"></a>1.1. 设备的识别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda	##系统中的第一块串口硬盘</span><br><span class="line">/dev/hda	##系统中第一块并口硬盘</span><br><span class="line">/dev/hdb	##系统中第二块并口硬盘</span><br><span class="line">/dev/cdrom	##系统光驱</span><br><span class="line">/dev/mapper/xxx	##虚拟设备</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/02/13/RH124-unit14/#more" rel="contents">
@@ -887,7 +999,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="如何安装软件"><a href="#如何安装软件" class="headerlink" title="如何安装软件"></a>如何安装软件</h3><blockquote>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-如何安装软件"><a href="#1-1-如何安装软件" class="headerlink" title="1.1. 如何安装软件"></a>1.1. 如何安装软件</h2><blockquote>
 <p>yum : Yellowdog Updater Modified</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">yum 	list	all		<span class="comment">##列出所有安装包</span></span><br><span class="line">yum 	list	installed	<span class="comment">##列出已经安装的</span></span><br><span class="line">yum	list	available	<span class="comment">##列出没有安装的</span></span><br><span class="line">yum 	remove	software	<span class="comment">##卸载软件</span></span><br><span class="line">yum 	install	software	<span class="comment">##安装软件</span></span><br><span class="line">yum	search	关键字		<span class="comment">##搜索与关键字相关的软件</span></span><br><span class="line">yum	whatprovides  文件	<span class="comment">##搜索包含此文件的包</span></span><br><span class="line">yum 	reinstall software	<span class="comment">##重新安装软件</span></span><br><span class="line">yum	localinstall 第三方软件	<span class="comment">##安装第三方软件并解决依赖关系</span></span><br><span class="line">yum 	info	software	<span class="comment">##查询软件信息</span></span><br><span class="line">yum 	groups  list		<span class="comment">##列出软件组</span></span><br><span class="line">yum	groups	install	组名	<span class="comment">##安装组</span></span><br><span class="line">yum	groups	remove	组名	<span class="comment">##卸载组</span></span><br><span class="line">yum	groups	info	组名	<span class="comment">##查看组信息</span></span><br></pre></td></tr></table></figure>
@@ -1001,7 +1113,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><blockquote>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-打包"><a href="#1-1-打包" class="headerlink" title="1.1. 打包"></a>1.1. 打包</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><blockquote>
 <p>打包表示把一堆文件变成一个</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tar  -f   <span class="comment">##指定生成包的名字</span></span><br><span class="line">tar  -c   <span class="comment">##创建包</span></span><br><span class="line">tar  -v   <span class="comment">##显示创建过程</span></span><br><span class="line">tar  -t   <span class="comment">##查看包中内容</span></span><br><span class="line">tar  -x   <span class="comment">##解包</span></span><br><span class="line"></span><br><span class="line">tar  -rf  包名 文件名              <span class="comment">##添加文件到包中</span></span><br><span class="line">tar  -f   包名 --delete filename  <span class="comment">##删除包中指定文件</span></span><br><span class="line">tar  -f   包名 --get    filename  <span class="comment">##取出包中指定文件</span></span><br><span class="line"></span><br><span class="line">tar -cvf  包名  要打包的目录 <span class="comment">##创建包</span></span><br><span class="line">tar -xvf  包名             <span class="comment">##解包</span></span><br></pre></td></tr></table></figure>
@@ -1115,7 +1227,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h3><blockquote>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-网络基础知识"><a href="#1-1-网络基础知识" class="headerlink" title="1.1. 网络基础知识"></a>1.1. 网络基础知识</h2><blockquote>
 <p><strong>ip</strong></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。</span><br></pre></td></tr></table></figure>
@@ -1214,7 +1326,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -1233,121 +1345,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/var/log/messages      ##存放大部分日志(非常重要，几乎所有的错误信息，重要信息都会被记录)</span><br><span class="line">/var/log/secure        ##存放安全及用户相关的日志</span><br><span class="line">/var/log/maillog       ##存放与邮件有关的日志</span><br><span class="line">/var/log/cron          ##存放定期执行的文件的日志</span><br><span class="line">/var/log/boot.log      ##存放与系统启动相关的日志(系统开机时的读条)</span><br><span class="line">/var/log/dmesg         ##记录系统在开机时内核检测过程所产生的信息</span><br><span class="line">/var/log/wtmp          ##记录用户正确或错误登录时的信息，last命令就是读的这个文件</span><br></pre></td></tr></table></figure>
+          <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-日志文件"><a href="#1-1-日志文件" class="headerlink" title="1.1. 日志文件"></a>1.1. 日志文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/var/log/messages      ##存放大部分日志(非常重要，几乎所有的错误信息，重要信息都会被记录)</span><br><span class="line">/var/log/secure        ##存放安全及用户相关的日志</span><br><span class="line">/var/log/maillog       ##存放与邮件有关的日志</span><br><span class="line">/var/log/cron          ##存放定期执行的文件的日志</span><br><span class="line">/var/log/boot.log      ##存放与系统启动相关的日志(系统开机时的读条)</span><br><span class="line">/var/log/dmesg         ##记录系统在开机时内核检测过程所产生的信息</span><br><span class="line">/var/log/wtmp          ##记录用户正确或错误登录时的信息，last命令就是读的这个文件</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/02/09/RH124-unit10/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/09/RH124-unit9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Aaron.png">
-      <meta itemprop="name" content="Aaron">
-      <meta itemprop="description" content="Have a mind like water">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Aaron's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/02/09/RH124-unit9/" class="post-title-link" itemprop="url">9.Configuring and Securing OpenSSH Service</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2016-02-09 16:04:56" itemprop="dateCreated datePublished" datetime="2016-02-09T16:04:56+00:00">2016-02-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/02/09/RH124-unit9/" class="post-meta-item leancloud_visitors" data-flag-title="9.Configuring and Securing OpenSSH Service" title="Views">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/2016/02/09/RH124-unit9/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/09/RH124-unit9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="什么是openssh"><a href="#什么是openssh" class="headerlink" title="什么是openssh?"></a>什么是openssh?</h3><p><code>OpenSSH 是 SSH （Secure SHell） 协议的免费开源实现，是一个提供远程访问控制的软件。</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/02/09/RH124-unit9/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1417,7 +1418,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1430,7 +1431,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1480,12 +1481,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">266k</span>
+    <span title="Symbols count total">269k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:02</span>
+    <span title="Reading time total">4:05</span>
 </div>
 
         

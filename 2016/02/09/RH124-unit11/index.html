@@ -54,12 +54,12 @@
   };
 </script>
 
-  <meta name="description" content="Red Hat Enterprise Linux 7网络基础知识 ip  1ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。  ip的表示  12345600000000.00000000.00000000.00000000  &#x3D;&#x3D;&gt;0.0.0.011111111.11111111.11111111.11111111  &#x3D;&#x3D;&gt;255.2">
+  <meta name="description" content="1. Red Hat Enterprise Linux 71.1. 网络基础知识 ip  1ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。  ip的表示  12345600000000.00000000.00000000.00000000  &#x3D;&#x3D;&gt;0.0.0.011111111.11111111.11111111.11111111  &#x3D;&#x3D;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="11.Managing Red Hat Enterprise Linux Networking">
 <meta property="og:url" content="https://aaronos0.github.io/2016/02/09/RH124-unit11/index.html">
 <meta property="og:site_name" content="Aaron&#39;s Blog">
-<meta property="og:description" content="Red Hat Enterprise Linux 7网络基础知识 ip  1ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。  ip的表示  12345600000000.00000000.00000000.00000000  &#x3D;&#x3D;&gt;0.0.0.011111111.11111111.11111111.11111111  &#x3D;&#x3D;&gt;255.2">
+<meta property="og:description" content="1. Red Hat Enterprise Linux 71.1. 网络基础知识 ip  1ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。  ip的表示  12345600000000.00000000.00000000.00000000  &#x3D;&#x3D;&gt;0.0.0.011111111.11111111.11111111.11111111  &#x3D;&#x3D;&amp;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-02-09T21:46:41.000Z">
 <meta property="article:modified_time" content="2016-02-09T21:46:41.000Z">
@@ -318,7 +318,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h3><blockquote>
+        <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-网络基础知识"><a href="#1-1-网络基础知识" class="headerlink" title="1.1. 网络基础知识"></a>1.1. 网络基础知识</h2><blockquote>
 <p><strong>ip</strong></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，32位。</span><br></pre></td></tr></table></figure>
@@ -331,10 +331,12 @@
 <p><strong>ip分级</strong></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">以二进制说明：</span><br><span class="line">Class A : 0xxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx ==&gt;Net_ID开头为:0</span><br><span class="line">          |--net--|-----------host----------|</span><br><span class="line">Class B : 10xxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx ==&gt;Net_ID开头为:10</span><br><span class="line">          |-------net------|------host------|</span><br><span class="line">Class C : 110xxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx ==&gt;Net_ID开头为:110</span><br><span class="line">          |-----------net-----------|--host-|</span><br><span class="line">Class D : 1110xxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx ==&gt;Net_ID开头为:1110</span><br><span class="line">Class E : 1111xxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx ==&gt;Net_ID开头为:1111</span><br><span class="line"></span><br><span class="line">以十进制表示：</span><br><span class="line">Class A :  0.xx.xx.xx ~ 127.xx.xx.xx</span><br><span class="line">Class B : 128.xx.xx.xx ~ 191.xx.xx.xx</span><br><span class="line">Class C : 192.xx.xx.xx ~ 223.xx.xx.xx</span><br><span class="line">Class D : 224.xx.xx.xx ~ 239.xx.xx.xx</span><br><span class="line">Class E : 240.xx.xx.xx ~ 255.xx.xx.xx</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>Loopback ip</strong></p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.0/8 , 即lo网络，lo网络是当初被用来作为测试操作系统内部循环所用的一个网络，同时也能够提供给系统内部原本就需要使用网络接口的服务使用。</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>Netmask</strong></p>
 </blockquote>
@@ -343,21 +345,26 @@
 <p><strong>Gateway/Router</strong></p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网关/路由器的功能就是负责在不同网络之间的数据包传递(IP Forwarding)，由于路由器具有IP Forwarding功能，并且具有管理路由的能力，所以可以将来自不同网络之间的数据包进行传递。此外，你的主机与主机配置的Gateway一定要在同一个网段内。</span><br></pre></td></tr></table></figure>
-<h3 id="ip-设定"><a href="#ip-设定" class="headerlink" title="ip 设定"></a>ip 设定</h3><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifconfig           <span class="comment">##查看或者临时设定主机ip的工具</span></span><br><span class="line">ifconfig 网络接口   <span class="comment">##查看这个接口上的 ip</span></span><br><span class="line">ifconfig 网络接口 ip netmask 子网掩码	<span class="comment">##临时设定ip与子网掩码</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-ip-设定"><a href="#1-2-ip-设定" class="headerlink" title="1.2. ip 设定"></a>1.2. ip 设定</h2><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifconfig           <span class="comment">##查看或者临时设定主机ip的工具</span></span><br><span class="line">ifconfig 网络接口   <span class="comment">##查看这个接口上的 ip</span></span><br><span class="line">ifconfig 网络接口 ip netmask 子网掩码	<span class="comment">##临时设定ip与子网掩码</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network	 <span class="comment">##重启网络基本服务</span></span><br><span class="line">systemctl restart NetworkManager <span class="comment">##重启网络智能管理服务</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="图形网络配置方式"><a href="#图形网络配置方式" class="headerlink" title="图形网络配置方式"></a>图形网络配置方式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nm-connection-editor       ##图形中的网络设定工具(network connection editor for NetworkManager)</span><br><span class="line">nmtui			   ##文本中的网络设定工具</span><br></pre></td></tr></table></figure>
+
 <h3 id="命令设定ip的方式"><a href="#命令设定ip的方式" class="headerlink" title="命令设定ip的方式"></a>命令设定ip的方式</h3><blockquote>
 <p><strong>nmcli : command‐line tool for controlling NetworkManager</strong></p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmcli connection delete	连接名称	     <span class="comment">##删除此连接</span></span><br><span class="line">nmcli connection add con-name westos ifname eth0 <span class="built_in">type</span> ethernet autoconnect  yes   <span class="comment">##添加动态网络</span></span><br><span class="line">nmcli connection add con-name westos ifname eth0 <span class="built_in">type</span> ethernet ip4 ip/24	  <span class="comment">##添加静态网络</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="网络配置文件"><a href="#网络配置文件" class="headerlink" title="网络配置文件"></a>网络配置文件</h3><p><code>/etc/sysconfig/network-scripts/       ##网络配置目录</code><br><strong>动态网络配置</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ifcfg-xxx		<span class="comment">###网络配置文件格式</span></span><br><span class="line">DEVICE=eth0		<span class="comment">##指定文件管理的设备名称</span></span><br><span class="line">BOOTPROTO=dhcp		<span class="comment">##dhcp动态获取，none和static都表示静态网络</span></span><br><span class="line">ONBOOT=yes		<span class="comment">##开机自动激活设备</span></span><br><span class="line">NAME=hello		<span class="comment">##指定网络链接的名字为hello</span></span><br></pre></td></tr></table></figure>
 <p><strong>静态网络配置</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim ifcfg-xxx                 <span class="comment">###网络配置文件格式</span></span><br><span class="line">DEVICE=eth0                   <span class="comment">##指定文件管理的设备名称</span></span><br><span class="line">BOOTPROTO=static|none	      <span class="comment">##dhcp动态获取，none和static都表示静态网络</span></span><br><span class="line">ONBOOT=yes                    <span class="comment">##开机自动激活设备</span></span><br><span class="line">NAME=hello		      <span class="comment">##指定链接名字</span></span><br><span class="line">IPADDR=172.25.254.100	      <span class="comment">##设定ip为172.25.254.100</span></span><br><span class="line">NETMASK=255.255.255.0	      <span class="comment">##子网掩码为255.255.255.0</span></span><br><span class="line">PREFIX=24		      <span class="comment">##子网掩码为255.255.255.0</span></span><br></pre></td></tr></table></figure>
-<h3 id="网关Gateway"><a href="#网关Gateway" class="headerlink" title="网关Gateway"></a>网关Gateway</h3><p><code>网关就是路由器上和我们的主机处在同一个网段上的ip</code></p>
+
+<h2 id="1-3-网关Gateway"><a href="#1-3-网关Gateway" class="headerlink" title="1.3. 网关Gateway"></a>1.3. 网关Gateway</h2><p><code>网关就是路由器上和我们的主机处在同一个网段上的ip</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-xxx</span><br><span class="line">GATEWAY=网关地址</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@client ~]<span class="comment"># route  ##查看网关</span></span><br><span class="line">Kernel IP routing table</span><br><span class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</span><br><span class="line">default         172.25.254.254  0.0.0.0         UG    1024   0        0 eth0</span><br><span class="line">172.25.254.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0</span><br><span class="line"></span><br><span class="line"><span class="comment">##Destination : 目的地网络/网段</span></span><br><span class="line"><span class="comment">##Gateway : * / 0.0.0.0 ，表示不需要额外的IP，直接从后面的网络接口出来，不通过Gateway</span></span><br><span class="line"><span class="comment">##Genmask : Netmask</span></span><br><span class="line"><span class="comment">##Flags : 标志， U:代表路由可用 G:代表网络需要Gateway来进行传递 H:代表改行路由为一台主机，而非一整个网络</span></span><br><span class="line"><span class="comment">##Iface : 接口</span></span><br></pre></td></tr></table></figure>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p><strong>1.ip映射文件</strong></p>
+
+<h2 id="1-4-域名解析"><a href="#1-4-域名解析" class="headerlink" title="1.4. 域名解析"></a>1.4. 域名解析</h2><p><strong>1.ip映射文件</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/hosts</span><br><span class="line">ip	主机名称</span><br></pre></td></tr></table></figure>
 <p><strong>2.dns服务器的指向文件</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/resolv.conf</span><br><span class="line">nameserver 172.25.254.254</span><br></pre></td></tr></table></figure>
@@ -451,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Hat-Enterprise-Linux-7"><span class="nav-text">Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">网络基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip-%E8%AE%BE%E5%AE%9A"><span class="nav-text">ip 设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">图形网络配置方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%AE%BE%E5%AE%9Aip%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">命令设定ip的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">网络配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%85%B3Gateway"><span class="nav-text">网关Gateway</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-text">域名解析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Red-Hat-Enterprise-Linux-7"><span class="nav-text">1. Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">1.1. 网络基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-ip-%E8%AE%BE%E5%AE%9A"><span class="nav-text">1.2. ip 设定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifconfig"><span class="nav-text">ifconfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-text">图形网络配置方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%AE%BE%E5%AE%9Aip%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">命令设定ip的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">网络配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E7%BD%91%E5%85%B3Gateway"><span class="nav-text">1.3. 网关Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-text">1.4. 域名解析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -467,7 +474,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -480,7 +487,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -530,12 +537,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">266k</span>
+    <span title="Symbols count total">269k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:02</span>
+    <span title="Reading time total">4:05</span>
 </div>
 
         

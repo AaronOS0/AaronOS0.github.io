@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Red Hat Enterprise Linux 6.51. 封装虚拟机1.1. 配置yum源(物理机Rhel7)效果 123456789101112[root@foundation ~]# df -hFilesystem                           Size  Used Avail Use% Mounted on&#x2F;dev&#x2F;mapper&#x2F;rhel_foundation163">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Encapsulate virtual machine">
+<meta property="og:url" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/index.html">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.51. 封装虚拟机1.1. 配置yum源(物理机Rhel7)效果 123456789101112[root@foundation ~]# df -hFilesystem                           Size  Used Avail Use% Mounted on&#x2F;dev&#x2F;mapper&#x2F;rhel_foundation163">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_20:51:26.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:07:34.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:12:21.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:12:32.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:12:43.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:12:54.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:14:03.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:14:21.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:15:03.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:15:50.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:16:57.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:17:25.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:18:16.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:18:30.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:36:04.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:44:31.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:49:53.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:54:22.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_21:58:46.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:01:49.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:04:38.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:12:41.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:14:23.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:19:52.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:42:19.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:43:20.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:44:09.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:44:16.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:44:45.png">
+<meta property="og:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_22:45:02.png">
+<meta property="article:published_time" content="2016-02-17T20:28:24.000Z">
+<meta property="article:modified_time" content="2016-02-17T20:28:24.000Z">
+<meta property="article:author" content="Aaron">
+<meta property="article:tag" content="linux Architecture">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/Screenshot_from_2016-02-17_20:51:26.png">
+
+<link rel="canonical" href="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Encapsulate virtual machine | Aaron's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151920999-1"></script>
+    <script>
+      var host = window.location.hostname;
+      if (host !== "localhost" || !true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-151920999-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Aaron.png">
+      <meta itemprop="name" content="Aaron">
+      <meta itemprop="description" content="Have a mind like water">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Encapsulate virtual machine
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2016-02-17 20:28:24" itemprop="dateCreated datePublished" datetime="2016-02-17T20:28:24+00:00">2016-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/02/17/Encapsulate-virtual-machine/" class="post-meta-item leancloud_visitors" data-flag-title="Encapsulate virtual machine" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2016/02/17/Encapsulate-virtual-machine/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/17/Encapsulate-virtual-machine/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Red-Hat-Enterprise-Linux-6-5"><a href="#Red-Hat-Enterprise-Linux-6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h1><h1 id="1-封装虚拟机"><a href="#1-封装虚拟机" class="headerlink" title="1. 封装虚拟机"></a>1. 封装虚拟机</h1><h2 id="1-1-配置yum源-物理机Rhel7"><a href="#1-1-配置yum源-物理机Rhel7" class="headerlink" title="1.1. 配置yum源(物理机Rhel7)"></a>1.1. 配置yum源(物理机Rhel7)</h2><p><strong>效果</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem                           Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/rhel_foundation163-root   89G   33G   57G  37% /</span><br><span class="line">devtmpfs                             3.8G     0  3.8G   0% /dev</span><br><span class="line">tmpfs                                3.8G   18M  3.8G   1% /dev/shm</span><br><span class="line">tmpfs                                3.8G  9.0M  3.8G   1% /run</span><br><span class="line">tmpfs                                3.8G     0  3.8G   0% /sys/fs/cgroup</span><br><span class="line">/dev/loop0                           3.5G  3.5G     0 100% /var/www/html/<span class="built_in">source</span></span><br><span class="line">/dev/loop1                           3.6G  3.6G     0 100% /var/www/html/rh6.5  <span class="comment">##镜像挂载成功</span></span><br><span class="line">/dev/sda3                            497M  122M  376M  25% /boot</span><br><span class="line">[root@foundation ~]<span class="comment"># vim /etc/fstab  ##设置开机自动挂载</span></span><br><span class="line">/<span class="built_in">source</span>/rhel-server-6.5-x86_64-dvd.iso /var/www/html/rh6.5 iso9660 ro,relatime 0 0</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p><strong>测试</strong><br><img src="Screenshot_from_2016-02-17_20:51:26.png"></p>
+<h2 id="1-2-安装母盘"><a href="#1-2-安装母盘" class="headerlink" title="1.2. 安装母盘"></a>1.2. 安装母盘</h2><p><img src="Screenshot_from_2016-02-17_21:07:34.png"><br><img src="Screenshot_from_2016-02-17_21:12:21.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过虚拟机管理软件安装一个rhel-server-6.5-x86_64-dvd.iso,内存如果设置为小于768M，则默认不安装图形，因此这里选择512M。大概需要安装243个包。</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:12:32.png"><br><img src="Screenshot_from_2016-02-17_21:12:43.png"><br><img src="Screenshot_from_2016-02-17_21:12:54.png"><br><img src="Screenshot_from_2016-02-17_21:14:03.png"><br><img src="Screenshot_from_2016-02-17_21:14:21.png"><br><img src="Screenshot_from_2016-02-17_21:15:03.png"><br><img src="Screenshot_from_2016-02-17_21:15:50.png"><br><img src="Screenshot_from_2016-02-17_21:16:57.png"><br><img src="Screenshot_from_2016-02-17_21:17:25.png"><br><img src="Screenshot_from_2016-02-17_21:18:16.png"><br><img src="Screenshot_from_2016-02-17_21:18:30.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/udev/rules.d/  </span><br><span class="line">rm -f 70-persistent-*  <span class="comment">##这些文件是和系统硬件绑定的，而且重启之后会自动生成，所以作为母盘，不需要这些。</span></span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:36:04.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/ssh/</span><br><span class="line">rm -f ssh_host_*   <span class="comment">###删除ssh的主机记录密钥文件</span></span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:44:31.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">DEVICE=eth0</span><br><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line"><span class="comment">#IPADDR=172.25.0.1</span></span><br><span class="line"><span class="comment">#PREFIX=24</span></span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:49:53.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/yum.repos.d/rhel-source.repo</span><br><span class="line">[rhel-source]</span><br><span class="line">name=Red Hat Enterprise Linux <span class="variable">$releasever</span> - <span class="variable">$basearch</span> - Source</span><br><span class="line">baseurl=http://172.25.254.100/rh6.5</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:54:22.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum install -y vim openssh-clients</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_21:58:46.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">rm -f *   <span class="comment">##删除root家目录下的文件</span></span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_22:01:49.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network <span class="comment">##修改主机名</span></span><br><span class="line">NETWORKING=yes</span><br><span class="line">HOSTNAME=server1.example.com</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_22:04:38.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts  <span class="comment">##解析</span></span><br><span class="line">127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4</span><br><span class="line">::1         localhost localhost.localdomain localhost6 localhost6.localdomain6</span><br><span class="line">172.25.0.1 server1.example.com</span><br><span class="line">172.25.0.2 server2.example.com</span><br><span class="line">172.25.0.3 server3.example.com</span><br><span class="line">172.25.0.4 server4.example.com</span><br><span class="line">172.25.0.5 server5.example.com</span><br><span class="line">172.25.0.6 server6.example.com</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">172.25.0.20 server20.example.com</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_22:12:41.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/selinux/config</span><br><span class="line">SELINUX=disabled</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_22:14:23.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br><span class="line">ip6tables -F</span><br><span class="line">chkconfig iptables off</span><br><span class="line">chkconfig ip6tables off</span><br></pre></td></tr></table></figure>
+<p><img src="Screenshot_from_2016-02-17_22:19:52.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poweroff  <span class="comment">##关机，这里不能重启，因为一些刚才删除的文件会在重启之后又生成。关机之后母盘就制作成功了。</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-3-利用母盘创建虚拟镜像"><a href="#1-3-利用母盘创建虚拟镜像" class="headerlink" title="1.3. 利用母盘创建虚拟镜像"></a>1.3. 利用母盘创建虚拟镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">qemu-img:QEMU disk image utility</span><br><span class="line">        -f     ##First image format，指定镜像格式【qcow2（常用），raw】</span><br><span class="line">	-b backing_file ##指定母盘</span><br><span class="line"></span><br><span class="line">注意：如果需要重置虚拟机，只需删除镜像再利用母盘重新制作即可。母盘坚决不能使用，否则其它虚拟机会受到影响。</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation ~]<span class="comment"># cd /var/lib/libvirt/images  ##虚拟机磁盘镜像文件存放位置</span></span><br><span class="line">[root@foundation images]<span class="comment"># ls</span></span><br><span class="line">client-gui.img  rhel6.5-base.img  server-gui.img</span><br><span class="line">[root@foundation images]<span class="comment"># qemu-img create -f qcow2 -b rhel6.5-base.img vm1  ##利用母盘制作格式为qcow2的子镜像vm1</span></span><br><span class="line">Formatting <span class="string">&#x27;vm1&#x27;</span>, fmt=qcow2 size=8589934592 backing_file=<span class="string">&#x27;rhel6.5-base.img&#x27;</span> encryption=off cluster_size=65536 lazy_refcounts=off</span><br><span class="line">[root@foundation images]<span class="comment"># qemu-img info vm1  ##查看镜像信息</span></span><br><span class="line">image: vm1</span><br><span class="line">file format: qcow2</span><br><span class="line">virtual size: 8.0G (8589934592 bytes)</span><br><span class="line">disk size: 196K</span><br><span class="line">cluster_size: 65536</span><br><span class="line">backing file: rhel6.5-base.img</span><br><span class="line">Format specific information:</span><br><span class="line">    compat: 1.1</span><br><span class="line">    lazy refcounts: <span class="literal">false</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation images]<span class="comment"># for i in &#123;1..20&#125;;do qemu-img create -f qcow2 -b rhel6.5-base.img vm$i;done  ##批量创建</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-4-添加虚拟机"><a href="#1-4-添加虚拟机" class="headerlink" title="1.4. 添加虚拟机"></a>1.4. 添加虚拟机</h2><p><img src="Screenshot_from_2016-02-17_22:42:19.png"><br><img src="Screenshot_from_2016-02-17_22:43:20.png"><br><img src="Screenshot_from_2016-02-17_22:44:09.png"><br><img src="Screenshot_from_2016-02-17_22:44:16.png"><br><img src="Screenshot_from_2016-02-17_22:44:45.png"><br><img src="Screenshot_from_2016-02-17_22:45:02.png"></p>
+<blockquote>
+<p><strong>注意</strong></p>
+</blockquote>
+<ul>
+<li>封装虚拟机时母盘的配置完全可以自定义，不过<code>rm -f 70-persistent-*</code>和<code>rm -f ssh_host_*</code>是必须的，否则会影响到创建的虚拟机的正常运行。</li>
+<li>每打开一个虚拟机，读的磁盘是母盘，只是把每次操作的改变都保存在了子镜像中，可以通过观察子镜像的大小来验证。</li>
+<li>创建的虚拟机需要修改yum源，<code>baseurl=http://172.25.0.250/rh6.5</code>,要写和物理机在同一个网段的ip。</li>
+</ul>
+<script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Aaron
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/" title="Encapsulate virtual machine">https://aaronos0.github.io/2016/02/17/Encapsulate-virtual-machine/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/linux-Architecture/" rel="tag"><i class="fa fa-tag"></i> linux Architecture</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2016/02/14/RH124-unit15/" rel="next" title="15.Using Virtualized Systems">
+                  <i class="fa fa-chevron-left"></i> 15.Using Virtualized Systems
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/05/Welcome/" rel="prev" title="Welcome to my blog">
+                  Welcome to my blog <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Red-Hat-Enterprise-Linux-6-5"><span class="nav-text">Red Hat Enterprise Linux 6.5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%B0%81%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-text">1. 封装虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%85%8D%E7%BD%AEyum%E6%BA%90-%E7%89%A9%E7%90%86%E6%9C%BARhel7"><span class="nav-text">1.1. 配置yum源(物理机Rhel7)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85%E6%AF%8D%E7%9B%98"><span class="nav-text">1.2. 安装母盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E5%88%A9%E7%94%A8%E6%AF%8D%E7%9B%98%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E9%95%9C%E5%83%8F"><span class="nav-text">1.3. 利用母盘创建虚拟镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-text">1.4. 添加虚拟机</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Aaron"
+    src="/images/Aaron.png">
+  <p class="site-author-name" itemprop="name">Aaron</p>
+  <div class="site-description" itemprop="description">Have a mind like water</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AaronOS0" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;AaronOS0" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/chiwang296" title="Instagram &amp;rarr; https:&#x2F;&#x2F;instagram.com&#x2F;chiwang296" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">269k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:05</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Jfcpb10tRtdGKBpGxOsWJhbk-MdYXbMMI',
+    appKey: 'kDYkHjQqdW4osGKcXK7n93S2',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'en' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: 'https://jfcpb10t.api.lncldglobal.com'
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

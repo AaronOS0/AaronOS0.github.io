@@ -54,12 +54,12 @@
   };
 </script>
 
-  <meta name="description" content="Red Hat Enterprise Linux 7什么是服务？ service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。">
+  <meta name="description" content="1. Red Hat Enterprise Linux 71.1. 什么是服务？服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8.Controlling Services and Daemons">
 <meta property="og:url" content="https://aaronos0.github.io/2016/02/09/RH124-unit8/index.html">
 <meta property="og:site_name" content="Aaron&#39;s Blog">
-<meta property="og:description" content="Red Hat Enterprise Linux 7什么是服务？ service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。">
+<meta property="og:description" content="1. Red Hat Enterprise Linux 71.1. 什么是服务？服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-02-09T12:04:43.000Z">
 <meta property="article:modified_time" content="2016-02-09T12:04:43.000Z">
@@ -299,7 +299,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>547</span>
+              <span>550</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -318,11 +318,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Red-Hat-Enterprise-Linux-7"><a href="#Red-Hat-Enterprise-Linux-7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="什么是服务？"><a href="#什么是服务？" class="headerlink" title="什么是服务？"></a>什么是服务？</h3><blockquote>
-<p>service<br><code>服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。</code></p>
-</blockquote>
+        <h1 id="1-Red-Hat-Enterprise-Linux-7"><a href="#1-Red-Hat-Enterprise-Linux-7" class="headerlink" title="1. Red Hat Enterprise Linux 7"></a>1. Red Hat Enterprise Linux 7</h1><h2 id="1-1-什么是服务？"><a href="#1-1-什么是服务？" class="headerlink" title="1.1. 什么是服务？"></a>1.1. 什么是服务？</h2><p><code>服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。 服务器则是安装了很多这类软件的主机。</code></p>
 <span id="more"></span>
-<h3 id="服务管理systemctl"><a href="#服务管理systemctl" class="headerlink" title="服务管理systemctl"></a>服务管理systemctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start     服务名称   <span class="comment">##开启服务</span></span><br><span class="line">systemctl  stop      服务名称   <span class="comment">##关闭服务</span></span><br><span class="line">systemctl  restart   服务名称   <span class="comment">##重启服务</span></span><br><span class="line">systemctl  reload    服务名称   <span class="comment">##重新加载服务配置</span></span><br><span class="line">systemctl  status    服务名称   <span class="comment">##查看服务状态</span></span><br><span class="line">systemctl  <span class="built_in">enable</span>    服务名称   <span class="comment">##设定服务开机启动</span></span><br><span class="line">systemctl  <span class="built_in">disable</span>   服务名称   <span class="comment">##禁止服务开机启动</span></span><br><span class="line">systemctl  show      服务名称   <span class="comment">##查看服务的所有配置细节         </span></span><br><span class="line"></span><br><span class="line">systemctl  list-dependencies 服务名称       <span class="comment">##查看服务依赖关系</span></span><br><span class="line">systemctl  list-units                     <span class="comment">##查看当前运行的所有服务</span></span><br><span class="line">systemctl  list-unit-files                <span class="comment">##查看服务的开机启动情况    </span></span><br><span class="line">systemctl  set-default multi-user.target  <span class="comment">##开机不启动图形</span></span><br><span class="line">systemctl  set-default graphical.target   <span class="comment">##开机启动图形</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-服务管理systemctl"><a href="#1-2-服务管理systemctl" class="headerlink" title="1.2. 服务管理systemctl"></a>1.2. 服务管理systemctl</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start     服务名称   <span class="comment">##开启服务</span></span><br><span class="line">systemctl  stop      服务名称   <span class="comment">##关闭服务</span></span><br><span class="line">systemctl  restart   服务名称   <span class="comment">##重启服务</span></span><br><span class="line">systemctl  reload    服务名称   <span class="comment">##重新加载服务配置</span></span><br><span class="line">systemctl  status    服务名称   <span class="comment">##查看服务状态</span></span><br><span class="line">systemctl  <span class="built_in">enable</span>    服务名称   <span class="comment">##设定服务开机启动</span></span><br><span class="line">systemctl  <span class="built_in">disable</span>   服务名称   <span class="comment">##禁止服务开机启动</span></span><br><span class="line">systemctl  show      服务名称   <span class="comment">##查看服务的所有配置细节         </span></span><br><span class="line"></span><br><span class="line">systemctl  list-dependencies 服务名称       <span class="comment">##查看服务依赖关系</span></span><br><span class="line">systemctl  list-units                     <span class="comment">##查看当前运行的所有服务</span></span><br><span class="line">systemctl  list-unit-files                <span class="comment">##查看服务的开机启动情况    </span></span><br><span class="line">systemctl  set-default multi-user.target  <span class="comment">##开机不启动图形</span></span><br><span class="line">systemctl  set-default graphical.target   <span class="comment">##开机启动图形</span></span><br></pre></td></tr></table></figure>
 <script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.7.0/dist/mindmap.min.css">
     </div>
 
@@ -407,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Hat-Enterprise-Linux-7"><span class="nav-text">Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%EF%BC%9F"><span class="nav-text">什么是服务？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86systemctl"><span class="nav-text">服务管理systemctl</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Red-Hat-Enterprise-Linux-7"><span class="nav-text">1. Red Hat Enterprise Linux 7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%EF%BC%9F"><span class="nav-text">1.1. 什么是服务？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86systemctl"><span class="nav-text">1.2. 服务管理systemctl</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -423,7 +421,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -436,7 +434,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -486,12 +484,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">266k</span>
+    <span title="Symbols count total">269k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:02</span>
+    <span title="Reading time total">4:05</span>
 </div>
 
         
